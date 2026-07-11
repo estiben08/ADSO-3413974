@@ -1,0 +1,174 @@
+====================================================================
+PROYECTO: CONTROL DE ASISTENCIA DIGITAL (SENA)
+====================================================================
+
+1. FINALIDAD DEL PROYECTO
+--------------------------------------------------------------------
+El propósito principal es optimizar el control de ingresos de los
+aprendices a su entorno de formación. La meta es reemplazar la lista
+en papel o el llamado a lista tradicional por un escaneo ágil con
+códigos QR, minimizando así las equivocaciones y ahorrando valioso
+tiempo de clase.
+
+
+2. TÉCNICAS DE LEVANTAMIENTO DE DATOS
+--------------------------------------------------------------------
+Para estructurar adecuadamente la solución y entender las falencias
+actuales, se acudió a las siguientes técnicas:
+
+- Observación de Campo: Se acompañó una sesión presencial, notando
+  que el docente invierte una parte considerable del tiempo pasando
+  lista manual o llamando a cada estudiante, lo cual retrasa el inicio
+  de la jornada.
+
+- Charlas con Instructores (Entrevistas): Se dialogó brevemente con
+  formadores sobre su metodología de asistencia. Manifestaron quehaceres
+  tediosos como lidiar con planillas extraviadas o interrumpir la sesión
+  cuando un estudiante se incorpora tarde.
+
+- Cuestionarios a Estudiantes (Encuestas): Se consultó a un grupo
+  de aprendices sobre su disposición a marcar su ingreso con el celular
+  mediante un código QR. La recepción fue ampliamente positiva.
+
+Conclusión del diagnóstico: La dependencia del registro manual propicia
+márgenes de error altos y consume tiempo efectivo de aprendizaje,
+evidenciando la urgencia de automatizar el proceso.
+
+
+3. EXIGENCIAS FUNCIONALES (EF)
+--------------------------------------------------------------------
+EF-01: El software tendrá la capacidad de marcar la entrada de un alumno
+       cuando este escanee un código QR asignado.
+
+EF-02: Al realizar la validación del código, la plataforma guardará por
+       defecto la hora exacta de ingreso y la fecha de la sesión.
+
+EF-03: El sistema le dará al docente la posibilidad de ver el listado
+       de estudiantes que llegaron en un día en particular.
+
+EF-04: El aplicativo bloqueará intentos de marcar doble asistencia
+       para la misma persona en una sola jornada.
+
+EF-05: Se incluirá una opción para extraer un consolidado básico
+       de faltas o presencias por grupo o rango de días.
+
+EF-06: Cada vez que un escaneo sea exitoso, la pantalla arrojará un
+       aviso visual de confirmación.
+
+
+4. PERFILES Y USUARIOS
+--------------------------------------------------------------------
+Estudiante (Aprendiz):
+   Usuario en capacitación que acude al centro de formación. Su rol 
+   es reportar su llegada usando la cámara de su celular y el QR.
+
+Docente (Instructor):
+   Responsable del ambiente de aprendizaje. Su rol es auditar los 
+   ingresos y generar la trazabilidad de los aprendices.
+
+
+5. LISTADO DE CASOS DE USO
+--------------------------------------------------------------------
+
+5.1 Marcar Ingreso
+   Usuario: Estudiante
+   Propósito: Facilitar al alumno la notificación de su llegada al 
+   aula de forma digital.
+   Paso a paso:
+      1. El estudiante ingresa al ambiente.
+      2. Pasa su código personal por el lector o lee el QR del salón.
+      3. El aplicativo captura el momento exacto (hora y día).
+      4. Se despliega una alerta verde indicando éxito.
+
+5.2 Revisar Asistencia
+   Usuario: Docente
+   Propósito: Autorizar al formador para inspeccionar quién está
+   presente en una sesión específica.
+   Paso a paso:
+      1. El docente escoge el número del grupo y el día.
+      2. La pantalla refleja la nómina del grupo marcando presentes.
+
+5.3 Emitir Reportes
+   Usuario: Docente
+   Propósito: Extraer una tabla resumen de la puntualidad de un 
+   grupo a lo largo de un corte de tiempo.
+   Paso a paso:
+      1. El docente define las fechas y el código del curso.
+      2. El servidor compila los datos almacenados.
+      3. Se visualiza un documento con la estadística de llegadas.
+
+
+6. ESQUEMA DE CLASES (UML TEXTUAL)
+--------------------------------------------------------------------
+A continuación se ilustra de manera gráfica (ASCII) la estructura
+básica orientada a objetos de la solución propuesta:
+
+   ========================
+   |      Instructor      |
+   ========================
+   | - identificadorDoc   |
+   | - nombresCompletos   |
+   | - numFicha           |
+   ========================
+   | + emitirReporte()    |
+   ========================
+             | 1
+             |
+             | 0..*
+   ========================
+   |       Estudiante     |
+   ========================
+   | - identificadorEst   |
+   | - nombresCompletos   |
+   | - hashQR             |
+   | - numFicha           |
+   ========================
+   | + marcarIngreso()    |
+   ========================
+             | 1
+             |
+             | 0..*
+   ========================
+   |  RegistroAsistencia  |
+   ========================
+   | - idRegistro         |
+   | - fechaDia           |
+   | - horaEntrada        |
+   | - estadoActual       |
+   ========================
+   | + revisarHistorial() |
+   ========================
+
+Mapeo de cardinalidad:
+- Un Instructor tiene a cargo varios Estudiantes (1 a 0..*).
+- Un Estudiante genera múltiples RegistrosAsistencia (1 a 0..*).
+
+
+7. MODELO DE CASOS DE USO (TEXTO)
+--------------------------------------------------------------------
+El siguiente esquema muestra cómo interactúan los usuarios finales
+con las funciones del programa:
+
+                     PLATAFORMA DE CONTROL
+        ==============================================
+        |                                            |
+        |           ( Marcar Ingreso )               |
+        |                                            |
+        |           ( Revisar Asistencia )           |
+        |                                            |
+        |           ( Emitir Reportes )              |
+        |                                            |
+        ==============================================
+
+      O                                                O
+     -|-  ---------- Marcar Ingreso                   -|-
+     / \                                              / \
+ ESTUDIANTE                                        DOCENTE
+                                                      |
+                                                      +---- Revisar Asistencia
+                                                      |
+                                                      +---- Emitir Reportes
+
+Mapeo de interacciones:
+- El Estudiante interviene únicamente en [Marcar Ingreso].
+- El Docente interviene en [Revisar Asistencia] y [Emitir Reportes].
