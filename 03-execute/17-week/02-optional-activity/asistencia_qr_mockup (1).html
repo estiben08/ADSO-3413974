@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asistencia QR · SENA — Sistema de Registro de Asistencia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN TOKENS
+============================================================ */
+:root{
+  --brand:#39A900;
+  --brand-2:#2D8600;
+  --brand-3:#1F5E00;
+  --brand-50:#F3FAEC;
+  --brand-100:#E6F5D9;
+  --lime:#8FE24A;
+
+  --ink:#10150F;
+  --ink-soft:#4A5346;
+  --muted:#7C8778;
+  --muted-2:#A5AE9F;
+  --line:#E4E8DE;
+  --line-soft:#EEF1E9;
+
+  --surface:#FFFFFF;
+  --surface-2:#FBFCF9;
+  --canvas:#F2F4EE;
+  --canvas-2:#EBEEE4;
+
+  --amber:#C9860B;
+  --amber-bg:#FBF0D9;
+  --amber-ink:#7A5205;
+  --red:#D0433D;
+  --red-bg:#FBEAE9;
+  --red-ink:#8A2A25;
+
+  --radius-xs:7px;
+  --radius-sm:10px;
+  --radius-md:14px;
+  --radius-lg:20px;
+  --radius-xl:26px;
+
+  --shadow-xs:0 1px 2px rgba(16,21,15,.05);
+  --shadow-sm:0 2px 8px rgba(16,21,15,.05), 0 1px 2px rgba(16,21,15,.04);
+  --shadow-md:0 8px 24px rgba(16,21,15,.08), 0 2px 6px rgba(16,21,15,.05);
+  --shadow-lg:0 20px 50px rgba(16,21,15,.14), 0 4px 14px rgba(16,21,15,.07);
+  --shadow-glow:0 0 0 1px rgba(57,169,0,.10), 0 10px 34px rgba(57,169,0,.20);
+
+  --ease:cubic-bezier(.22,1,.36,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --dur-fast:180ms;
+  --dur:320ms;
+  --dur-slow:480ms;
+
+  --font:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-display:'Manrope','Inter',-apple-system,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+
+  color-scheme: light;
+}
+
+[data-theme="dark"]{
+  --ink:#EEF2EA;
+  --ink-soft:#C4CBBE;
+  --muted:#8C9686;
+  --muted-2:#69726459;
+  --line:#26301F;
+  --line-soft:#1D2618;
+  --surface:#141A10;
+  --surface-2:#171E12;
+  --canvas:#0D110A;
+  --canvas-2:#0A0D07;
+  --brand-50:#152110;
+  --brand-100:#1A2A13;
+  --amber-bg:#2B2308;
+  --amber-ink:#F0C158;
+  --red-bg:#2C1513;
+  --red-ink:#F2938D;
+  --shadow-glow:0 0 0 1px rgba(143,226,74,.18), 0 10px 34px rgba(143,226,74,.14);
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);background:var(--canvas);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  transition:background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+h1,h2,h3,h4,p{margin:0;}
+button{font-family:var(--font);cursor:pointer;}
+input,select,textarea{font-family:var(--font);}
+::selection{background:var(--brand);color:#fff;}
+::-webkit-scrollbar{width:10px;height:10px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--line);border-radius:10px;border:2px solid var(--canvas);}
+::-webkit-scrollbar-thumb:hover{background:var(--muted-2);}
+
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes slideUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+@keyframes slideIn{from{opacity:0;transform:translateX(-10px);}to{opacity:1;transform:translateX(0);}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.94);}to{opacity:1;transform:scale(1);}}
+@keyframes pulseRing{0%{transform:scale(.65);opacity:.75;}100%{transform:scale(2.1);opacity:0;}}
+@keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+@keyframes shimmer{0%{background-position:-300px 0;}100%{background-position:300px 0;}}
+@keyframes spinSlow{to{transform:rotate(360deg);}}
+@keyframes glowPulse{0%,100%{opacity:.55;}50%{opacity:1;}}
+@keyframes toastIn{from{opacity:0;transform:translateY(10px) scale(.96);}to{opacity:1;transform:translateY(0) scale(1);}}
+@keyframes shake{10%,90%{transform:translateX(-1px);}20%,80%{transform:translateX(2px);}30%,50%,70%{transform:translateX(-3px);}40%,60%{transform:translateX(3px);}}
+@keyframes checkDraw{from{stroke-dashoffset:40;}to{stroke-dashoffset:0;}}
+@keyframes scanMove{0%{top:14%;}50%{top:82%;}100%{top:14%;}}
+
+.reveal{animation:slideUp var(--dur-slow) var(--ease) both;}
+.reveal-fast{animation:fadeIn var(--dur) var(--ease) both;}
+.stagger > *{animation:slideUp var(--dur-slow) var(--ease) both;}
+.stagger > *:nth-child(1){animation-delay:.02s;}
+.stagger > *:nth-child(2){animation-delay:.07s;}
+.stagger > *:nth-child(3){animation-delay:.12s;}
+.stagger > *:nth-child(4){animation-delay:.17s;}
+.stagger > *:nth-child(5){animation-delay:.22s;}
+.stagger > *:nth-child(6){animation-delay:.27s;}
+.stagger > *:nth-child(7){animation-delay:.32s;}
+.stagger > *:nth-child(8){animation-delay:.37s;}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+}
+
+/* ---------- preview switcher (meta chrome, not part of the product) ---------- */
+.preview-bar{
+  position:sticky;top:0;z-index:200;
+  background:linear-gradient(180deg, #0D1209, #0A0E07);
+  padding:12px 22px;
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  border-bottom:1px solid #1D2618;
+}
+.preview-bar .label{color:#7C8778;font-size:11.5px;margin-right:4px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;}
+.preview-btn{
+  background:transparent;border:1px solid #26301F;color:#B9C2AE;
+  padding:8px 15px;border-radius:100px;font-size:12.5px;font-weight:500;
+  transition:all var(--dur-fast) var(--ease);
+}
+.preview-btn:hover{border-color:#3B4A2E;color:#fff;background:#161D10;}
+.preview-btn.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));border-color:transparent;color:#fff;box-shadow:0 4px 16px rgba(57,169,0,.35);}
+.preview-spacer{flex:1;}
+.theme-toggle{
+  display:inline-flex;align-items:center;gap:8px;background:#161D10;border:1px solid #26301F;color:#D9EFC4;
+  padding:8px 14px;border-radius:100px;font-size:12.5px;font-weight:500;transition:all var(--dur-fast);
+}
+.theme-toggle:hover{border-color:#3B4A2E;}
+.theme-toggle svg{width:14px;height:14px;stroke:currentColor;}
+
+.screen{display:none;padding:28px 28px 70px;max-width:1400px;margin:0 auto;}
+.screen.active{display:block;}
+
+svg.icon{width:18px;height:18px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none;}
+
+/* ============================================================
+   SHARED UI KIT
+============================================================ */
+.btn{
+  display:inline-flex;align-items:center;gap:7px;
+  border-radius:var(--radius-sm);border:1px solid var(--line);
+  background:var(--surface);color:var(--ink);
+  padding:10px 17px;font-size:13.5px;font-weight:600;
+  transition:all var(--dur-fast) var(--ease);white-space:nowrap;
+  position:relative;overflow:hidden;
+}
+.btn:hover{border-color:var(--muted-2);background:var(--surface-2);transform:translateY(-1px);box-shadow:var(--shadow-sm);}
+.btn:active{transform:translateY(0);}
+.btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));border-color:transparent;color:#fff;box-shadow:0 4px 14px rgba(57,169,0,.28);}
+.btn-primary:hover{box-shadow:0 6px 20px rgba(57,169,0,.4);filter:brightness(1.04);}
+.btn-danger{background:var(--surface);border-color:var(--red);color:var(--red-ink);}
+.btn-danger:hover{background:var(--red-bg);}
+.btn-sm{padding:7px 13px;font-size:12.5px;}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none !important;}
+.btn .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rippleAnim .55s var(--ease) forwards;pointer-events:none;}
+@keyframes rippleAnim{to{transform:scale(2.6);opacity:0;}}
+
+.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:100px;font-size:11.5px;font-weight:700;letter-spacing:.01em;}
+.badge-success{background:var(--brand-50);color:var(--brand-3);}
+[data-theme="dark"] .badge-success{color:#9BE86B;}
+.badge-warning{background:var(--amber-bg);color:var(--amber-ink);}
+.badge-danger{background:var(--red-bg);color:var(--red-ink);}
+.badge-neutral{background:var(--line-soft);color:var(--ink-soft);}
+.dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none;}
+
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm);transition:box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease), border-color var(--dur);
+}
+.card.hoverable:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);border-color:var(--muted-2);}
+
+/* ---------- app shell ---------- */
+.app-shell{display:flex;min-height:660px;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--line);}
+.sidebar{
+  width:246px;flex:none;display:flex;flex-direction:column;padding:20px 14px;
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(143,226,74,.16), transparent 55%),
+    linear-gradient(190deg,#122009,#0B1406 65%);
+  color:#EAF6DC;position:relative;transition:width var(--dur) var(--ease);
+}
+.sidebar.collapsed{width:76px;}
+.sidebar.collapsed .txt,.sidebar.collapsed .nav-section,.sidebar.collapsed .nav-item span,.sidebar.collapsed .who{display:none;}
+.sidebar.collapsed .nav-item{justify-content:center;}
+.sidebar-brand{display:flex;align-items:center;gap:11px;padding:6px 8px 22px;}
+.sidebar-brand .mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--lime),var(--brand));display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 4px 14px rgba(143,226,74,.35);}
+.sidebar-brand .mark svg{width:19px;height:19px;stroke:#0B1406;stroke-width:2.2;}
+.sidebar-brand .txt div:first-child{font-family:var(--font-display);font-size:14px;font-weight:800;color:#fff;line-height:1.2;letter-spacing:-.01em;}
+.sidebar-brand .txt div:last-child{font-size:11px;color:#8FAE7A;margin-top:2px;}
+.collapse-btn{margin-left:auto;width:26px;height:26px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;flex:none;transition:all var(--dur-fast);}
+.collapse-btn:hover{background:rgba(255,255,255,.1);}
+.collapse-btn svg{width:13px;height:13px;stroke:#B9C2AE;transition:transform var(--dur);}
+.sidebar.collapsed .collapse-btn svg{transform:rotate(180deg);}
+
+.nav-section{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:#5F7A50;padding:16px 12px 7px;font-weight:700;}
+.nav-item{
+  display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;font-size:13.5px;font-weight:600;
+  color:#CBE3AF;margin-bottom:2px;position:relative;transition:all var(--dur-fast) var(--ease);
+}
+.nav-item svg{width:17px;height:17px;stroke:currentColor;stroke-width:1.8;fill:none;flex:none;}
+.nav-item.active{background:linear-gradient(135deg,rgba(143,226,74,.22),rgba(143,226,74,.08));color:#fff;box-shadow:inset 0 0 0 1px rgba(143,226,74,.25);}
+.nav-item.active::before{content:"";position:absolute;left:-14px;top:50%;transform:translateY(-50%);width:3px;height:16px;border-radius:3px;background:var(--lime);}
+.nav-item:not(.active):hover{background:rgba(255,255,255,.06);color:#fff;}
+.nav-badge{margin-left:auto;background:var(--red);color:#fff;font-size:10px;font-weight:800;padding:1px 6px;border-radius:100px;}
+
+.sidebar-footer{margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:flex;align-items:center;gap:10px;}
+.avatar{width:33px;height:33px;border-radius:50%;background:linear-gradient(135deg,#6FA84A,#3E7A26);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none;box-shadow:0 2px 8px rgba(0,0,0,.2);}
+.sidebar-footer .who div:first-child{font-size:12.5px;font-weight:700;color:#fff;}
+.sidebar-footer .who div:last-child{font-size:11px;color:#8FAE7A;}
+
+.main{flex:1;background:var(--surface-2);display:flex;flex-direction:column;min-width:0;}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;border-bottom:1px solid var(--line);background:var(--surface);gap:16px;flex-wrap:wrap;}
+.topbar h1{font-family:var(--font-display);font-size:19px;font-weight:800;letter-spacing:-.01em;}
+.topbar .breadcrumb{font-size:11.5px;color:var(--muted);margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+.content{padding:26px 28px;flex:1;overflow:auto;}
+
+.ficha-select{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--surface);border-radius:var(--radius-sm);padding:9px 14px;font-size:13px;font-weight:600;transition:all var(--dur-fast);}
+.ficha-select:hover{border-color:var(--muted-2);box-shadow:var(--shadow-xs);}
+.ficha-select svg{width:15px;height:15px;stroke:var(--muted);}
+
+.state-toggle{display:inline-flex;background:var(--line-soft);border-radius:100px;padding:3px;gap:2px;}
+.state-toggle button{border:none;background:transparent;padding:7px 14px;font-size:12px;font-weight:700;border-radius:100px;color:var(--muted);transition:all var(--dur-fast);}
+.state-toggle button.active{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-xs);}
+
+/* ---------- table ---------- */
+.table-wrap{overflow:auto;}
+table.data{width:100%;border-collapse:collapse;font-size:13.5px;}
+table.data thead th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface-2);position:sticky;top:0;}
+table.data tbody td{padding:13px 16px;border-bottom:1px solid var(--line-soft);vertical-align:middle;}
+table.data tbody tr{transition:background var(--dur-fast);}
+table.data tbody tr:hover{background:var(--brand-50);}
+.cell-person{display:flex;align-items:center;gap:10px;font-weight:600;}
+.mini-avatar{width:29px;height:29px;border-radius:50%;background:var(--brand-100);color:var(--brand-3);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex:none;}
+[data-theme="dark"] .mini-avatar{color:#9BE86B;}
+
+/* ---------- metric cards ---------- */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px;}
+.metric{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:18px 20px;
+  position:relative;overflow:hidden;transition:all var(--dur) var(--ease);
+}
+.metric:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--muted-2);}
+.metric .top-row{display:flex;align-items:flex-start;justify-content:space-between;}
+.metric .lbl{font-size:12px;color:var(--muted);font-weight:600;margin-bottom:8px;}
+.metric .micon{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex:none;}
+.metric .micon svg{width:16px;height:16px;stroke-width:2;}
+.metric .micon.brand{background:var(--brand-50);color:var(--brand-3);}
+[data-theme="dark"] .metric .micon.brand{color:#9BE86B;}
+.metric .micon.danger{background:var(--red-bg);color:var(--red-ink);}
+.metric .micon.amber{background:var(--amber-bg);color:var(--amber-ink);}
+.metric .val{font-family:var(--font-display);font-size:28px;font-weight:800;letter-spacing:-.02em;}
+.metric .val.success{color:var(--brand-3);}
+[data-theme="dark"] .metric .val.success{color:#9BE86B;}
+.metric .val.danger{color:var(--red-ink);}
+.metric .sub{font-size:11.5px;color:var(--muted);margin-top:5px;}
+.metric .spark{margin-top:10px;height:26px;}
+.metric .spark path{fill:none;stroke-width:2;}
+
+/* empty state */
+.empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 20px;color:var(--muted);}
+.empty-state .ico{width:56px;height:56px;border-radius:50%;background:var(--line-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px;animation:floaty 3.4s ease-in-out infinite;}
+.empty-state .ico svg{width:25px;height:25px;stroke:var(--muted-2);}
+.empty-state h3{font-family:var(--font-display);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:5px;}
+.empty-state p{font-size:13px;max-width:340px;line-height:1.6;}
+
+/* ---------- QR / session card (signature element) ---------- */
+.session-grid{display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:start;}
+.qr-card{
+  padding:30px 26px 24px;text-align:center;position:relative;overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 50% -10%, var(--brand-50), transparent 60%),
+    var(--surface);
+}
+[data-theme="dark"] .qr-card{background:radial-gradient(120% 90% at 50% -10%, rgba(143,226,74,.10), transparent 60%), var(--surface);}
+.qr-status-row{display:flex;justify-content:center;margin-bottom:18px;}
+.pulse-badge{display:inline-flex;align-items:center;gap:8px;background:var(--brand-50);color:var(--brand-3);padding:6px 14px;border-radius:100px;font-size:12.5px;font-weight:700;box-shadow:inset 0 0 0 1px rgba(57,169,0,.12);}
+[data-theme="dark"] .pulse-badge{color:#9BE86B;}
+.pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--brand);position:relative;flex:none;}
+.pulse-dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--brand);opacity:.5;animation:pulseRing 1.8s infinite;}
+
+.qr-ring-wrap{position:relative;width:200px;height:200px;margin:0 auto 16px;filter:drop-shadow(0 6px 24px rgba(57,169,0,.22));}
+.qr-ring-wrap svg{transform:rotate(-90deg);}
+.qr-ring-glow{fill:none;stroke:var(--brand);stroke-width:10;opacity:.12;filter:blur(3px);}
+.qr-ring-track{fill:none;stroke:var(--line);stroke-width:5;}
+.qr-ring-prog{fill:none;stroke:url(#qrGrad);stroke-width:5;stroke-linecap:round;stroke-dasharray:508;stroke-dashoffset:110;transition:stroke-dashoffset .9s linear;}
+.qr-code-box{position:absolute;inset:18px;background:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px var(--line), 0 2px 10px rgba(0,0,0,.05);transition:transform var(--dur-slow) var(--ease), opacity var(--dur-slow) var(--ease);}
+.qr-code-box.refreshing{animation:qrFlip .6s var(--ease);}
+@keyframes qrFlip{0%{transform:scale(1) rotateY(0);opacity:1;}45%{transform:scale(.85) rotateY(90deg);opacity:.3;}55%{transform:scale(.85) rotateY(-90deg);opacity:.3;}100%{transform:scale(1) rotateY(0);opacity:1;}}
+.qr-refresh-label{font-size:12px;color:var(--muted);margin-bottom:3px;font-weight:600;}
+.qr-refresh-time{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.02em;}
+.session-window{display:flex;align-items:center;justify-content:space-between;background:var(--brand-50);border:1px solid var(--brand-100);border-radius:var(--radius-sm);padding:12px 15px;margin-top:18px;font-size:12.5px;}
+.session-window .t1{color:var(--brand-3);font-weight:700;}
+[data-theme="dark"] .session-window .t1{color:#9BE86B;}
+.session-window .t2{font-family:var(--mono);font-weight:700;color:var(--ink);}
+
+.attend-card{padding:0;overflow:hidden;display:flex;flex-direction:column;}
+.attend-head{display:flex;align-items:center;justify-content:space-between;padding:17px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:10px;}
+.attend-head h3{font-family:var(--font-display);font-size:14.5px;font-weight:800;}
+.attend-head .cnt{font-size:12px;color:var(--muted);font-weight:600;}
+.attend-list{max-height:460px;overflow:auto;}
+.attend-row{display:flex;align-items:center;gap:12px;padding:12px 20px;border-bottom:1px solid var(--line-soft);animation:slideIn var(--dur-slow) var(--ease) both;transition:background var(--dur-fast);}
+.attend-row:hover{background:var(--surface-2);}
+.attend-row:last-child{border-bottom:none;}
+.attend-row .info{flex:1;min-width:0;}
+.attend-row .name{font-size:13.5px;font-weight:600;}
+.attend-row .doc{font-size:11.5px;color:var(--muted);font-family:var(--mono);}
+.attend-row .time{font-size:12px;color:var(--muted);font-family:var(--mono);}
+.attend-row.new{background:var(--brand-50);}
+
+/* ---------- toasts ---------- */
+.toast-stack{position:fixed;bottom:20px;right:20px;z-index:500;display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+.toast{
+  display:flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:12px 16px;border-radius:var(--radius-sm);
+  font-size:13px;font-weight:600;box-shadow:var(--shadow-lg);animation:toastIn .4s var(--ease-spring) both;max-width:320px;
+}
+[data-theme="dark"] .toast{background:#EEF2EA;color:#10150F;}
+.toast .ic{width:24px;height:24px;border-radius:50%;background:var(--brand);display:flex;align-items:center;justify-content:center;flex:none;}
+.toast .ic svg{width:13px;height:13px;stroke:#fff;stroke-width:3;}
+
+/* ---------- alerts screen ---------- */
+.alert-card{display:flex;gap:0;padding:0;margin-bottom:14px;overflow:hidden;}
+.alert-sev{width:5px;flex:none;align-self:stretch;}
+.alert-sev.red{background:linear-gradient(180deg,var(--red),#A83530);}
+.alert-sev.amber{background:linear-gradient(180deg,var(--amber),#A66C08);}
+.alert-body{flex:1;min-width:0;padding:18px 20px;}
+.alert-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:10px;flex-wrap:wrap;}
+.alert-top .name{font-family:var(--font-display);font-size:14.5px;font-weight:800;}
+.alert-reason{font-size:13px;color:var(--ink-soft);margin-bottom:12px;line-height:1.55;}
+.risk-bar{height:6px;border-radius:100px;background:var(--line-soft);overflow:hidden;margin-bottom:12px;max-width:280px;}
+.risk-bar .fill{height:100%;border-radius:100px;transition:width 1s var(--ease);}
+.risk-bar .fill.high{background:linear-gradient(90deg,var(--red),#A83530);}
+.risk-bar .fill.mod{background:linear-gradient(90deg,var(--amber),#A66C08);}
+.alert-meta{display:flex;gap:18px;font-size:11.5px;color:var(--muted);margin-bottom:14px;flex-wrap:wrap;font-weight:500;}
+.note-box{max-height:0;overflow:hidden;transition:max-height var(--dur-slow) var(--ease), margin var(--dur-slow);margin-top:0;}
+.note-box.open{max-height:180px;margin-top:12px;}
+.note-box-inner{padding-top:12px;border-top:1px dashed var(--line);}
+.note-box textarea{width:100%;border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 12px;font-size:13px;font-family:var(--font);resize:vertical;min-height:60px;margin-bottom:9px;background:var(--surface-2);color:var(--ink);}
+.note-box textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-50);}
+
+/* ---------- phone frame ---------- */
+.phone-stage{display:flex;flex-direction:column;align-items:center;gap:20px;padding:24px 0 44px;}
+.phone-frame{width:346px;height:706px;background:#0B0D09;border-radius:44px;padding:13px;box-shadow:0 24px 60px rgba(0,0,0,.35), 0 2px 8px rgba(0,0,0,.2);position:relative;}
+.phone-notch{position:absolute;top:13px;left:50%;transform:translateX(-50%);width:112px;height:23px;background:#0B0D09;border-radius:0 0 15px 15px;z-index:5;}
+.phone-screen{width:100%;height:100%;background:var(--surface-2);border-radius:33px;overflow:hidden;display:flex;flex-direction:column;position:relative;}
+.phone-statusbar{height:34px;flex:none;}
+.phone-app-top{padding:11px 18px 15px;text-align:center;border-bottom:1px solid var(--line);background:var(--surface);}
+.phone-app-top .app-name{font-family:var(--font-display);font-size:13px;font-weight:800;color:var(--brand-3);}
+[data-theme="dark"] .phone-app-top .app-name{color:#9BE86B;}
+.phone-app-top .ficha{font-size:11px;color:var(--muted);margin-top:3px;font-weight:500;}
+.phone-body{flex:1;padding:24px 20px;overflow:auto;}
+
+.scan-frame{width:100%;aspect-ratio:1;background:#12140F;border-radius:20px;position:relative;overflow:hidden;margin-bottom:20px;box-shadow:inset 0 0 0 1px #22271A;}
+.scan-corner{position:absolute;width:28px;height:28px;border-color:var(--lime);}
+.scan-corner.tl{top:16px;left:16px;border-top:3px solid;border-left:3px solid;border-radius:8px 0 0 0;}
+.scan-corner.tr{top:16px;right:16px;border-top:3px solid;border-right:3px solid;border-radius:0 8px 0 0;}
+.scan-corner.bl{bottom:16px;left:16px;border-bottom:3px solid;border-left:3px solid;border-radius:0 0 0 8px;}
+.scan-corner.br{bottom:16px;right:16px;border-bottom:3px solid;border-right:3px solid;border-radius:0 0 8px 0;}
+.scan-line{position:absolute;left:16px;right:16px;top:14%;height:2px;background:linear-gradient(90deg,transparent,var(--lime),transparent);box-shadow:0 0 12px var(--lime);animation:scanMove 2.2s ease-in-out infinite;}
+.scan-hint{text-align:center;font-size:13px;color:var(--muted);line-height:1.5;}
+
+.form-field{margin-bottom:15px;}
+.form-field label{display:block;font-size:12.5px;font-weight:700;color:var(--ink-soft);margin-bottom:7px;}
+.form-field input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius-sm);font-size:14px;background:var(--surface);color:var(--ink);transition:all var(--dur-fast);}
+.form-field input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-50);}
+
+.result-wrap{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:28px;animation:scaleIn var(--dur-slow) var(--ease-spring) both;}
+.result-icon{width:68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;position:relative;}
+.result-icon::after{content:"";position:absolute;inset:-8px;border-radius:50%;opacity:.35;}
+.result-icon.ok{background:var(--brand-50);}
+.result-icon.ok::after{border:2px solid var(--brand);animation:pulseRing 1.6s ease-out 1;}
+.result-icon.ok svg{width:32px;height:32px;stroke:var(--brand-3);stroke-width:2.4;stroke-dasharray:40;stroke-dashoffset:40;animation:checkDraw .5s var(--ease) .15s forwards;}
+[data-theme="dark"] .result-icon.ok svg{stroke:#9BE86B;}
+.result-icon.err{background:var(--red-bg);animation:shake .5s var(--ease) .1s;}
+.result-icon.err svg{width:32px;height:32px;stroke:var(--red-ink);stroke-width:2.4;}
+.result-icon.warn{background:var(--amber-bg);}
+.result-icon.warn svg{width:32px;height:32px;stroke:var(--amber-ink);stroke-width:2.4;animation:spinSlow 2.4s linear infinite;}
+.result-title{font-family:var(--font-display);font-size:18px;font-weight:800;margin-bottom:7px;}
+.result-desc{font-size:13.5px;color:var(--muted);line-height:1.6;max-width:260px;}
+.result-detail{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px 15px;width:100%;text-align:left;font-size:12.5px;}
+.result-detail div{display:flex;justify-content:space-between;padding:4px 0;color:var(--muted);}
+.result-detail div span:last-child{color:var(--ink);font-weight:600;font-family:var(--mono);}
+
+.phone-tabs{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;max-width:346px;}
+.phone-tabs button{border:1px solid var(--line);background:var(--surface);padding:7px 13px;border-radius:100px;font-size:11.5px;font-weight:700;color:var(--muted);transition:all var(--dur-fast);}
+.phone-tabs button.active{background:var(--ink);border-color:var(--ink);color:var(--canvas);}
+
+/* ---------- admin tabs ---------- */
+.subtabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:22px;}
+.subtab{padding:11px 4px;margin-right:24px;font-size:13.5px;font-weight:600;color:var(--muted);border-bottom:2px solid transparent;transition:all var(--dur-fast);}
+.subtab.active{color:var(--brand-3);border-color:var(--brand);font-weight:700;}
+[data-theme="dark"] .subtab.active{color:#9BE86B;}
+.subtab:not(.active):hover{color:var(--ink);}
+
+.kv-config{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.kv-config .field{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:16px 18px;transition:all var(--dur-fast);}
+.kv-config .field:hover{border-color:var(--muted-2);box-shadow:var(--shadow-xs);}
+.kv-config .field label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:9px;}
+.kv-config .field input{width:100%;border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 12px;font-size:13.5px;font-family:var(--mono);background:var(--surface-2);color:var(--ink);}
+.kv-config .field .hint{font-size:11.5px;color:var(--muted);margin-top:7px;line-height:1.5;}
+
+.offline-banner{display:flex;align-items:center;gap:11px;background:var(--amber-bg);border:1px solid #E9CE86;color:var(--amber-ink);padding:12px 18px;border-radius:var(--radius-sm);font-size:12.5px;font-weight:600;margin-bottom:20px;}
+[data-theme="dark"] .offline-banner{border-color:#4A3B10;}
+.offline-banner svg{width:16px;height:16px;stroke:currentColor;flex:none;}
+
+.filters-bar{display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap;}
+.filters-bar select, .filters-bar input[type=text], .filters-bar input[type=date]{
+  border:1px solid var(--line);border-radius:var(--radius-sm);padding:9px 12px;font-size:13px;background:var(--surface);color:var(--ink);transition:all var(--dur-fast);
+}
+.filters-bar select:hover, .filters-bar input:hover{border-color:var(--muted-2);}
+.filters-bar select:focus, .filters-bar input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-50);}
+.filters-bar .search-wrap{position:relative;}
+.filters-bar .search-wrap svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--muted);}
+.filters-bar .search-wrap input{padding-left:32px;width:200px;}
+.filters-bar .spacer{flex:1;}
+
+.icon-btn{width:32px;height:32px;border-radius:9px;border:1px solid var(--line);background:var(--surface);display:inline-flex;align-items:center;justify-content:center;transition:all var(--dur-fast);}
+.icon-btn svg{width:15px;height:15px;stroke:var(--muted);}
+.icon-btn:hover{background:var(--surface-2);border-color:var(--muted-2);transform:translateY(-1px);}
+
+.corregir-row{background:var(--brand-50);}
+.corregir-panel{max-height:0;overflow:hidden;transition:max-height var(--dur-slow) var(--ease);}
+.corregir-panel.open{max-height:200px;}
+.corregir-panel-inner{padding:16px 20px;border-bottom:1px solid var(--line-soft);}
+.corregir-panel strong{font-size:12.5px;color:var(--ink-soft);}
+.corregir-panel input[type=text]{width:100%;border:1px solid var(--line);border-radius:var(--radius-sm);padding:9px 12px;font-size:13px;margin:9px 0;background:var(--surface);color:var(--ink);}
+
+/* ---------- skeleton loading ---------- */
+.skeleton{background:linear-gradient(90deg,var(--line-soft) 25%,var(--line) 37%,var(--line-soft) 63%);background-size:400px 100%;animation:shimmer 1.4s ease infinite;border-radius:6px;}
+
+/* ---------- tooltip ---------- */
+[data-tip]{position:relative;}
+[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:var(--ink);color:var(--canvas);font-size:11.5px;font-weight:600;padding:6px 10px;border-radius:7px;
+  white-space:nowrap;z-index:50;box-shadow:var(--shadow-md);animation:fadeIn var(--dur-fast) both;pointer-events:none;
+}
+[data-theme="dark"] [data-tip]:hover::after{background:#EEF2EA;color:#10150F;}
+
+/* pagination */
+.pagination{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-top:1px solid var(--line);flex-wrap:wrap;gap:10px;}
+.pagination .info{font-size:12px;color:var(--muted);font-weight:500;}
+.pagination .pages{display:flex;gap:4px;}
+.page-btn{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:var(--surface);font-size:12.5px;font-weight:600;color:var(--ink-soft);display:flex;align-items:center;justify-content:center;transition:all var(--dur-fast);}
+.page-btn.active{background:var(--brand);border-color:var(--brand);color:#fff;}
+.page-btn:hover:not(.active){background:var(--surface-2);}
+
+/* section title row */
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px;}
+.section-head h2{font-family:var(--font-display);font-size:15.5px;font-weight:800;}
+.section-head .actions{display:flex;gap:8px;}
+
+@media (max-width:1024px){
+  .session-grid{grid-template-columns:1fr;}
+  .metrics{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:760px){
+  .app-shell{flex-direction:column;min-height:0;}
+  .sidebar{width:100% !important;flex-direction:row;align-items:center;padding:12px 16px;overflow-x:auto;}
+  .sidebar-brand{padding:0 12px 0 0;}
+  .nav-section{display:none;}
+  .nav-item{white-space:nowrap;margin-bottom:0;}
+  .sidebar-footer{display:none;}
+  .collapse-btn{display:none;}
+  .metrics{grid-template-columns:1fr 1fr;}
+  .screen{padding:16px 12px 50px;}
+  .topbar{padding:14px 16px;}
+  .content{padding:16px;}
+}
+</style>
+</head>
+<body>
+
+<div class="preview-bar">
+  <span class="label">Vista previa · pantalla</span>
+  <button class="preview-btn active" data-screen="s1">1 · Instructor</button>
+  <button class="preview-btn" data-screen="s2">2 · Aprendiz (móvil)</button>
+  <button class="preview-btn" data-screen="s3">3 · Historial</button>
+  <button class="preview-btn" data-screen="s4">4 · Alertas</button>
+  <button class="preview-btn" data-screen="s5">5 · Administración</button>
+  <div class="preview-spacer"></div>
+  <button class="theme-toggle" id="theme-toggle-btn">
+    <svg class="icon" id="theme-icon"><use href="#ic-moon"/></svg>
+    <span id="theme-label">Modo oscuro</span>
+  </button>
+</div>
+
+<!-- ============ ICON DEFS (reused inline) ============ -->
+<svg width="0" height="0" style="position:absolute">
+<defs>
+<g id="ic-qr"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM19 14h2v2M14 19h2v2M19 19h2v2"/></g>
+<g id="ic-history"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g>
+<g id="ic-alert"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></g>
+<g id="ic-admin"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.34 1.87l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.7 1.7 0 00-1.87-.34 1.7 1.7 0 00-1 1.55V21a2 2 0 11-4 0v-.09a1.7 1.7 0 00-1-1.55 1.7 1.7 0 00-1.87.34l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.7 1.7 0 004.6 15a1.7 1.7 0 00-1.55-1H3a2 2 0 110-4h.09A1.7 1.7 0 004.6 9a1.7 1.7 0 00-.34-1.87l-.06-.06A2 2 0 117.03 4.24l.06.06A1.7 1.7 0 008.96 4.6a1.7 1.7 0 001-1.55V3a2 2 0 114 0v.09a1.7 1.7 0 001 1.55 1.7 1.7 0 001.87-.34l.06-.06a2 2 0 112.83 2.83l-.06.06A1.7 1.7 0 0019.4 9a1.7 1.7 0 001.55 1H21a2 2 0 110 4h-.09a1.7 1.7 0 00-1.55 1z"/></g>
+<g id="ic-users"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M15.5 3.13a4 4 0 010 7.75"/></g>
+<g id="ic-log"><path d="M4 6h16M4 12h16M4 18h10"/></g>
+<g id="ic-settings"><circle cx="12" cy="12" r="3"/><path d="M4 12h2M18 12h2M12 4v2M12 18v2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M17.7 6.3l-1.4 1.4M7.7 16.3l-1.4 1.4"/></g>
+<g id="ic-logout"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></g>
+<g id="ic-check"><path d="M20 6L9 17l-5-5"/></g>
+<g id="ic-x"><path d="M18 6L6 18M6 6l18 18" transform="scale(0.9) translate(1.3,1.3)"/></g>
+<g id="ic-refresh"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></g>
+<g id="ic-inbox"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"/></g>
+<g id="ic-search"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></g>
+<g id="ic-wifi-off"><path d="M1 1l22 22M16.72 11.06A10.94 10.94 0 0119 12.55M5 12.55a10.94 10.94 0 015.17-2.39M10.71 5.05A16 16 0 0122.58 9M1.42 9a15.91 15.91 0 014.7-2.88M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></g>
+<g id="ic-edit"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 013 3L12 15l-4 1 1-4z"/></g>
+<g id="ic-plus"><path d="M12 5v14M5 12h14"/></g>
+<g id="ic-lock"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></g>
+<g id="ic-user"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></g>
+<g id="ic-mail"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></g>
+<g id="ic-trending-down"><path d="M23 18l-9.5-9.5-5 5L1 6"/><path d="M17 18h6v-6"/></g>
+<g id="ic-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></g>
+<g id="ic-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></g>
+<g id="ic-chevron-left"><path d="M15 18l-6-6 6-6"/></g>
+<g id="ic-users2"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></g>
+<g id="ic-percent"><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/><path d="M18 6L6 18"/></g>
+<g id="ic-clock"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></g>
+<g id="ic-download"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></g>
+<g id="ic-file"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></g>
+</defs>
+</svg>
+
+<!-- ======================================================================
+     SCREEN 1 — Instructor: generar sesión
+====================================================================== -->
+<section class="screen active" id="s1">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar-1">
+      <div class="sidebar-brand">
+        <div class="mark"><svg viewBox="0 0 24 24" style="fill:none;stroke-width:2"><use href="#ic-qr"/></svg></div>
+        <div class="txt"><div>Asistencia QR</div><div>SENA · Regional Huila</div></div>
+        <button class="collapse-btn" onclick="toggleSidebar('sidebar-1')"><svg><use href="#ic-chevron-left"/></svg></button>
+      </div>
+      <div class="nav-section">Formación</div>
+      <div class="nav-item active"><svg><use href="#ic-qr"/></svg><span>Generar sesión</span></div>
+      <div class="nav-item" onclick="go('s3')"><svg><use href="#ic-history"/></svg><span>Historial de asistencia</span></div>
+      <div class="nav-item" onclick="go('s4')"><svg><use href="#ic-alert"/></svg><span>Alertas de deserción</span><span class="nav-badge">3</span></div>
+      <div class="nav-section">Cuenta</div>
+      <div class="nav-item"><svg><use href="#ic-logout"/></svg><span>Cerrar sesión</span></div>
+      <div class="sidebar-footer">
+        <div class="avatar">DR</div>
+        <div class="who"><div>Diana Rojas</div><div>Instructora · ADSI</div></div>
+      </div>
+    </aside>
+
+    <div class="main">
+      <div class="topbar">
+        <div>
+          <div class="breadcrumb">Formación en curso</div>
+          <h1>Generar sesión de asistencia</h1>
+        </div>
+        <div class="ficha-select">
+          <svg class="icon"><use href="#ic-users"/></svg>
+          Ficha 2830145 — Análisis y Desarrollo de Software
+          <svg class="icon" style="width:12px;height:12px"><path d="M6 9l6 6 6-6" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="session-grid">
+
+          <div class="card qr-card reveal">
+            <div class="qr-status-row">
+              <span class="pulse-badge"><span class="pulse-dot"></span>Sesión activa</span>
+            </div>
+
+            <div class="qr-ring-wrap">
+              <svg width="200" height="200" viewBox="0 0 190 190">
+                <defs>
+                  <linearGradient id="qrGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#8FE24A"/>
+                    <stop offset="100%" stop-color="#2D8600"/>
+                  </linearGradient>
+                </defs>
+                <circle class="qr-ring-glow" cx="95" cy="95" r="81"/>
+                <circle class="qr-ring-track" cx="95" cy="95" r="81"/>
+                <circle class="qr-ring-prog" cx="95" cy="95" r="81"/>
+              </svg>
+              <div class="qr-code-box" id="qr-code-box">
+                <svg width="120" height="120" viewBox="0 0 118 118">
+                  <rect width="118" height="118" fill="#fff"/>
+                  <g fill="#12140F">
+                    <rect x="6" y="6" width="28" height="28"/><rect x="12" y="12" width="16" height="16" fill="#fff"/><rect x="17" y="17" width="6" height="6"/>
+                    <rect x="84" y="6" width="28" height="28"/><rect x="90" y="12" width="16" height="16" fill="#fff"/><rect x="95" y="17" width="6" height="6"/>
+                    <rect x="6" y="84" width="28" height="28"/><rect x="12" y="90" width="16" height="16" fill="#fff"/><rect x="17" y="95" width="6" height="6"/>
+                    <rect x="42" y="6" width="6" height="6"/><rect x="54" y="6" width="6" height="6"/><rect x="66" y="12" width="6" height="6"/><rect x="42" y="18" width="6" height="6"/><rect x="60" y="24" width="6" height="6"/>
+                    <rect x="42" y="42" width="6" height="6"/><rect x="54" y="42" width="12" height="6"/><rect x="72" y="48" width="6" height="6"/><rect x="42" y="54" width="6" height="12"/><rect x="60" y="54" width="6" height="6"/><rect x="78" y="42" width="6" height="18"/><rect x="66" y="66" width="6" height="6"/><rect x="48" y="72" width="12" height="6"/>
+                    <rect x="6" y="42" width="6" height="6"/><rect x="18" y="48" width="6" height="6"/><rect x="6" y="60" width="6" height="12"/><rect x="24" y="60" width="6" height="6"/>
+                    <rect x="84" y="42" width="6" height="6"/><rect x="96" y="42" width="16" height="6"/><rect x="84" y="54" width="6" height="16"/><rect x="102" y="60" width="10" height="6"/><rect x="84" y="78" width="16" height="6"/><rect x="102" y="84" width="10" height="16"/>
+                    <rect x="42" y="84" width="6" height="6"/><rect x="54" y="90" width="6" height="6"/><rect x="66" y="84" width="6" height="6"/><rect x="42" y="96" width="16" height="6"/><rect x="66" y="102" width="6" height="10"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="qr-refresh-label">Se actualiza en</div>
+            <div class="qr-refresh-time" id="qr-timer">03:42</div>
+
+            <div class="session-window">
+              <span class="t1">Ventana de registro</span>
+              <span class="t2">12:35 restantes</span>
+            </div>
+
+            <div style="margin-top:18px;display:flex;gap:8px;">
+              <button class="btn btn-danger" style="flex:1;justify-content:center" onclick="ripple(event)"><svg class="icon" style="width:15px;height:15px"><use href="#ic-x"/></svg>Cerrar ventana de registro</button>
+            </div>
+          </div>
+
+          <div class="card attend-card reveal" style="animation-delay:.08s">
+            <div class="attend-head">
+              <div>
+                <h3>Registros en tiempo real</h3>
+                <div class="cnt" id="attend-cnt">18 de 26 aprendices registrados</div>
+              </div>
+              <div class="state-toggle" id="s1-toggle">
+                <button class="active" data-v="full">Con registros</button>
+                <button data-v="empty">Vacío</button>
+              </div>
+            </div>
+
+            <div class="attend-list" id="s1-full">
+              <div class="attend-row"><div class="mini-avatar">JP</div><div class="info"><div class="name">Juan Esteban Perdomo</div><div class="doc">CC 1075342198</div></div><span class="badge badge-success"><span class="dot"></span>A tiempo</span><span class="time">9:02 am</span></div>
+              <div class="attend-row"><div class="mini-avatar">LT</div><div class="info"><div class="name">Laura Sofía Trujillo</div><div class="doc">CC 1075361027</div></div><span class="badge badge-success"><span class="dot"></span>A tiempo</span><span class="time">9:03 am</span></div>
+              <div class="attend-row"><div class="mini-avatar">CV</div><div class="info"><div class="name">Camilo Andrés Vargas</div><div class="doc">CC 1075398204</div></div><span class="badge badge-success"><span class="dot"></span>A tiempo</span><span class="time">9:04 am</span></div>
+              <div class="attend-row"><div class="mini-avatar">VC</div><div class="info"><div class="name">Valentina Cerquera</div><div class="doc">CC 1075401152</div></div><span class="badge badge-success"><span class="dot"></span>A tiempo</span><span class="time">9:04 am</span></div>
+              <div class="attend-row"><div class="mini-avatar">SO</div><div class="info"><div class="name">Sebastián Ortiz Polanía</div><div class="doc">CC 1075417765</div></div><span class="badge badge-warning"><span class="dot"></span>Corregido</span><span class="time">9:06 am</span></div>
+              <div class="attend-row"><div class="mini-avatar">MG</div><div class="info"><div class="name">María Fernanda Guzmán</div><div class="doc">CC 1075420981</div></div><span class="badge badge-success"><span class="dot"></span>A tiempo</span><span class="time">9:07 am</span></div>
+              <div class="attend-row"><div class="mini-avatar">AO</div><div class="info"><div class="name">Andrés Felipe Ospina</div><div class="doc">CC 1075433410</div></div><span class="badge badge-success"><span class="dot"></span>A tiempo</span><span class="time">9:08 am</span></div>
+              <div class="attend-row"><div class="mini-avatar">NB</div><div class="info"><div class="name">Natalia Ximena Bermeo</div><div class="doc">CC 1075447792</div></div><span class="badge badge-success"><span class="dot"></span>A tiempo</span><span class="time">9:09 am</span></div>
+            </div>
+
+            <div class="empty-state" id="s1-empty" style="display:none">
+              <div class="ico"><svg class="icon" style="width:24px;height:24px"><use href="#ic-inbox"/></svg></div>
+              <h3>Nadie ha registrado asistencia todavía</h3>
+              <p>En cuanto un aprendiz escanee el QR vigente y confirme sus credenciales, aparecerá aquí en tiempo real.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     SCREEN 2 — Aprendiz (mobile-first)
+====================================================================== -->
+<section class="screen" id="s2">
+  <div class="phone-stage">
+    <div class="phone-tabs" id="s2-tabs">
+      <button class="active" data-v="scan">Escáner</button>
+      <button data-v="login">Login</button>
+      <button data-v="success">Éxito</button>
+      <button data-v="refresh">QR actualizado</button>
+      <button data-v="error">Error genérico</button>
+    </div>
+
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-statusbar"></div>
+        <div class="phone-app-top">
+          <div class="app-name">Asistencia QR · SENA</div>
+          <div class="ficha">Ficha 2830145 — ADSI Neiva</div>
+        </div>
+        <div class="phone-body">
+
+          <!-- state: scan -->
+          <div class="phone-view" data-v="scan">
+            <div class="scan-frame">
+              <div class="scan-corner tl"></div><div class="scan-corner tr"></div>
+              <div class="scan-corner bl"></div><div class="scan-corner br"></div>
+              <div class="scan-line"></div>
+            </div>
+            <p class="scan-hint">Apunta la cámara al código QR proyectado por tu instructor</p>
+            <div style="margin-top:16px;background:var(--brand-50);border:1px solid var(--brand-100);border-radius:var(--radius-sm);padding:11px 13px;font-size:12px;color:var(--brand-3);text-align:center;font-weight:600;">
+              Conectado a la red institucional SENA-Neiva
+            </div>
+          </div>
+
+          <!-- state: login -->
+          <div class="phone-view" data-v="login" style="display:none">
+            <p style="font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.5">QR reconocido. Inicia sesión con tus credenciales institucionales para confirmar tu asistencia.</p>
+            <div class="form-field"><label>Usuario / número de documento</label><input type="text" value="1075420981" readonly></div>
+            <div class="form-field"><label>Contraseña</label><input type="password" value="••••••••••"></div>
+            <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px" onclick="ripple(event)">Confirmar asistencia</button>
+          </div>
+
+          <!-- state: success -->
+          <div class="phone-view" data-v="success" style="display:none">
+            <div class="result-wrap">
+              <div class="result-icon ok"><svg><use href="#ic-check"/></svg></div>
+              <div class="result-title">Asistencia registrada</div>
+              <div class="result-desc">Quedó registrada tu asistencia a la sesión de hoy. No necesitas hacer nada más.</div>
+              <div class="result-detail">
+                <div><span>Aprendiz</span><span>María F. Guzmán</span></div>
+                <div><span>Ficha</span><span>2830145</span></div>
+                <div><span>Hora</span><span>9:07:14 am</span></div>
+                <div><span>Fecha</span><span>10 jul 2026</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- state: refresh -->
+          <div class="phone-view" data-v="refresh" style="display:none">
+            <div class="result-wrap">
+              <div class="result-icon warn"><svg><use href="#ic-refresh"/></svg></div>
+              <div class="result-title">El QR se actualizó</div>
+              <div class="result-desc">El código cambió mientras iniciabas sesión. Vuelve a escanear el QR vigente para completar tu registro.</div>
+              <button class="btn btn-primary" style="margin-top:20px" onclick="ripple(event)"><svg class="icon" style="width:15px;height:15px"><use href="#ic-qr"/></svg>Escanear de nuevo</button>
+            </div>
+          </div>
+
+          <!-- state: error -->
+          <div class="phone-view" data-v="error" style="display:none">
+            <div class="result-wrap">
+              <div class="result-icon err"><svg><use href="#ic-x"/></svg></div>
+              <div class="result-title">No se pudo registrar tu asistencia</div>
+              <div class="result-desc">Verifica que estás conectado a la red institucional, que usaste el QR vigente y que es tu primer intento en esta sesión, e inténtalo de nuevo.</div>
+              <button class="btn" style="margin-top:20px" onclick="ripple(event)">Volver a intentar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     SCREEN 3 — Historial de asistencia
+====================================================================== -->
+<section class="screen" id="s3">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar-3">
+      <div class="sidebar-brand">
+        <div class="mark"><svg viewBox="0 0 24 24" style="fill:none;stroke-width:2"><use href="#ic-qr"/></svg></div>
+        <div class="txt"><div>Asistencia QR</div><div>SENA · Regional Huila</div></div>
+        <button class="collapse-btn" onclick="toggleSidebar('sidebar-3')"><svg><use href="#ic-chevron-left"/></svg></button>
+      </div>
+      <div class="nav-section">Formación</div>
+      <div class="nav-item" onclick="go('s1')"><svg><use href="#ic-qr"/></svg><span>Generar sesión</span></div>
+      <div class="nav-item active"><svg><use href="#ic-history"/></svg><span>Historial de asistencia</span></div>
+      <div class="nav-item" onclick="go('s4')"><svg><use href="#ic-alert"/></svg><span>Alertas de deserción</span><span class="nav-badge">3</span></div>
+      <div class="nav-section">Cuenta</div>
+      <div class="nav-item"><svg><use href="#ic-logout"/></svg><span>Cerrar sesión</span></div>
+      <div class="sidebar-footer">
+        <div class="avatar">DR</div>
+        <div class="who"><div>Diana Rojas</div><div>Instructora · ADSI</div></div>
+      </div>
+    </aside>
+
+    <div class="main">
+      <div class="topbar">
+        <div>
+          <div class="breadcrumb">Consulta</div>
+          <h1>Historial de asistencia</h1>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+          <button class="btn btn-sm" onclick="ripple(event)"><svg class="icon" style="width:14px;height:14px"><use href="#ic-file"/></svg>Exportar PDF</button>
+          <button class="btn btn-sm" onclick="ripple(event)"><svg class="icon" style="width:14px;height:14px"><use href="#ic-download"/></svg>Exportar Excel</button>
+          <div class="state-toggle" id="s3-toggle">
+            <button class="active" data-v="full">Con resultados</button>
+            <button data-v="empty">Sin resultados</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="metrics stagger">
+          <div class="metric"><div class="top-row"><div class="lbl">Sesiones en el rango</div><div class="micon brand"><svg class="icon"><use href="#ic-clock"/></svg></div></div><div class="val" data-count="6">0</div><div class="sub">1 jul — 10 jul 2026</div></div>
+          <div class="metric"><div class="top-row"><div class="lbl">Asistentes</div><div class="micon brand"><svg class="icon"><use href="#ic-users2"/></svg></div></div><div class="val success" data-count="142">0</div><div class="sub">de 156 registros esperados</div>
+            <svg class="spark" viewBox="0 0 100 26" preserveAspectRatio="none"><path d="M0,18 L14,15 L28,17 L42,11 L56,13 L70,7 L84,9 L100,4" stroke="#39A900"/></svg>
+          </div>
+          <div class="metric"><div class="top-row"><div class="lbl">Inasistentes</div><div class="micon danger"><svg class="icon"><use href="#ic-trending-down"/></svg></div></div><div class="val danger" data-count="14">0</div><div class="sub">marcados automáticamente</div>
+            <svg class="spark" viewBox="0 0 100 26" preserveAspectRatio="none"><path d="M0,6 L14,9 L28,8 L42,14 L56,12 L70,18 L84,16 L100,20" stroke="#D0433D"/></svg>
+          </div>
+          <div class="metric"><div class="top-row"><div class="lbl">% de asistencia</div><div class="micon brand"><svg class="icon"><use href="#ic-percent"/></svg></div></div><div class="val" data-count="91" data-suffix="%">0</div><div class="sub">promedio del rango</div></div>
+        </div>
+
+        <div class="filters-bar">
+          <select><option>Ficha 2830145 — ADSI</option><option>Ficha 2799301 — ADSO</option><option>Todas las fichas</option></select>
+          <div class="search-wrap"><svg class="icon"><use href="#ic-search"/></svg><input type="text" placeholder="Buscar aprendiz o documento"></div>
+          <input type="date" value="2026-07-01"><span style="color:var(--muted-2);font-size:12px">a</span><input type="date" value="2026-07-10">
+          <select><option>Todos los estados</option><option>Asistió</option><option>Inasistió</option><option>Corregido</option></select>
+          <div class="spacer"></div>
+        </div>
+
+        <div class="card" id="s3-full" style="overflow:hidden">
+          <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Aprendiz</th><th>Fecha</th><th>Hora</th><th>Estado</th><th></th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="cell-person"><div class="mini-avatar">JP</div>Juan Esteban Perdomo</td><td>10 jul 2026</td><td>9:02 am</td>
+                <td><span class="badge badge-success"><span class="dot"></span>Asistió</span></td>
+                <td><button class="icon-btn" data-tip="Corregir" onclick="toggleCorregir(this)"><svg><use href="#ic-edit"/></svg></button></td>
+              </tr>
+              <tr><td colspan="5" style="padding:0"><div class="corregir-panel"><div class="corregir-panel-inner"><strong>Corregir registro manualmente</strong><input type="text" placeholder="Motivo de la corrección, p. ej. 'reportó asistencia verbal, sin celular disponible'"><div style="display:flex;gap:8px"><button class="btn btn-primary btn-sm" onclick="ripple(event)">Guardar corrección</button><button class="btn btn-sm" onclick="this.closest('.corregir-panel').classList.remove('open')">Cancelar</button></div></div></div></td></tr>
+
+              <tr>
+                <td class="cell-person"><div class="mini-avatar">LT</div>Laura Sofía Trujillo</td><td>10 jul 2026</td><td>9:03 am</td>
+                <td><span class="badge badge-success"><span class="dot"></span>Asistió</span></td>
+                <td><button class="icon-btn" data-tip="Corregir" onclick="toggleCorregir(this)"><svg><use href="#ic-edit"/></svg></button></td>
+              </tr>
+              <tr><td colspan="5" style="padding:0"><div class="corregir-panel"><div class="corregir-panel-inner"><strong>Corregir registro manualmente</strong><input type="text" placeholder="Motivo de la corrección"><div style="display:flex;gap:8px"><button class="btn btn-primary btn-sm" onclick="ripple(event)">Guardar corrección</button><button class="btn btn-sm" onclick="this.closest('.corregir-panel').classList.remove('open')">Cancelar</button></div></div></div></td></tr>
+
+              <tr class="corregir-row">
+                <td class="cell-person"><div class="mini-avatar">SO</div>Sebastián Ortiz Polanía</td><td>10 jul 2026</td><td>—</td>
+                <td><span class="badge badge-warning"><span class="dot"></span>Corregido manualmente</span></td>
+                <td><button class="icon-btn" data-tip="Corregir" onclick="toggleCorregir(this)"><svg><use href="#ic-edit"/></svg></button></td>
+              </tr>
+              <tr><td colspan="5" style="padding:0"><div class="corregir-panel"><div class="corregir-panel-inner"><strong>Corregir registro manualmente</strong><input type="text" placeholder="Motivo de la corrección" value="reportó asistencia verbal, sin celular disponible"><div style="display:flex;gap:8px"><button class="btn btn-primary btn-sm" onclick="ripple(event)">Guardar corrección</button><button class="btn btn-sm" onclick="this.closest('.corregir-panel').classList.remove('open')">Cancelar</button></div></div></div></td></tr>
+
+              <tr>
+                <td class="cell-person"><div class="mini-avatar">CM</div>Cristian David Muñoz</td><td>9 jul 2026</td><td>—</td>
+                <td><span class="badge badge-danger"><span class="dot"></span>Inasistió</span></td>
+                <td><button class="icon-btn" data-tip="Corregir" onclick="toggleCorregir(this)"><svg><use href="#ic-edit"/></svg></button></td>
+              </tr>
+              <tr><td colspan="5" style="padding:0"><div class="corregir-panel"><div class="corregir-panel-inner"><strong>Corregir registro manualmente</strong><input type="text" placeholder="Motivo de la corrección"><div style="display:flex;gap:8px"><button class="btn btn-primary btn-sm" onclick="ripple(event)">Guardar corrección</button><button class="btn btn-sm" onclick="this.closest('.corregir-panel').classList.remove('open')">Cancelar</button></div></div></div></td></tr>
+
+              <tr>
+                <td class="cell-person"><div class="mini-avatar">MG</div>María Fernanda Guzmán</td><td>9 jul 2026</td><td>9:05 am</td>
+                <td><span class="badge badge-success"><span class="dot"></span>Asistió</span></td>
+                <td><button class="icon-btn" data-tip="Corregir" onclick="toggleCorregir(this)"><svg><use href="#ic-edit"/></svg></button></td>
+              </tr>
+              <tr><td colspan="5" style="padding:0"><div class="corregir-panel"><div class="corregir-panel-inner"><strong>Corregir registro manualmente</strong><input type="text" placeholder="Motivo de la corrección"><div style="display:flex;gap:8px"><button class="btn btn-primary btn-sm" onclick="ripple(event)">Guardar corrección</button><button class="btn btn-sm" onclick="this.closest('.corregir-panel').classList.remove('open')">Cancelar</button></div></div></div></td></tr>
+            </tbody>
+          </table>
+          </div>
+          <div class="pagination">
+            <div class="info">Mostrando 1–5 de 156 registros</div>
+            <div class="pages">
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <button class="page-btn">…</button>
+              <button class="page-btn">32</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" id="s3-empty" style="display:none">
+          <div class="empty-state">
+            <div class="ico"><svg class="icon" style="width:24px;height:24px"><use href="#ic-search"/></svg></div>
+            <h3>No encontramos registros</h3>
+            <p>Ajusta los filtros de fecha, ficha o estado para ver resultados de asistencia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     SCREEN 4 — Alertas de deserción
+====================================================================== -->
+<section class="screen" id="s4">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar-4">
+      <div class="sidebar-brand">
+        <div class="mark"><svg viewBox="0 0 24 24" style="fill:none;stroke-width:2"><use href="#ic-qr"/></svg></div>
+        <div class="txt"><div>Asistencia QR</div><div>SENA · Regional Huila</div></div>
+        <button class="collapse-btn" onclick="toggleSidebar('sidebar-4')"><svg><use href="#ic-chevron-left"/></svg></button>
+      </div>
+      <div class="nav-section">Formación</div>
+      <div class="nav-item" onclick="go('s1')"><svg><use href="#ic-qr"/></svg><span>Generar sesión</span></div>
+      <div class="nav-item" onclick="go('s3')"><svg><use href="#ic-history"/></svg><span>Historial de asistencia</span></div>
+      <div class="nav-item active"><svg><use href="#ic-alert"/></svg><span>Alertas de deserción</span><span class="nav-badge">3</span></div>
+      <div class="nav-section">Cuenta</div>
+      <div class="nav-item"><svg><use href="#ic-logout"/></svg><span>Cerrar sesión</span></div>
+      <div class="sidebar-footer">
+        <div class="avatar">DR</div>
+        <div class="who"><div>Diana Rojas</div><div>Instructora · ADSI</div></div>
+      </div>
+    </aside>
+
+    <div class="main">
+      <div class="topbar">
+        <div>
+          <div class="breadcrumb">Seguimiento</div>
+          <h1>Alertas tempranas de deserción</h1>
+        </div>
+        <div class="state-toggle" id="s4-toggle">
+          <button class="active" data-v="full">Con alertas</button>
+          <button data-v="empty">Sin alertas</button>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="metrics stagger" style="grid-template-columns:repeat(3,1fr)">
+          <div class="metric"><div class="top-row"><div class="lbl">Alertas activas</div><div class="micon danger"><svg class="icon"><use href="#ic-alert"/></svg></div></div><div class="val danger" data-count="3">0</div><div class="sub">requieren revisión</div></div>
+          <div class="metric"><div class="top-row"><div class="lbl">Riesgo alto</div><div class="micon danger"><svg class="icon"><use href="#ic-trending-down"/></svg></div></div><div class="val danger" data-count="1">0</div><div class="sub">3+ inasistencias seguidas</div></div>
+          <div class="metric"><div class="top-row"><div class="lbl">Atendidas este mes</div><div class="micon brand"><svg class="icon"><use href="#ic-check"/></svg></div></div><div class="val success" data-count="5">0</div><div class="sub">con nota registrada</div></div>
+        </div>
+
+        <div id="s4-full">
+          <div class="card alert-card hoverable reveal">
+            <div class="alert-sev red"></div>
+            <div class="alert-body">
+              <div class="alert-top"><span class="name">Cristian David Muñoz</span><span class="badge badge-danger"><svg class="icon" style="width:12px;height:12px"><use href="#ic-trending-down"/></svg>Riesgo alto</span></div>
+              <p class="alert-reason">Inasistió a 3 sesiones consecutivas (4, 7 y 9 de julio). Su asistencia bajó del 92% al 71% en las últimas dos semanas.</p>
+              <div class="risk-bar"><div class="fill high" style="width:86%"></div></div>
+              <div class="alert-meta"><span>Ficha 2830145 — ADSI</span><span>Documento 1075455310</span><span>Detectado hoy, 8:40 am</span></div>
+              <div style="display:flex;gap:8px">
+                <button class="btn btn-primary btn-sm" onclick="toggleNote(this);ripple(event)">Marcar como atendida</button>
+                <button class="btn btn-sm" onclick="ripple(event)">Ver historial del aprendiz</button>
+              </div>
+              <div class="note-box"><div class="note-box-inner"><textarea placeholder="Nota de seguimiento, p. ej. 'Se contactó al aprendiz, reporta dificultades económicas de transporte'"></textarea><button class="btn btn-primary btn-sm" onclick="ripple(event)">Guardar nota</button></div></div>
+            </div>
+          </div>
+
+          <div class="card alert-card hoverable reveal" style="animation-delay:.06s">
+            <div class="alert-sev amber"></div>
+            <div class="alert-body">
+              <div class="alert-top"><span class="name">Andrés Felipe Ospina</span><span class="badge badge-warning"><svg class="icon" style="width:12px;height:12px"><use href="#ic-trending-down"/></svg>Riesgo moderado</span></div>
+              <p class="alert-reason">Su porcentaje de asistencia bajó 12 puntos porcentuales en las últimas dos semanas (de 95% a 83%).</p>
+              <div class="risk-bar"><div class="fill mod" style="width:55%"></div></div>
+              <div class="alert-meta"><span>Ficha 2830145 — ADSI</span><span>Documento 1075433410</span><span>Detectado ayer, 6:12 pm</span></div>
+              <div style="display:flex;gap:8px">
+                <button class="btn btn-primary btn-sm" onclick="toggleNote(this);ripple(event)">Marcar como atendida</button>
+                <button class="btn btn-sm" onclick="ripple(event)">Ver historial del aprendiz</button>
+              </div>
+              <div class="note-box"><div class="note-box-inner"><textarea placeholder="Nota de seguimiento"></textarea><button class="btn btn-primary btn-sm" onclick="ripple(event)">Guardar nota</button></div></div>
+            </div>
+          </div>
+
+          <div class="card alert-card hoverable reveal" style="animation-delay:.12s">
+            <div class="alert-sev amber"></div>
+            <div class="alert-body">
+              <div class="alert-top"><span class="name">Natalia Ximena Bermeo</span><span class="badge badge-warning"><svg class="icon" style="width:12px;height:12px"><use href="#ic-trending-down"/></svg>Riesgo moderado</span></div>
+              <p class="alert-reason">Inasistió a 2 de las últimas 3 sesiones. Aún no cumple el umbral de 3 consecutivas, pero muestra tendencia descendente.</p>
+              <div class="risk-bar"><div class="fill mod" style="width:48%"></div></div>
+              <div class="alert-meta"><span>Ficha 2830145 — ADSI</span><span>Documento 1075447792</span><span>Detectado hace 2 días</span></div>
+              <div style="display:flex;gap:8px">
+                <button class="btn btn-primary btn-sm" onclick="toggleNote(this);ripple(event)">Marcar como atendida</button>
+                <button class="btn btn-sm" onclick="ripple(event)">Ver historial del aprendiz</button>
+              </div>
+              <div class="note-box"><div class="note-box-inner"><textarea placeholder="Nota de seguimiento"></textarea><button class="btn btn-primary btn-sm" onclick="ripple(event)">Guardar nota</button></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" id="s4-empty" style="display:none">
+          <div class="empty-state">
+            <div class="ico"><svg class="icon" style="width:24px;height:24px"><use href="#ic-check"/></svg></div>
+            <h3>No hay alertas activas</h3>
+            <p>Ningún aprendiz de tus fichas supera los umbrales de inasistencia o caída de asistencia configurados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     SCREEN 5 — Administración
+====================================================================== -->
+<section class="screen" id="s5">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar-5">
+      <div class="sidebar-brand">
+        <div class="mark"><svg viewBox="0 0 24 24" style="fill:none;stroke-width:2"><use href="#ic-qr"/></svg></div>
+        <div class="txt"><div>Asistencia QR</div><div>SENA · Regional Huila</div></div>
+        <button class="collapse-btn" onclick="toggleSidebar('sidebar-5')"><svg><use href="#ic-chevron-left"/></svg></button>
+      </div>
+      <div class="nav-section">Administración</div>
+      <div class="nav-item active"><svg><use href="#ic-admin"/></svg><span>Panel de administración</span></div>
+      <div class="nav-item"><svg><use href="#ic-users"/></svg><span>Todas las fichas activas</span></div>
+      <div class="nav-section">Cuenta</div>
+      <div class="nav-item"><svg><use href="#ic-logout"/></svg><span>Cerrar sesión</span></div>
+      <div class="sidebar-footer">
+        <div class="avatar" style="background:linear-gradient(135deg,#E0A72B,#8A5700)">RM</div>
+        <div class="who"><div>Rodrigo Muñoz</div><div>Administrador · Centro Neiva</div></div>
+      </div>
+    </aside>
+
+    <div class="main">
+      <div class="topbar">
+        <div>
+          <div class="breadcrumb">Sistema</div>
+          <h1>Panel de administración</h1>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="ripple(event)"><svg class="icon" style="width:14px;height:14px"><use href="#ic-plus"/></svg>Nuevo usuario</button>
+      </div>
+
+      <div class="content">
+        <div class="offline-banner">
+          <svg><use href="#ic-wifi-off"/></svg>
+          Modo sin conexión activo en Ficha 2799301 (Sede Centro) desde 8:52 am · 6 registros pendientes por sincronizar
+        </div>
+
+        <div class="subtabs">
+          <div class="subtab active" onclick="showAdminTab('usuarios',this)">Usuarios</div>
+          <div class="subtab" onclick="showAdminTab('auditoria',this)">Log de auditoría</div>
+          <div class="subtab" onclick="showAdminTab('config',this)">Configuración</div>
+        </div>
+
+        <div id="admin-usuarios">
+          <div class="filters-bar">
+            <div class="search-wrap"><svg class="icon"><use href="#ic-search"/></svg><input type="text" placeholder="Buscar por nombre o documento"></div>
+            <select><option>Todos los roles</option><option>Instructor</option><option>Administrador</option></select>
+            <select><option>Todos los estados</option><option>Activo</option><option>Desactivado</option></select>
+          </div>
+          <div class="card" style="overflow:hidden">
+            <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Usuario</th><th>Rol</th><th>Centro</th><th>Estado</th><th></th></tr></thead>
+              <tbody>
+                <tr><td class="cell-person"><div class="mini-avatar">DR</div>Diana Rojas</td><td>Instructor</td><td>Neiva</td><td><span class="badge badge-success"><span class="dot"></span>Activo</span></td><td><button class="icon-btn"><svg><use href="#ic-edit"/></svg></button></td></tr>
+                <tr><td class="cell-person"><div class="mini-avatar">JC</div>Javier Coronado</td><td>Instructor</td><td>Neiva</td><td><span class="badge badge-success"><span class="dot"></span>Activo</span></td><td><button class="icon-btn"><svg><use href="#ic-edit"/></svg></button></td></tr>
+                <tr><td class="cell-person"><div class="mini-avatar">RM</div>Rodrigo Muñoz</td><td>Administrador</td><td>Neiva</td><td><span class="badge badge-success"><span class="dot"></span>Activo</span></td><td><button class="icon-btn"><svg><use href="#ic-edit"/></svg></button></td></tr>
+                <tr><td class="cell-person"><div class="mini-avatar">LA</div>Liliana Artunduaga</td><td>Instructor</td><td>Pitalito</td><td><span class="badge badge-neutral"><span class="dot"></span>Desactivado</span></td><td><button class="icon-btn"><svg><use href="#ic-edit"/></svg></button></td></tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="admin-auditoria" style="display:none">
+          <div class="filters-bar">
+            <input type="date" value="2026-07-01"><span style="color:var(--muted-2);font-size:12px">a</span><input type="date" value="2026-07-10">
+            <select><option>Todos los usuarios</option><option>Diana Rojas</option><option>Rodrigo Muñoz</option></select>
+            <select><option>Todas las acciones</option><option>Desactivó verificación de red</option><option>Corrigió registro</option><option>Cambió rol</option></select>
+          </div>
+          <div class="card" style="overflow:hidden">
+            <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Fecha y hora</th><th>Usuario</th><th>Acción</th><th>Detalle</th></tr></thead>
+              <tbody>
+                <tr><td style="font-family:var(--mono)">10 jul 2026, 8:52 am</td><td class="cell-person"><div class="mini-avatar">RM</div>Rodrigo Muñoz</td><td><span class="badge badge-warning">Desactivó verificación de red</span></td><td>Ficha 2799301 — caída de red confirmada en Sede Centro</td></tr>
+                <tr><td style="font-family:var(--mono)">10 jul 2026, 9:06 am</td><td class="cell-person"><div class="mini-avatar">DR</div>Diana Rojas</td><td><span class="badge badge-neutral">Corrigió registro</span></td><td>Sebastián Ortiz Polanía — ficha 2830145, marcado presente</td></tr>
+                <tr><td style="font-family:var(--mono)">9 jul 2026, 3:40 pm</td><td class="cell-person"><div class="mini-avatar">RM</div>Rodrigo Muñoz</td><td><span class="badge badge-neutral">Cambió rol</span></td><td>Liliana Artunduaga — instructor → desactivado</td></tr>
+                <tr><td style="font-family:var(--mono)">8 jul 2026, 7:15 am</td><td class="cell-person"><div class="mini-avatar">RM</div>Rodrigo Muñoz</td><td><span class="badge badge-neutral">Actualizó configuración</span></td><td>Tiempo de expiración del QR: 5 min → 5 min (sin cambio)</td></tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="admin-config" style="display:none">
+          <div class="kv-config">
+            <div class="field"><label>Rango de IP institucional — Sede Neiva</label><input type="text" value="10.42.0.0/16"><div class="hint">Dispositivos fuera de este rango no pueden registrar asistencia.</div></div>
+            <div class="field"><label>Tiempo de expiración del QR</label><input type="text" value="5 minutos"><div class="hint">El código se regenera automáticamente al vencer este tiempo.</div></div>
+            <div class="field"><label>Umbral mínimo de asistencia (alerta)</label><input type="text" value="10 puntos porcentuales en 2 semanas"><div class="hint">Dispara una alerta de riesgo moderado.</div></div>
+            <div class="field"><label>Inasistencias consecutivas (alerta)</label><input type="text" value="3 sesiones"><div class="hint">Dispara una alerta de riesgo alto.</div></div>
+          </div>
+          <div style="margin-top:20px"><button class="btn btn-primary" onclick="ripple(event)">Guardar configuración</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="toast-stack" id="toast-stack"></div>
+
+<script>
+/* ---------- screen switching (unchanged logic) ---------- */
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.preview-btn').forEach(b=>b.classList.toggle('active', b.dataset.screen===id));
+  animateCounters(document.getElementById(id));
+}
+document.querySelectorAll('.preview-btn').forEach(b=>b.addEventListener('click',()=>go(b.dataset.screen)));
+
+function wireToggle(id, onChange){
+  const wrap=document.getElementById(id);
+  if(!wrap) return;
+  wrap.querySelectorAll('button').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      wrap.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      onChange(btn.dataset.v);
+    });
+  });
+}
+wireToggle('s1-toggle', v=>{
+  document.getElementById('s1-full').style.display = v==='full' ? 'block':'none';
+  document.getElementById('s1-empty').style.display = v==='empty' ? 'flex':'none';
+});
+wireToggle('s3-toggle', v=>{
+  document.getElementById('s3-full').style.display = v==='full' ? 'block':'none';
+  document.getElementById('s3-empty').style.display = v==='empty' ? 'block':'none';
+});
+wireToggle('s4-toggle', v=>{
+  document.getElementById('s4-full').style.display = v==='full' ? 'block':'none';
+  document.getElementById('s4-empty').style.display = v==='empty' ? 'block':'none';
+});
+
+const s2tabs=document.getElementById('s2-tabs');
+s2tabs.querySelectorAll('button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    s2tabs.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.phone-view').forEach(v=>{
+      v.style.display = v.dataset.v===btn.dataset.v ? 'block':'none';
+    });
+  });
+});
+
+function toggleCorregir(btn){
+  const panel = btn.closest('tr').nextElementSibling.querySelector('.corregir-panel');
+  panel.classList.toggle('open');
+}
+function toggleNote(btn){
+  const box = btn.closest('.alert-body').querySelector('.note-box');
+  box.classList.toggle('open');
+}
+function showAdminTab(name, el){
+  document.querySelectorAll('.subtab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  ['usuarios','auditoria','config'].forEach(n=>{
+    document.getElementById('admin-'+n).style.display = n===name ? 'block':'none';
+  });
+}
+
+/* ---------- QR countdown (unchanged logic, adds refresh animation) ---------- */
+let seconds=222;
+function tickQr(){
+  seconds--;
+  if(seconds<0){
+    seconds=300;
+    const box=document.getElementById('qr-code-box');
+    if(box){ box.classList.remove('refreshing'); void box.offsetWidth; box.classList.add('refreshing'); }
+    showToast('El código QR se actualizó automáticamente');
+  }
+  const m=String(Math.floor(seconds/60)).padStart(2,'0');
+  const s=String(seconds%60).padStart(2,'0');
+  const el=document.getElementById('qr-timer');
+  if(el) el.textContent = m+':'+s;
+  const ring=document.querySelector('.qr-ring-prog');
+  if(ring){
+    const total=300, frac=seconds/total, circumference=508.9;
+    ring.style.strokeDashoffset = circumference*(1-frac);
+  }
+}
+setInterval(tickQr,1000);
+
+/* ---------- ripple effect on buttons ---------- */
+function ripple(e){
+  const btn=e.currentTarget;
+  const rect=btn.getBoundingClientRect();
+  const circle=document.createElement('span');
+  const size=Math.max(rect.width,rect.height);
+  circle.className='ripple';
+  circle.style.width=circle.style.height=size+'px';
+  circle.style.left=(e.clientX-rect.left-size/2)+'px';
+  circle.style.top=(e.clientY-rect.top-size/2)+'px';
+  btn.appendChild(circle);
+  setTimeout(()=>circle.remove(),600);
+}
+
+/* ---------- animated counters ---------- */
+function animateCounters(scope){
+  (scope||document).querySelectorAll('.val[data-count]').forEach(el=>{
+    if(el.dataset.done) return;
+    el.dataset.done='1';
+    const target=parseInt(el.dataset.count,10);
+    const suffix=el.dataset.suffix||'';
+    const dur=900, start=performance.now();
+    function frame(now){
+      const p=Math.min(1,(now-start)/dur);
+      const eased=1-Math.pow(1-p,3);
+      el.textContent=Math.round(target*eased)+suffix;
+      if(p<1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  });
+}
+animateCounters(document);
+
+/* ---------- toast notifications ---------- */
+function showToast(msg){
+  const stack=document.getElementById('toast-stack');
+  const t=document.createElement('div');
+  t.className='toast';
+  t.innerHTML='<span class="ic"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="#fff" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>'+msg+'</span>';
+  stack.appendChild(t);
+  setTimeout(()=>{ t.style.opacity='0'; t.style.transform='translateY(10px) scale(.96)'; t.style.transition='all .35s ease'; setTimeout(()=>t.remove(),350); },3200);
+}
+
+/* simulate a new attendee arriving on screen 1 */
+const newArrivals=[
+  {i:'RG',n:'Ricardo Gómez Salazar',d:'CC 1075462014',t:'9:11 am'},
+  {i:'PL',n:'Paula Andrea León',d:'CC 1075479903',t:'9:13 am'}
+];
+let arrivalIdx=0;
+setInterval(()=>{
+  if(document.getElementById('s1').classList.contains('active') && document.getElementById('s1-full').style.display!=='none' && arrivalIdx<newArrivals.length){
+    const a=newArrivals[arrivalIdx++];
+    const list=document.getElementById('s1-full');
+    const row=document.createElement('div');
+    row.className='attend-row new';
+    row.innerHTML='<div class="mini-avatar">'+a.i+'</div><div class="info"><div class="name">'+a.n+'</div><div class="doc">'+a.d+'</div></div><span class="badge badge-success"><span class="dot"></span>A tiempo</span><span class="time">'+a.t+'</span>';
+    list.appendChild(row);
+    showToast(a.n.split(' ')[0]+' '+a.n.split(' ')[1]+' registró su asistencia');
+    const cnt=document.getElementById('attend-cnt');
+    if(cnt){ const m=cnt.textContent.match(/(\d+) de (\d+)/); if(m){ cnt.textContent=(parseInt(m[1])+1)+' de '+m[2]+' aprendices registrados'; } }
+    setTimeout(()=>row.classList.remove('new'),2000);
+  }
+},9000);
+
+/* ---------- sidebar collapse ---------- */
+function toggleSidebar(id){
+  document.getElementById(id).classList.toggle('collapsed');
+}
+
+/* ---------- dark / light theme ---------- */
+const themeBtn=document.getElementById('theme-toggle-btn');
+const themeIcon=document.getElementById('theme-icon');
+const themeLabel=document.getElementById('theme-label');
+function setTheme(mode){
+  if(mode==='dark'){
+    document.documentElement.setAttribute('data-theme','dark');
+    themeIcon.innerHTML='<use href="#ic-sun"/>';
+    themeLabel.textContent='Modo claro';
+  }else{
+    document.documentElement.removeAttribute('data-theme');
+    themeIcon.innerHTML='<use href="#ic-moon"/>';
+    themeLabel.textContent='Modo oscuro';
+  }
+}
+let currentTheme='light';
+themeBtn.addEventListener('click',()=>{
+  currentTheme = currentTheme==='light' ? 'dark' : 'light';
+  setTheme(currentTheme);
+});
+</script>
+</body>
+</html>
