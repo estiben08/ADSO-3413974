@@ -1,0 +1,39 @@
+==================================================
+DOCUMENTO 03: ALCANCE DEL PROYECTO
+==================================================
+
+1. QUÉ SÍ INCLUYE EL SISTEMA (DENTRO DEL ALCANCE)
+-------------------------------------------------
+El sistema de control de asistencia cubrirá exclusivamente las siguientes áreas y funcionalidades:
+
+- Autenticación y Autorización: 
+  Login seguro para tres tipos de roles: Administrador, Instructor y Aprendiz.
+
+- Gestión Administrativa Básica: 
+  Creación, edición y desactivación de usuarios. Creación de nuevas fichas de formación y asignación de un instructor a cada ficha.
+
+- Proyección de Código QR Dinámico (Instructor): 
+  Una interfaz dedicada para el instructor que genera un código QR rotativo cada 30 segundos en la pantalla del computador del aula. El código estará cifrado internamente.
+
+- Registro de Asistencia (Aprendiz): 
+  Una interfaz móvil para el estudiante que le permite escanear el código QR con su celular.
+
+- Validación Zero-Trust (Seguridad): 
+  Verificación en tiempo real de la dirección IP. El sistema permitirá el registro de la asistencia únicamente si el celular del aprendiz y el computador del instructor están conectados a la misma red local (subred WiFi).
+
+- Reportes Históricos (Exportación): 
+  El instructor podrá ver un historial de la asistencia filtrado por fechas y descargar un archivo CSV (formato de tabla compatible con Excel).
+
+- Módulo Visual de Alertas: 
+  Un panel donde el instructor puede visualizar de forma gráfica qué aprendices están en alto riesgo de deserción por faltas acumuladas, permitiéndole escribir notas de seguimiento.
+
+
+2. QUÉ NO INCLUYE EL SISTEMA (FUERA DEL ALCANCE)
+------------------------------------------------
+Para evitar que el proyecto crezca de forma descontrolada y poder entregarlo funcional, las siguientes características quedan fuera del límite de este software:
+
+- Lectura de Huellas Digitales o Reconocimiento Facial (Biometría física): No se utilizará hardware de huelleros ni cámaras conectadas por USB. Todo el sistema funciona por software y escaneo de pantalla a pantalla.
+- Notificaciones Automáticas por Correo o SMS: El sistema no enviará correos electrónicos ni mensajes de texto a los aprendices cuando falten a clase. Las alertas son únicamente visuales en el panel del instructor.
+- Integración oficial con SofíaPlus: El sistema funciona con su propia base de datos local y no se conectará automáticamente a las bases de datos del Gobierno Nacional ni de SofíaPlus mediante APIs complejas. Los datos se suben manualmente exportando el Excel (CSV).
+- Aplicación Instalable (App Móvil): No se desarrollará una aplicación que se tenga que descargar de la Play Store (Android) o App Store (iOS). Todo funcionará directamente abriendo una página web en el navegador del celular.
+- Registro "Offline" (Sin internet): Si el centro de formación pierde la conexión a internet, el sistema no podrá verificar la asistencia. No hay base de datos fuera de línea.

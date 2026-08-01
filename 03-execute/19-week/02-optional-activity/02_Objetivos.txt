@@ -1,0 +1,25 @@
+==================================================
+DOCUMENTO 02: OBJETIVOS DEL PROYECTO
+==================================================
+
+OBJETIVO GENERAL
+----------------
+Desarrollar un sistema web de control de asistencia basado en tecnología de códigos QR dinámicos para los ambientes de formación del SENA, que permita automatizar el registro de entrada de los aprendices y evite cualquier tipo de suplantación o fraude mediante la verificación de la red local de internet, reduciendo el tiempo perdido al llamar a lista y generando reportes automáticos.
+
+OBJETIVOS ESPECÍFICOS
+---------------------
+1. Construir una aplicación web usando el lenguaje de programación Python y el framework Flask que separe correctamente la lógica, la vista y la base de datos (Arquitectura MVC) para facilitar su mantenimiento.
+
+2. Diseñar una base de datos relacional en MySQL que permita almacenar de forma segura la información de los usuarios (administradores, instructores y aprendices), las fichas de formación, y los registros exactos de las asistencias.
+
+3. Implementar un módulo de generación de códigos QR rotativos en la pantalla del instructor, los cuales cambien automáticamente cada 30 segundos y estén firmados criptográficamente (HMAC) para asegurar que el código no pueda ser fabricado externamente.
+
+4. Desarrollar un filtro de validación de red (Subred local) que capture la dirección IP del computador del instructor al momento de iniciar la clase y la compare con la dirección IP del celular del aprendiz que está escaneando el código, rechazando la asistencia si no están conectados a la misma red WiFi del centro de formación.
+
+5. Crear una interfaz gráfica de usuario responsiva (que se adapte bien a los celulares) utilizando HTML, CSS y JavaScript, basándose en principios de diseño modernos para que sea muy intuitiva de manejar por los estudiantes.
+
+6. Construir un panel administrativo que le permita a los coordinadores del sistema crear nuevos usuarios, editar sus permisos y asignarles fichas de formación sin necesidad de tocar el código ni la base de datos de forma manual.
+
+7. Programar una funcionalidad que le permita al instructor descargar el historial de asistencia de sus aprendices en formato de tabla (archivo CSV) filtrando por fechas, para que pueda presentarlo en las reuniones de seguimiento o subirlo a la plataforma oficial del SENA.
+
+8. Implementar un sistema de alertas tempranas que registre automáticamente avisos de deserción cuando los aprendices tengan inasistencias prolongadas o muestren un comportamiento de ausentismo preocupante.

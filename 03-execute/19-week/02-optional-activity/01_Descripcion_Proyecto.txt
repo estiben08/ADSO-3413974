@@ -1,0 +1,21 @@
+==================================================
+DOCUMENTO 01: DESCRIPCIÓN DEL PROYECTO
+==================================================
+
+Nombre del Proyecto: Sistema de Control de Asistencia QR - Zero Trust (Cero Confianza).
+
+El presente proyecto es una aplicación web diseñada específicamente para llevar el control de la asistencia de los aprendices en sus ambientes de formación (salones de clase) de forma digital, automática y segura. 
+
+En el día a día, llamar a lista a los estudiantes usando una planilla de papel quita tiempo valioso de la clase, y si se usan sistemas digitales simples como un enlace de Google Forms, los estudiantes pueden compartir el enlace por WhatsApp y registrar que están en el salón cuando en realidad están en sus casas.
+
+Para solucionar esto, el sistema desarrollado funciona con un código QR inteligente. El instructor inicia su sesión desde su computador en el salón y proyecta un código QR en el televisor o tablero. Este código QR tiene las siguientes características especiales:
+1. Cambia cada 30 segundos de manera automática (es rotativo).
+2. Está protegido con una firma matemática invisible (HMAC) para que nadie pueda inventar un código falso.
+3. Lo más importante: cuando el estudiante saca su celular para escanear el código, el sistema revisa que el celular del estudiante esté conectado a la misma red de internet (el mismo WiFi o router) al que está conectado el computador del instructor. Si el estudiante intenta escanear una foto del QR desde otra red, el sistema le rechaza la asistencia.
+
+El proyecto está compuesto por varias pantallas pensadas para los tres tipos de personas que lo van a usar:
+- El Administrador, que puede entrar para agregar nuevos profesores, estudiantes y armar los grupos (fichas).
+- El Instructor, que ve una pantalla especial para proyectar el QR grande y otra pantalla para descargar a Excel el reporte de los que vinieron.
+- El Aprendiz, que al iniciar sesión desde su celular solo ve un botón gigante para escanear el código.
+
+Toda la aplicación está construida usando tecnologías tradicionales y muy confiables: se usó Python (con Flask) para la programación interna, HTML y CSS para que las pantallas se vean modernas y bonitas en los celulares, y MySQL para guardar todos los datos en la base de datos de manera organizada. Todo el sistema está organizado bajo el modelo "Modelo-Vista-Controlador", lo que significa que el código está muy bien separado en carpetas para que sea fácil de entender y de mejorar en el futuro por otros estudiantes o programadores.
