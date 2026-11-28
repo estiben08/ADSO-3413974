@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 940" width="1400" height="940" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow-inc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#0369a1" stroke-width="1.8"/>
+    </marker>
+    <marker id="arrow-ext" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#b45309" stroke-width="1.8"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="940" fill="#ffffff"/>
+  
+  <!-- System Boundary -->
+  <rect x="250" y="30" width="900" height="880" rx="8" fill="#f8fafc" stroke="#1e3a8a" stroke-width="2.5"/>
+  <rect x="250" y="30" width="900" height="42" rx="8" fill="#1e3a8a"/>
+  <text x="700" y="57" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Frontera del Sistema: Sistema de Control de Asistencia QR SENA (asistencia-qr)</text>
+
+  <!-- Actors (Outside Boundary) -->
+  <!-- Administrador -->
+  <g transform="translate(105, 140)">
+    <circle cx="0" cy="0" r="16" fill="#e2e8f0" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="0" y1="16" x2="0" y2="55" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="-22" y1="30" x2="22" y2="30" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="0" y1="55" x2="-18" y2="85" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="0" y1="55" x2="18" y2="85" stroke="#1e293b" stroke-width="2.5"/>
+    <text x="0" y="106" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Administrador</text>
+    <text x="0" y="122" font-size="11" fill="#475569" text-anchor="middle">(Actor Primario)</text>
+  </g>
+
+  <!-- Instructor -->
+  <g transform="translate(105, 420)">
+    <circle cx="0" cy="0" r="16" fill="#e2e8f0" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="0" y1="16" x2="0" y2="55" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="-22" y1="30" x2="22" y2="30" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="0" y1="55" x2="-18" y2="85" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="0" y1="55" x2="18" y2="85" stroke="#1e293b" stroke-width="2.5"/>
+    <text x="0" y="106" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Instructor</text>
+    <text x="0" y="122" font-size="11" fill="#475569" text-anchor="middle">(Actor Primario)</text>
+  </g>
+
+  <!-- Aprendiz -->
+  <g transform="translate(105, 680)">
+    <circle cx="0" cy="0" r="16" fill="#e2e8f0" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="0" y1="16" x2="0" y2="55" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="-22" y1="30" x2="22" y2="30" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="0" y1="55" x2="-18" y2="85" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="0" y1="55" x2="18" y2="85" stroke="#1e293b" stroke-width="2.5"/>
+    <text x="0" y="106" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Aprendiz</text>
+    <text x="0" y="122" font-size="11" fill="#475569" text-anchor="middle">(Actor Primario)</text>
+  </g>
+
+  <!-- Temporizador del Sistema -->
+  <g transform="translate(1285, 320)">
+    <circle cx="0" cy="0" r="16" fill="#e0f2fe" stroke="#0369a1" stroke-width="2.5"/>
+    <line x1="0" y1="16" x2="0" y2="55" stroke="#0369a1" stroke-width="2.5"/>
+    <line x1="-22" y1="30" x2="22" y2="30" stroke="#0369a1" stroke-width="2.5"/>
+    <line x1="0" y1="55" x2="-18" y2="85" stroke="#0369a1" stroke-width="2.5"/>
+    <line x1="0" y1="55" x2="18" y2="85" stroke="#0369a1" stroke-width="2.5"/>
+    <text x="0" y="106" font-size="13" font-weight="bold" fill="#0369a1" text-anchor="middle">Temporizador</text>
+    <text x="0" y="122" font-size="11" fill="#0369a1" text-anchor="middle">(Actor Secundario / Reloj)</text>
+  </g>
+
+  <!-- Use Cases (Ellipses) -->
+  <!-- CU-01 -->
+  <ellipse cx="460" cy="125" rx="145" ry="34" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="460" y="130" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">CU-01 Autenticar usuario</text>
+
+  <!-- CU-02 -->
+  <ellipse cx="460" cy="225" rx="165" ry="36" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="460" y="222" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">CU-02 Gestionar catálogo académico</text>
+  <text x="460" y="240" font-size="12" fill="#1e3a8a" text-anchor="middle">y usuarios (Fichas, Ambientes, Matrículas)</text>
+
+  <!-- CU-03 -->
+  <ellipse cx="460" cy="340" rx="155" ry="36" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="460" y="345" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">CU-03 Aperturar sesión de asistencia</text>
+
+  <!-- CU-04 -->
+  <ellipse cx="940" cy="340" rx="165" ry="36" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+  <text x="940" y="337" font-size="13" font-weight="bold" fill="#0c4a6e" text-anchor="middle">CU-04 Generar token QR dinámico</text>
+  <text x="940" y="354" font-size="12" fill="#0c4a6e" text-anchor="middle">firmado (rotación 30 s HMAC)</text>
+
+  <!-- CU-05 -->
+  <ellipse cx="460" cy="465" rx="160" ry="36" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="460" y="470" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">CU-05 Registrar asistencia por escaneo QR</text>
+
+  <!-- CU-06 -->
+  <ellipse cx="940" cy="465" rx="165" ry="36" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+  <text x="940" y="462" font-size="13" font-weight="bold" fill="#0c4a6e" text-anchor="middle">CU-06 Validar subred IP y firma</text>
+  <text x="940" y="479" font-size="12" fill="#0c4a6e" text-anchor="middle">del código QR (Zero-Trust)</text>
+
+  <!-- CU-08 -->
+  <ellipse cx="460" cy="635" rx="175" ry="54" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="460" y="612" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">CU-08 Monitorear asistencia y cerrar sesión</text>
+  <line x1="315" y1="622" x2="605" y2="622" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="460" y="638" font-size="11" font-weight="bold" fill="#334155" text-anchor="middle">Puntos de extensión:</text>
+  <text x="460" y="653" font-size="11" fill="#334155" text-anchor="middle">1. Excepción dispositivo en aula</text>
+  <text x="460" y="668" font-size="11" fill="#334155" text-anchor="middle">2. Consolidación inasistencias al cierre</text>
+
+  <!-- CU-07 -->
+  <ellipse cx="940" cy="585" rx="168" ry="36" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <text x="940" y="582" font-size="13" font-weight="bold" fill="#78350f" text-anchor="middle">CU-07 Registrar asistencia manual</text>
+  <text x="940" y="599" font-size="12" fill="#78350f" text-anchor="middle">por contingencia en aula</text>
+
+  <!-- CU-10 -->
+  <ellipse cx="940" cy="705" rx="168" ry="36" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <text x="940" y="702" font-size="13" font-weight="bold" fill="#78350f" text-anchor="middle">CU-10 Generar alerta temprana</text>
+  <text x="940" y="719" font-size="12" fill="#78350f" text-anchor="middle">de inasistencia (deserción)</text>
+
+  <!-- CU-09 -->
+  <ellipse cx="460" cy="815" rx="165" ry="36" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="460" y="820" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">CU-09 Exportar reporte histórico de asistencia</text>
+
+  <!-- Actor Associations -->
+  <!-- Administrador -->
+  <line x1="135" y1="165" x2="315" y2="125" stroke="#334155" stroke-width="1.8"/>
+  <line x1="135" y1="175" x2="295" y2="225" stroke="#334155" stroke-width="1.8"/>
+  <line x1="135" y1="195" x2="295" y2="805" stroke="#64748b" stroke-width="1.4"/>
+
+  <!-- Instructor -->
+  <line x1="135" y1="435" x2="315" y2="135" stroke="#334155" stroke-width="1.8"/>
+  <line x1="135" y1="445" x2="305" y2="340" stroke="#334155" stroke-width="1.8"/>
+  <line x1="135" y1="460" x2="285" y2="630" stroke="#334155" stroke-width="1.8"/>
+  <line x1="135" y1="475" x2="295" y2="815" stroke="#334155" stroke-width="1.8"/>
+
+  <!-- Aprendiz -->
+  <line x1="135" y1="695" x2="315" y2="145" stroke="#334155" stroke-width="1.8"/>
+  <line x1="135" y1="710" x2="300" y2="465" stroke="#334155" stroke-width="1.8"/>
+
+  <!-- Temporizador -->
+  <line x1="1255" y1="350" x2="1105" y2="340" stroke="#0369a1" stroke-width="1.8"/>
+
+  <!-- <<include>> Arrows (Base -> Included) -->
+  <line x1="615" y1="340" x2="770" y2="340" stroke="#0369a1" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-inc)"/>
+  <text x="692" y="328" font-size="12" font-weight="bold" fill="#0369a1" text-anchor="middle">&lt;&lt;include&gt;&gt;</text>
+
+  <line x1="620" y1="465" x2="770" y2="465" stroke="#0369a1" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-inc)"/>
+  <text x="695" y="453" font-size="12" font-weight="bold" fill="#0369a1" text-anchor="middle">&lt;&lt;include&gt;&gt;</text>
+
+  <!-- <<extend>> Arrows (Extending -> Base) -->
+  <line x1="772" y1="585" x2="635" y2="618" stroke="#b45309" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-ext)"/>
+  <text x="705" y="575" font-size="12" font-weight="bold" fill="#b45309" text-anchor="middle">&lt;&lt;extend&gt;&gt;</text>
+  <text x="708" y="590" font-size="10.5" fill="#78350f" text-anchor="middle">[aprendiz sin celular / falla cámara]</text>
+
+  <line x1="772" y1="705" x2="635" y2="655" stroke="#b45309" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-ext)"/>
+  <text x="705" y="698" font-size="12" font-weight="bold" fill="#b45309" text-anchor="middle">&lt;&lt;extend&gt;&gt;</text>
+  <text x="708" y="713" font-size="10.5" fill="#78350f" text-anchor="middle">[inasistencias acumuladas &gt;= 3]</text>
+</svg>

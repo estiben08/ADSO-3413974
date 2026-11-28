@@ -1,0 +1,44 @@
+flowchart LR
+  %% Actores fuera de la frontera
+  ACT_INS(["👤 Instructor"])
+  ACT_APR(["👤 Aprendiz"])
+  ACT_ADM(["👤 Administrador"])
+  ACT_TMP(["⏱️ Temporizador del Sistema"])
+
+  subgraph SYS["Frontera del Sistema: Sistema de Control de Asistencia QR SENA (asistencia-qr)"]
+    CU01(["CU-01 Autenticar usuario"])
+    CU02(["CU-02 Gestionar catálogo académico y usuarios"])
+    CU03(["CU-03 Aperturar sesión de asistencia"])
+    CU04(["CU-04 Generar token QR dinámico firmado"])
+    CU05(["CU-05 Registrar asistencia por escaneo QR"])
+    CU06(["CU-06 Validar subred IP y firma del código QR"])
+    CU07(["CU-07 Registrar asistencia manual por contingencia"])
+    CU08(["CU-08 Monitorear asistencia y cerrar sesión"])
+    CU09(["CU-09 Exportar reporte histórico de asistencia"])
+    CU10(["CU-10 Generar alerta temprana de inasistencia"])
+  end
+
+  %% Asociaciones Actor -> Caso de Uso
+  ACT_ADM --> CU01
+  ACT_ADM --> CU02
+  ACT_ADM --> CU09
+
+  ACT_INS --> CU01
+  ACT_INS --> CU03
+  ACT_INS --> CU08
+  ACT_INS --> CU09
+
+  ACT_APR --> CU01
+  ACT_APR --> CU05
+
+  ACT_TMP --> CU04
+
+  %% Relaciones <<include>> (Caso base -> Caso incluido)
+  CU03 -. "<<include>>" .-> CU04
+  CU05 -. "<<include>>" .-> CU06
+
+  %% Relaciones <<extend>> (Caso extensor -> Caso base)
+  CU07 -. "<<extend>>
+[aprendiz sin celular / falla cámara]" .-> CU08
+  CU10 -. "<<extend>>
+[inasistencias acumuladas >= 3]" .-> CU08
