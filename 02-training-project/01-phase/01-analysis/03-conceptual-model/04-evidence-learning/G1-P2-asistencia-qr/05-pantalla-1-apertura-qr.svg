@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" width="1100" height="720" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1100" height="720" fill="#f1f5f9"/>
+<rect x="20" y="15" width="1060" height="690" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+<rect x="20" y="15" width="1060" height="44" rx="10" fill="#0f172a"/>
+<circle cx="45" cy="37" r="7" fill="#ef4444"/><circle cx="67" cy="37" r="7" fill="#f59e0b"/><circle cx="89" cy="37" r="7" fill="#22c55e"/>
+<text x="125" y="42" fill="#e2e8f0" font-size="13" font-weight="bold">https://asistencia-qr.sena.edu.co · Pantalla 1 · Apertura de Sesión y Proyección de QR Dinámico</text>
+<rect x="40" y="75" width="1020" height="48" rx="6" fill="#1e3a8a"/>
+<text x="60" y="104" fill="#ffffff" font-size="15" font-weight="bold">RÓTULO DE TRAZABILIDAD: CU-03 Aperturar sesión de asistencia + CU-04 Generar token QR dinámico firmado (RF-04, RF-05, RF-06)</text>
+<rect x="810" y="84" width="235" height="30" rx="15" fill="#38bdf8"/>
+<text x="927" y="104" fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle">Rol: Instructor SENA</text>
+<rect x="40" y="140" width="440" height="250" rx="8" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<text x="58" y="168" font-size="14" font-weight="bold" fill="#0f172a">1. Configuración y Apertura de Sesión (CU-03)</text>
+<text x="58" y="194" font-size="12.5" fill="#334155">• Ficha Seleccionada: [ 3413974 - ADSO (Jornada Mañana) ]</text>
+<text x="58" y="218" font-size="12.5" fill="#334155">• Ambiente de Formación: [ AMB-302 Laboratorio Software ]</text>
+<text x="58" y="242" font-size="12.5" fill="#334155">• Subred Local Detectada: 192.168.10.0/24 (Red CIES Aula)</text>
+<text x="58" y="266" font-size="12.5" fill="#334155">• Ventana de Tolerancia: [ 15 minutos ]</text>
+<text x="58" y="290" font-size="12.5" fill="#334155">• Estado de la Sesión: ACTIVA (Abierta a las 07:05:00 a. m.)</text>
+<text x="58" y="314" font-size="12.5" fill="#334155">  [ Botón Principal: Iniciar / Proyectar Código QR ]</text>
+<rect x="40" y="410" width="440" height="265" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<text x="58" y="438" font-size="14" font-weight="bold" fill="#0f172a">2. Reglas Activas de Seguridad Zero-Trust</text>
+<text x="58" y="464" font-size="12.5" fill="#334155">✓ Rotación automática de token QR cada 30 segundos</text>
+<text x="58" y="488" font-size="12.5" fill="#334155">✓ Firma criptográfica HMAC-SHA256 verificada por sesión</text>
+<text x="58" y="512" font-size="12.5" fill="#334155">✓ Validación obligatoria de subred IP 192.168.10.X</text>
+<text x="58" y="536" font-size="12.5" fill="#334155">✓ Bloqueo de doble marcación por aprendiz en la sesión</text>
+<text x="58" y="560" font-size="12.5" fill="#334155">• Contador de aprendices matriculados: 30 aprendices</text>
+<text x="58" y="584" font-size="12.5" fill="#334155">• Asistencias confirmadas en vivo: 24 / 30 (80 %)</text>
+<rect x="505" y="140" width="555" height="535" rx="8" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="523" y="168" font-size="14" font-weight="bold" fill="#0f172a">3. Proyección de Código QR Dinámico en Aula (CU-04)</text>
+<text x="523" y="194" font-size="12.5" fill="#334155">┌───────────────────────────────────────────┐</text>
+<text x="523" y="218" font-size="12.5" fill="#334155">│   [ ██▀▀▀██  ▄▀▄  ██▀▀▀██ ]               │</text>
+<text x="523" y="242" font-size="12.5" fill="#334155">│   [ ██ █ ██  ▀▄▀  ██ █ ██ ]  QR FIRMADO   │</text>
+<text x="523" y="266" font-size="12.5" fill="#334155">│   [ ██▄▄▄██  ▄▀▄  ██▄▄▄██ ]  HMAC-SHA256  │</text>
+<text x="523" y="290" font-size="12.5" fill="#334155">│   Token ID: SES-3413974-20261127-SEQ14    │</text>
+<text x="523" y="314" font-size="12.5" fill="#334155">└───────────────────────────────────────────┘</text>
+<text x="523" y="338" font-size="12.5" fill="#334155">⏱️ Tiempo restante para rotación: [ 00:18 segundos ]</text>
+<text x="523" y="362" font-size="12.5" fill="#334155">🔄 Barra de progreso: ████████████░░░░░░░ 60 %</text>
+<text x="523" y="386" font-size="12.5" fill="#334155">Instrucción al aprendiz: Conéctate a la red WiFi del ambiente</text>
+<text x="523" y="410" font-size="12.5" fill="#334155">AMB-302 y escanea el código proyectado desde tu navegador móvil.</text>
+</svg>

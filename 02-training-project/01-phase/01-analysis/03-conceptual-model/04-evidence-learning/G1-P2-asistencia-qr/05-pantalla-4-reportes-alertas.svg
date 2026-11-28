@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" width="1100" height="720" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1100" height="720" fill="#f1f5f9"/>
+<rect x="20" y="15" width="1060" height="690" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+<rect x="20" y="15" width="1060" height="44" rx="10" fill="#0f172a"/>
+<circle cx="45" cy="37" r="7" fill="#ef4444"/><circle cx="67" cy="37" r="7" fill="#f59e0b"/><circle cx="89" cy="37" r="7" fill="#22c55e"/>
+<text x="125" y="42" fill="#e2e8f0" font-size="13" font-weight="bold">https://asistencia-qr.sena.edu.co · Pantalla 4 · Reportes Históricos, Exportación CSV/Excel y Alertas de Deserción</text>
+<rect x="40" y="75" width="1020" height="48" rx="6" fill="#1e3a8a"/>
+<text x="60" y="104" fill="#ffffff" font-size="15" font-weight="bold">RÓTULO DE TRAZABILIDAD: CU-09 Exportar reporte histórico de asistencia + CU-10 Generar alerta temprana de inasistencia (RF-12, RF-13)</text>
+<rect x="810" y="84" width="235" height="30" rx="15" fill="#38bdf8"/>
+<text x="927" y="104" fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle">Rol: Instructor / Administrador</text>
+<rect x="40" y="140" width="1020" height="115" rx="8" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<text x="58" y="168" font-size="14" font-weight="bold" fill="#0f172a">1. Filtros de Consulta y Exportación de Historial (CU-09 · RF-12)</text>
+<text x="58" y="194" font-size="12.5" fill="#334155">Ficha: [ 3413974 - ADSO ]   |   Desde: [ 2026-11-01 ]   Hasta: [ 2026-11-27 ]   |   Estado: [ Todos ]   |   [ 🔍 Consultar ]</text>
+<text x="58" y="218" font-size="12.5" fill="#334155">Exportación verificada:   [ 📥 Descargar Consolidado CSV ]   [ 📊 Descargar Libro Excel (.xlsx) ]   [ ☑ Incluir Alertas (CU-10) ]</text>
+<rect x="40" y="275" width="620" height="400" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+<text x="58" y="303" font-size="14" font-weight="bold" fill="#0f172a">2. Consolidado Histórico por Aprendiz (18 Sesiones en el Periodo)</text>
+<text x="58" y="329" font-size="12.5" fill="#334155">Doc. Aprendiz | Presentes | Excusas | Inasistencias | % Asistencia | Alerta</text>
+<text x="58" y="353" font-size="12.5" fill="#334155">──────────────────────────────────────────────────────────────────────────</text>
+<text x="58" y="377" font-size="12.5" fill="#334155">***8215       |    18     |    0    |       0       |    100,0 %   | Normal</text>
+<text x="58" y="401" font-size="12.5" fill="#334155">***1899       |    17     |    1    |       0       |     94,4 %   | Normal</text>
+<text x="58" y="425" font-size="12.5" fill="#334155">***1661       |    16     |    1    |       1       |     88,9 %   | Normal</text>
+<text x="58" y="449" font-size="12.5" fill="#334155">***2785       |    15     |    0    |       3       |     83,3 %   | ⚠️ ALERTA (3)</text>
+<text x="58" y="473" font-size="12.5" fill="#334155">***7600       |    14     |    0    |       4       |     77,8 %   | 🚨 CRÍTICA (4)</text>
+<rect x="680" y="275" width="380" height="400" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+<text x="698" y="303" font-size="14" font-weight="bold" fill="#0f172a">3. Alertas Tempranas de Deserción (CU-10)</text>
+<text x="698" y="329" font-size="12.5" fill="#334155">🚨 Regla RN-06: Umbral >= 3 inasistencias</text>
+<text x="698" y="353" font-size="12.5" fill="#334155">─────────────────────────────────────────</text>
+<text x="698" y="377" font-size="12.5" fill="#334155">• Alerta #ALT-019 · Doc. ***7600</text>
+<text x="698" y="401" font-size="12.5" fill="#334155">  Fallas acumuladas: 4 sesiones</text>
+<text x="698" y="425" font-size="12.5" fill="#334155">  Nivel: Riesgo Alto de Deserción</text>
+<text x="698" y="449" font-size="12.5" fill="#334155">  Acción: Remitir a Bienestar al Aprendiz</text>
+<text x="698" y="473" font-size="12.5" fill="#334155">• Alerta #ALT-020 · Doc. ***2785</text>
+<text x="698" y="497" font-size="12.5" fill="#334155">  Fallas acumuladas: 3 sesiones</text>
+<text x="698" y="521" font-size="12.5" fill="#334155">  Nivel: Riesgo Preventivo</text>
+<text x="698" y="545" font-size="12.5" fill="#334155">  [ Registrar Nota de Seguimiento ]</text>
+</svg>

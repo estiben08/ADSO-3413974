@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 920" width="1400" height="920" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1400" height="920" fill="#ffffff"/>
+<rect x="20" y="15" width="1360" height="42" rx="6" fill="#1e3a8a"/>
+<text x="700" y="42" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Modelo de Dominio Conceptual · Sistema de Control de Asistencia QR SENA (11 Clases Conceptuales, Sin Métodos ni FK)</text>
+<line x1="215" y1="270" x2="600" y2="210" stroke="#334155" stroke-width="2"/>
+<rect x="337" y="222" width="140" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="407" y="235" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">Generalización (es un)</text>
+<line x1="675" y1="270" x2="675" y2="210" stroke="#334155" stroke-width="2"/>
+<rect x="605" y="222" width="140" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="675" y="235" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">Generalización (es un)</text>
+<line x1="1120" y1="270" x2="750" y2="210" stroke="#334155" stroke-width="2"/>
+<rect x="865" y="222" width="140" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="935" y="235" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">Generalización (es un)</text>
+<line x1="675" y1="375" x2="675" y2="445" stroke="#334155" stroke-width="2"/>
+<rect x="605" y="392" width="140" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="675" y="405" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">lidera / orienta</text>
+<text x="689" y="369" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="643" y="439" font-size="11" font-weight="bold" fill="#b45309">1..*</text>
+<line x1="1120" y1="375" x2="1120" y2="445" stroke="#334155" stroke-width="2"/>
+<rect x="1050" y="392" width="140" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="1120" y="405" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">se vincula por</text>
+<text x="1134" y="369" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="1088" y="439" font-size="11" font-weight="bold" fill="#b45309">0..*</text>
+<line x1="820" y1="500" x2="980" y2="500" stroke="#334155" stroke-width="2"/>
+<rect x="830" y="482" width="140" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="900" y="495" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">asocia a ficha</text>
+<text x="834" y="494" font-size="11" font-weight="bold" fill="#b45309">1..*</text>
+<text x="948" y="494" font-size="11" font-weight="bold" fill="#b45309">0..*</text>
+<line x1="360" y1="520" x2="530" y2="700" stroke="#334155" stroke-width="2"/>
+<rect x="375" y="592" width="140" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="445" y="605" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">aloja sesión</text>
+<text x="374" y="514" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="498" y="694" font-size="11" font-weight="bold" fill="#b45309">0..*</text>
+<line x1="675" y1="590" x2="675" y2="665" stroke="#334155" stroke-width="2"/>
+<rect x="605" y="609" width="140" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="675" y="622" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">desarrolla</text>
+<text x="689" y="584" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="643" y="659" font-size="11" font-weight="bold" fill="#b45309">0..*</text>
+<line x1="530" y1="730" x2="360" y2="730" stroke="#334155" stroke-width="2"/>
+<rect x="375" y="712" width="140" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="445" y="725" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">proyecta QR</text>
+<text x="544" y="724" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="328" y="724" font-size="11" font-weight="bold" fill="#b45309">1..*</text>
+<line x1="820" y1="710" x2="980" y2="685" stroke="#334155" stroke-width="2"/>
+<rect x="830" y="679" width="140" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="900" y="692" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">consolida</text>
+<text x="834" y="704" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="948" y="679" font-size="11" font-weight="bold" fill="#b45309">0..*</text>
+<line x1="1260" y1="375" x2="1260" y2="620" stroke="#334155" stroke-width="2"/>
+<rect x="1190" y="479" width="140" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="1260" y="492" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">realiza marcación</text>
+<text x="1274" y="369" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="1228" y="614" font-size="11" font-weight="bold" fill="#b45309">0..*</text>
+<line x1="820" y1="560" x2="980" y2="830" stroke="#334155" stroke-width="2"/>
+<rect x="830" y="677" width="140" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="900" y="690" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">registra alerta</text>
+<text x="834" y="554" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="948" y="824" font-size="11" font-weight="bold" fill="#b45309">0..*</text>
+<rect x="530" y="80" width="290" height="130" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="530" y="80" width="290" height="30" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="675" y="100" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Persona (Superclase Conceptual)</text>
+<text x="542" y="128" font-size="11.5" fill="#1e293b">• tipoDocumento</text>
+<text x="542" y="147" font-size="11.5" fill="#1e293b">• numeroDocumento</text>
+<text x="542" y="166" font-size="11.5" fill="#1e293b">• nombreCompleto</text>
+<text x="542" y="185" font-size="11.5" fill="#1e293b">• correoInstitucional</text>
+<text x="542" y="204" font-size="11.5" fill="#1e293b">• estadoCuenta</text>
+<rect x="80" y="270" width="270" height="105" rx="6" fill="#ffffff" stroke="#0369a1" stroke-width="2"/>
+<rect x="80" y="270" width="270" height="30" rx="6" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="215" y="290" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Administrador</text>
+<text x="92" y="318" font-size="11.5" fill="#1e293b">• cargoCoordinacion</text>
+<text x="92" y="337" font-size="11.5" fill="#1e293b">• dependenciaCentro</text>
+<text x="92" y="356" font-size="11.5" fill="#1e293b">• nivelAutorizacion</text>
+<rect x="540" y="270" width="270" height="105" rx="6" fill="#ffffff" stroke="#0369a1" stroke-width="2"/>
+<rect x="540" y="270" width="270" height="30" rx="6" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="675" y="290" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Instructor</text>
+<text x="552" y="318" font-size="11.5" fill="#1e293b">• especialidadTecnica</text>
+<text x="552" y="337" font-size="11.5" fill="#1e293b">• tipoVinculacion</text>
+<text x="552" y="356" font-size="11.5" fill="#1e293b">• centroFormacion</text>
+<rect x="980" y="270" width="280" height="105" rx="6" fill="#ffffff" stroke="#0369a1" stroke-width="2"/>
+<rect x="980" y="270" width="280" height="30" rx="6" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="1120" y="290" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Aprendiz</text>
+<text x="992" y="318" font-size="11.5" fill="#1e293b">• etapaFormacion</text>
+<text x="992" y="337" font-size="11.5" fill="#1e293b">• telefonoContacto</text>
+<text x="992" y="356" font-size="11.5" fill="#1e293b">• condicionVocero</text>
+<rect x="980" y="445" width="280" height="105" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<rect x="980" y="445" width="280" height="30" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="1120" y="465" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">MatriculaFicha (Clase Asociación)</text>
+<text x="992" y="493" font-size="11.5" fill="#1e293b">• fechaInscripcion</text>
+<text x="992" y="512" font-size="11.5" fill="#1e293b">• estadoMatricula</text>
+<text x="992" y="531" font-size="11.5" fill="#1e293b">• observacionAcademica</text>
+<rect x="530" y="445" width="290" height="145" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="530" y="445" width="290" height="30" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="675" y="465" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">FichaFormacion</text>
+<text x="542" y="493" font-size="11.5" fill="#1e293b">• numeroFicha</text>
+<text x="542" y="512" font-size="11.5" fill="#1e293b">• nombrePrograma</text>
+<text x="542" y="531" font-size="11.5" fill="#1e293b">• nivelFormacion</text>
+<text x="542" y="550" font-size="11.5" fill="#1e293b">• jornada</text>
+<text x="542" y="569" font-size="11.5" fill="#1e293b">• fechaInicioLectiva / Fin</text>
+<rect x="80" y="455" width="280" height="130" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="80" y="455" width="280" height="30" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="220" y="475" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">AmbienteFormacion</text>
+<text x="92" y="503" font-size="11.5" fill="#1e293b">• codigoAmbiente</text>
+<text x="92" y="522" font-size="11.5" fill="#1e293b">• nombreAmbiente</text>
+<text x="92" y="541" font-size="11.5" fill="#1e293b">• sedeCentro</text>
+<text x="92" y="560" font-size="11.5" fill="#1e293b">• capacidadAprendices</text>
+<text x="92" y="579" font-size="11.5" fill="#1e293b">• subredLocalAula</text>
+<rect x="530" y="665" width="290" height="135" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<rect x="530" y="665" width="290" height="30" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="675" y="685" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">SesionAsistencia</text>
+<text x="542" y="713" font-size="11.5" fill="#1e293b">• fechaSesion</text>
+<text x="542" y="732" font-size="11.5" fill="#1e293b">• horaApertura</text>
+<text x="542" y="751" font-size="11.5" fill="#1e293b">• horaCierre</text>
+<text x="542" y="770" font-size="11.5" fill="#1e293b">• subredRegistradaAula</text>
+<text x="542" y="789" font-size="11.5" fill="#1e293b">• estadoSesion</text>
+<rect x="80" y="665" width="280" height="135" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<rect x="80" y="665" width="280" height="30" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="220" y="685" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">CodigoQRTemporal</text>
+<text x="92" y="713" font-size="11.5" fill="#1e293b">• cadenaToken</text>
+<text x="92" y="732" font-size="11.5" fill="#1e293b">• selloCriptografico</text>
+<text x="92" y="751" font-size="11.5" fill="#1e293b">• instanteGeneracion</text>
+<text x="92" y="770" font-size="11.5" fill="#1e293b">• instanteExpiracion</text>
+<text x="92" y="789" font-size="11.5" fill="#1e293b">• estadoVigencia</text>
+<rect x="980" y="620" width="290" height="135" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<rect x="980" y="620" width="290" height="30" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="1125" y="640" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">RegistroAsistencia</text>
+<text x="992" y="668" font-size="11.5" fill="#1e293b">• horaMarcacion</text>
+<text x="992" y="687" font-size="11.5" fill="#1e293b">• estadoAsistencia</text>
+<text x="992" y="706" font-size="11.5" fill="#1e293b">• modalidadRegistro</text>
+<text x="992" y="725" font-size="11.5" fill="#1e293b">• subredOrigenAprendiz</text>
+<text x="992" y="744" font-size="11.5" fill="#1e293b">• motivoContingencia</text>
+<rect x="980" y="785" width="290" height="115" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+<rect x="980" y="785" width="290" height="30" rx="6" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+<text x="1125" y="805" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">AlertaInasistencia</text>
+<text x="992" y="833" font-size="11.5" fill="#1e293b">• fechaGeneracion</text>
+<text x="992" y="852" font-size="11.5" fill="#1e293b">• cantidadFallasAcumuladas</text>
+<text x="992" y="871" font-size="11.5" fill="#1e293b">• nivelRiesgoDesercion</text>
+<text x="992" y="890" font-size="11.5" fill="#1e293b">• estadoAlerta</text>
+</svg>

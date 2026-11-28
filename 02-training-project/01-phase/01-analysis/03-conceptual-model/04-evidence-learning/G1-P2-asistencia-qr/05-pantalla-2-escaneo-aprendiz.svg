@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" width="1100" height="720" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1100" height="720" fill="#f1f5f9"/>
+<rect x="20" y="15" width="1060" height="690" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+<rect x="20" y="15" width="1060" height="44" rx="10" fill="#0f172a"/>
+<circle cx="45" cy="37" r="7" fill="#ef4444"/><circle cx="67" cy="37" r="7" fill="#f59e0b"/><circle cx="89" cy="37" r="7" fill="#22c55e"/>
+<text x="125" y="42" fill="#e2e8f0" font-size="13" font-weight="bold">https://asistencia-qr.sena.edu.co · Pantalla 2 · Interfaz Móvil del Aprendiz (Escaneo QR y Comprobante)</text>
+<rect x="40" y="75" width="1020" height="48" rx="6" fill="#1e3a8a"/>
+<text x="60" y="104" fill="#ffffff" font-size="15" font-weight="bold">RÓTULO DE TRAZABILIDAD: CU-05 Registrar asistencia por escaneo QR + CU-06 Validar subred IP y firma QR (RF-07, RF-08, RF-09)</text>
+<rect x="810" y="84" width="235" height="30" rx="15" fill="#38bdf8"/>
+<text x="927" y="104" fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle">Rol: Aprendiz SENA</text>
+<rect x="40" y="140" width="320" height="535" rx="8" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<text x="58" y="168" font-size="14" font-weight="bold" fill="#0f172a">Vista Móvil A: Escaneo de QR (CU-05)</text>
+<text x="58" y="194" font-size="12.5" fill="#334155">📱 Aprendiz: @estiben08 (Ficha 3413974)</text>
+<text x="58" y="218" font-size="12.5" fill="#334155">📶 Red detectada: WiFi-SENA-AMB302</text>
+<text x="58" y="242" font-size="12.5" fill="#334155">   (Subred 192.168.10.45 - Coincide ✓)</text>
+<text x="58" y="266" font-size="12.5" fill="#334155">┌─────────────────────────────┐</text>
+<text x="58" y="290" font-size="12.5" fill="#334155">│   [ Visor Cámara Móvil ]    │</text>
+<text x="58" y="314" font-size="12.5" fill="#334155">│      ┌───────────────┐      │</text>
+<text x="58" y="338" font-size="12.5" fill="#334155">│      │  Enfocando QR │      │</text>
+<text x="58" y="362" font-size="12.5" fill="#334155">│      └───────────────┘      │</text>
+<text x="58" y="386" font-size="12.5" fill="#334155">└─────────────────────────────┘</text>
+<text x="58" y="410" font-size="12.5" fill="#334155">[ Botón: Confirmar Lectura de QR ]</text>
+<text x="58" y="434" font-size="12.5" fill="#334155">Estado: Validando firma y subred (CU-06)...</text>
+<rect x="385" y="140" width="330" height="535" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<text x="403" y="168" font-size="14" font-weight="bold" fill="#0f172a">Vista Móvil B: Comprobante Exitoso</text>
+<text x="403" y="194" font-size="12.5" fill="#334155">✅ ASISTENCIA CONFIRMADA</text>
+<text x="403" y="218" font-size="12.5" fill="#334155">─────────────────────────────────</text>
+<text x="403" y="242" font-size="12.5" fill="#334155">• Ficha: 3413974 · ADSO</text>
+<text x="403" y="266" font-size="12.5" fill="#334155">• Ambiente: AMB-302 Laboratorio</text>
+<text x="403" y="290" font-size="12.5" fill="#334155">• Fecha: 2026-11-27</text>
+<text x="403" y="314" font-size="12.5" fill="#334155">• Hora exacta: 07:06:14 a. m.</text>
+<text x="403" y="338" font-size="12.5" fill="#334155">• Estado: PRESENTE (Validado por QR)</text>
+<text x="403" y="362" font-size="12.5" fill="#334155">• Verificación HMAC: Válida ✓</text>
+<text x="403" y="386" font-size="12.5" fill="#334155">• Verificación Subred: 192.168.10.0/24 ✓</text>
+<text x="403" y="410" font-size="12.5" fill="#334155">• Código Comprobante: #AST-2026-0984</text>
+<text x="403" y="434" font-size="12.5" fill="#334155">[ Botón: Ver Mi Historial de Asistencia ]</text>
+<rect x="740" y="140" width="320" height="535" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<text x="758" y="168" font-size="14" font-weight="bold" fill="#0f172a">Vista Móvil C: Flujo Alterno / Excepción</text>
+<text x="758" y="194" font-size="12.5" fill="#334155">⚠️ AVISO DE VALIDACIÓN (CU-06)</text>
+<text x="758" y="218" font-size="12.5" fill="#334155">─────────────────────────────────</text>
+<text x="758" y="242" font-size="12.5" fill="#334155">Caso Alterno 4a (QR recién rotado):</text>
+<text x="758" y="266" font-size="12.5" fill="#334155">«El código QR acaba de actualizarse.</text>
+<text x="758" y="290" font-size="12.5" fill="#334155"> Por favor enfoca el nuevo código en</text>
+<text x="758" y="314" font-size="12.5" fill="#334155"> pantalla para completar tu registro.»</text>
+<text x="758" y="338" font-size="12.5" fill="#334155">─────────────────────────────────</text>
+<text x="758" y="362" font-size="12.5" fill="#334155">Caso Excepción 5b (Subred externa):</text>
+<text x="758" y="386" font-size="12.5" fill="#334155">«Rechazado: Tu dispositivo no está en</text>
+<text x="758" y="410" font-size="12.5" fill="#334155"> la red WiFi del ambiente AMB-302.</text>
+<text x="758" y="434" font-size="12.5" fill="#334155"> Conéctate al WiFi del aula e intenta</text>
+<text x="758" y="458" font-size="12.5" fill="#334155"> nuevamente.»</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" width="1100" height="720" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1100" height="720" fill="#f1f5f9"/>
+<rect x="20" y="15" width="1060" height="690" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+<rect x="20" y="15" width="1060" height="44" rx="10" fill="#0f172a"/>
+<circle cx="45" cy="37" r="7" fill="#ef4444"/><circle cx="67" cy="37" r="7" fill="#f59e0b"/><circle cx="89" cy="37" r="7" fill="#22c55e"/>
+<text x="125" y="42" fill="#e2e8f0" font-size="13" font-weight="bold">https://asistencia-qr.sena.edu.co · Pantalla 3 · Panel de Monitoreo en Tiempo Real, Contingencia y Cierre</text>
+<rect x="40" y="75" width="1020" height="48" rx="6" fill="#1e3a8a"/>
+<text x="60" y="104" fill="#ffffff" font-size="15" font-weight="bold">RÓTULO DE TRAZABILIDAD: CU-08 Monitorear asistencia y cerrar sesión + CU-07 Registrar asistencia manual por contingencia (RF-10, RF-11)</text>
+<rect x="810" y="84" width="235" height="30" rx="15" fill="#38bdf8"/>
+<text x="927" y="104" fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle">Rol: Instructor SENA</text>
+<rect x="40" y="140" width="1020" height="115" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="58" y="168" font-size="14" font-weight="bold" fill="#0f172a">1. Indicadores en Tiempo Real de la Sesión Activa #SES-3413974-1127 (Auto-refresh 10 s)</text>
+<text x="58" y="194" font-size="12.5" fill="#334155">🟢 PRESENTES: 27 aprendices (90 %)   |   🟡 PENDIENTES EN AULA: 3 aprendices (10 %)   |   🔴 INTENTOS RECHAZADOS: 2 (Subred externa / QR expirado)</text>
+<text x="58" y="218" font-size="12.5" fill="#334155">Acciones de sesión:   [ + Registrar Contingencia Manual (CU-07) ]     [ 🔒 Cerrar Sesión y Consolidar Inasistencias (CU-08) ]</text>
+<rect x="40" y="275" width="620" height="400" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+<text x="58" y="303" font-size="14" font-weight="bold" fill="#0f172a">2. Listado en Vivo de Aprendices de la Ficha 3413974 (CU-08)</text>
+<text x="58" y="329" font-size="12.5" fill="#334155">Doc. Aprendiz | Estado Actual             | Hora      | Modalidad / Subred</text>
+<text x="58" y="353" font-size="12.5" fill="#334155">──────────────────────────────────────────────────────────────────────────</text>
+<text x="58" y="377" font-size="12.5" fill="#334155">***8215       | 🟢 PRESENTE               | 07:05:19  | Escaneo QR · 192.168.10.45</text>
+<text x="58" y="401" font-size="12.5" fill="#334155">***1899       | 🟢 PRESENTE               | 07:05:42  | Escaneo QR · 192.168.10.52</text>
+<text x="58" y="425" font-size="12.5" fill="#334155">***1661       | 🟡 PRESENTE CONTINGENCIA  | 07:08:10  | Manual (CU-07): Sin batería</text>
+<text x="58" y="449" font-size="12.5" fill="#334155">***2785       | ⏳ PENDIENTE POR MARCAR   | --:--:--  | [Registrar Contingencia]</text>
+<text x="58" y="473" font-size="12.5" fill="#334155">***4399       | 🔴 RECHAZO (Excepción 5b) | 07:06:50  | IP Externa 181.54.XX.XX</text>
+<rect x="680" y="275" width="380" height="400" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<text x="698" y="303" font-size="14" font-weight="bold" fill="#0f172a">3. Modal Contingencia Manual (CU-07)</text>
+<text x="698" y="329" font-size="12.5" fill="#334155">Aprendiz seleccionado: Doc. ***1661</text>
+<text x="698" y="353" font-size="12.5" fill="#334155">Estado a asignar:</text>
+<text x="698" y="377" font-size="12.5" fill="#334155">  (•) Presente por contingencia en aula</text>
+<text x="698" y="401" font-size="12.5" fill="#334155">  ( ) Excusa médica / institucional</text>
+<text x="698" y="425" font-size="12.5" fill="#334155">Motivo obligatorio (RN-05):</text>
+<text x="698" y="449" font-size="12.5" fill="#334155">  «Aprendiz presente en puesto 14 del</text>
+<text x="698" y="473" font-size="12.5" fill="#334155">   ambiente AMB-302; teléfono móvil</text>
+<text x="698" y="497" font-size="12.5" fill="#334155">   apagado por batería agotada.»</text>
+<text x="698" y="521" font-size="12.5" fill="#334155">[ Guardar Registro Manual Auditado ]</text>
+</svg>
