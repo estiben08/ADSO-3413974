@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="1200" height="820" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1200" height="820" fill="#ffffff"/>
+<rect x="20" y="15" width="1160" height="40" rx="6" fill="#1e3a8a"/>
+<text x="600" y="41" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Diagrama de Actividades UML · CU-05 Registrar asistencia por escaneo QR (incluye CU-06)</text>
+<rect x="20" y="60" width="460" height="740" fill="#f8fafc" stroke="#1e3a8a" stroke-width="2"/>
+<rect x="20" y="60" width="460" height="32" fill="#dbeafe" stroke="#1e3a8a" stroke-width="2"/>
+<text x="250" y="81" fill="#1e3a8a" font-size="14" font-weight="bold" text-anchor="middle">Calle: Aprendiz</text>
+<rect x="480" y="60" width="700" height="740" fill="#ffffff" stroke="#1e3a8a" stroke-width="2"/>
+<rect x="480" y="60" width="700" height="32" fill="#e0f2fe" stroke="#1e3a8a" stroke-width="2"/>
+<text x="830" y="81" fill="#0c4a6e" font-size="14" font-weight="bold" text-anchor="middle">Calle: Sistema de Control de Asistencia QR (CU-06)</text>
+<circle cx="250" cy="115" r="14" fill="#0f172a"/>
+<rect x="70" y="145" width="360" height="42" rx="12" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="250" y="171" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">1. Escanear código QR proyectado en aula</text>
+<rect x="70" y="210" width="360" height="42" rx="12" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="250" y="236" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">2. Enviar solicitud de registro con identidad</text>
+<polygon points="820,197 975,231 820,265 665,231" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="820" y="235" font-size="11.5" font-weight="bold" fill="#78350f" text-anchor="middle">¿Sesión activa y QR vigente?</text>
+<rect x="70" y="295" width="360" height="42" rx="12" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="250" y="321" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">4a.1 Re-escanear nuevo QR recién rotado</text>
+<rect x="880" y="295" width="280" height="42" rx="12" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+<text x="1020" y="321" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">4b. Rechazar QR vencido/alterado</text>
+<polygon points="820,351 970,385 820,419 670,385" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="820" y="389" font-size="11.5" font-weight="bold" fill="#78350f" text-anchor="middle">¿Misma subred local del aula?</text>
+<rect x="880" y="445" width="280" height="42" rx="12" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+<text x="1020" y="471" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">5b. Rechazar por subred externa</text>
+<polygon points="820,491 975,525 820,559 665,525" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="820" y="529" font-size="11.5" font-weight="bold" fill="#78350f" text-anchor="middle">¿Registro previo en la sesión?</text>
+<rect x="500" y="585" width="300" height="42" rx="12" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="650" y="611" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">6a. Informar asistencia ya confirmada</text>
+<rect x="650" y="645" width="360" height="8" fill="#0f172a"/>
+<text x="1020" y="653" font-size="10.5" font-weight="bold" fill="#334155">Fork (Concurrencia)</text>
+<rect x="510" y="672" width="300" height="42" rx="12" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="660" y="698" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">6.1 Asentar asistencia Presente y hora</text>
+<rect x="830" y="672" width="320" height="42" rx="12" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="990" y="698" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">6.2 Actualizar conteo en panel en vivo</text>
+<rect x="650" y="730" width="360" height="8" fill="#0f172a"/>
+<text x="1020" y="738" font-size="10.5" font-weight="bold" fill="#334155">Join</text>
+<rect x="70" y="680" width="360" height="44" rx="12" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="250" y="707" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">7. Visualizar comprobante de asistencia</text>
+<rect x="70" y="445" width="360" height="42" rx="12" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+<text x="250" y="471" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">Visualizar causal de rechazo en móvil</text>
+<circle cx="250" cy="765" r="16" fill="none" stroke="#0f172a" stroke-width="2.5"/>
+<circle cx="250" cy="765" r="10" fill="#0f172a"/>
+<text x="250" y="795" font-size="11" font-weight="bold" fill="#0f172a" text-anchor="middle">Fin Exitoso</text>
+<circle cx="250" cy="535" r="16" fill="none" stroke="#0f172a" stroke-width="2.5"/>
+<circle cx="250" cy="535" r="10" fill="#0f172a"/>
+<text x="250" y="565" font-size="11" font-weight="bold" fill="#0f172a" text-anchor="middle">Fin Rechazado</text>
+<line x1="250" y1="129" x2="250" y2="145" stroke="#334155" stroke-width="1.8"/>
+<line x1="250" y1="187" x2="250" y2="210" stroke="#334155" stroke-width="1.8"/>
+<line x1="430" y1="231" x2="665" y2="231" stroke="#334155" stroke-width="1.8"/>
+<line x1="720" y1="248" x2="430" y2="316" stroke="#334155" stroke-width="1.8"/>
+<text x="575" y="276" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[QR rotó <5 s - Alterno 4a]</text>
+<line x1="250" y1="295" x2="250" y2="252" stroke="#334155" stroke-width="1.8"/>
+<line x1="920" y1="248" x2="1020" y2="295" stroke="#334155" stroke-width="1.8"/>
+<text x="970" y="265" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[QR inválido/cerrada - Excepción 4b]</text>
+<line x1="820" y1="265" x2="820" y2="351" stroke="#334155" stroke-width="1.8"/>
+<text x="820" y="302" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[sesión activa y QR válido]</text>
+<line x1="920" y1="400" x2="1020" y2="445" stroke="#334155" stroke-width="1.8"/>
+<text x="970" y="416" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[subred distinta - Excepción 5b]</text>
+<line x1="820" y1="419" x2="820" y2="491" stroke="#334155" stroke-width="1.8"/>
+<text x="820" y="449" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[misma subred del aula]</text>
+<line x1="720" y1="540" x2="650" y2="585" stroke="#334155" stroke-width="1.8"/>
+<text x="685" y="556" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[ya registrado - Alterno 6a]</text>
+<line x1="820" y1="559" x2="820" y2="645" stroke="#334155" stroke-width="1.8"/>
+<text x="820" y="596" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[sin registro previo]</text>
+<line x1="730" y1="653" x2="660" y2="672" stroke="#334155" stroke-width="1.8"/>
+<line x1="910" y1="653" x2="990" y2="672" stroke="#334155" stroke-width="1.8"/>
+<line x1="660" y1="714" x2="730" y2="730" stroke="#334155" stroke-width="1.8"/>
+<line x1="990" y1="714" x2="910" y2="730" stroke="#334155" stroke-width="1.8"/>
+<line x1="650" y1="734" x2="430" y2="702" stroke="#334155" stroke-width="1.8"/>
+<line x1="500" y1="606" x2="430" y2="690" stroke="#334155" stroke-width="1.8"/>
+<line x1="250" y1="724" x2="250" y2="749" stroke="#334155" stroke-width="1.8"/>
+<line x1="880" y1="466" x2="430" y2="466" stroke="#334155" stroke-width="1.8"/>
+<line x1="880" y1="316" x2="430" y2="455" stroke="#334155" stroke-width="1.8"/>
+<line x1="250" y1="487" x2="250" y2="519" stroke="#334155" stroke-width="1.8"/>
+</svg>

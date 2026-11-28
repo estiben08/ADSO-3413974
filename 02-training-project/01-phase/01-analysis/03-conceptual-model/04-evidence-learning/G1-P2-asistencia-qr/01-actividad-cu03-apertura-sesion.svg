@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="1200" height="820" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1200" height="820" fill="#ffffff"/>
+<rect x="20" y="15" width="1160" height="40" rx="6" fill="#1e3a8a"/>
+<text x="600" y="41" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Diagrama de Actividades UML · CU-03 Aperturar sesión de asistencia (incluye CU-04)</text>
+<rect x="20" y="60" width="460" height="740" fill="#f8fafc" stroke="#1e3a8a" stroke-width="2"/>
+<rect x="20" y="60" width="460" height="32" fill="#dbeafe" stroke="#1e3a8a" stroke-width="2"/>
+<text x="250" y="81" fill="#1e3a8a" font-size="14" font-weight="bold" text-anchor="middle">Calle: Instructor</text>
+<rect x="480" y="60" width="700" height="740" fill="#ffffff" stroke="#1e3a8a" stroke-width="2"/>
+<rect x="480" y="60" width="700" height="32" fill="#e0f2fe" stroke="#1e3a8a" stroke-width="2"/>
+<text x="830" y="81" fill="#0c4a6e" font-size="14" font-weight="bold" text-anchor="middle">Calle: Sistema de Control de Asistencia QR</text>
+<circle cx="250" cy="120" r="14" fill="#0f172a"/>
+<rect x="70" y="155" width="360" height="44" rx="12" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="250" y="182" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">1. Solicitar apertura de sesión de asistencia</text>
+<rect x="70" y="225" width="360" height="44" rx="12" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="250" y="252" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">2. Seleccionar ficha asignada y ambiente</text>
+<polygon points="820,211 975,247 820,283 665,247" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="820" y="251" font-size="11.5" font-weight="bold" fill="#78350f" text-anchor="middle">¿Sesión previa de la ficha hoy?</text>
+<rect x="70" y="320" width="360" height="44" rx="12" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="250" y="347" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">3a.1 Reabrir vista de sesión activa existente</text>
+<rect x="860" y="320" width="300" height="44" rx="12" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+<text x="1010" y="347" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">3b.1 Informar jornada ya cerrada hoy</text>
+<polygon points="820,386 970,420 820,454 670,420" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="820" y="424" font-size="11.5" font-weight="bold" fill="#78350f" text-anchor="middle">¿Red del aula identificable?</text>
+<rect x="70" y="420" width="360" height="44" rx="12" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+<text x="250" y="447" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">4b.1 Recibir aviso de red no institucional</text>
+<rect x="640" y="490" width="360" height="8" fill="#0f172a"/>
+<text x="1010" y="498" font-size="10.5" font-weight="bold" fill="#334155">Fork (Concurrencia)</text>
+<rect x="510" y="525" width="290" height="46" rx="12" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="655" y="553" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">4.1 Registrar sesión Activa con subred</text>
+<rect x="830" y="525" width="320" height="46" rx="12" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="990" y="553" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">4.2 Generar primer QR firmado (CU-04)</text>
+<rect x="640" y="595" width="360" height="8" fill="#0f172a"/>
+<text x="1010" y="603" font-size="10.5" font-weight="bold" fill="#334155">Join (Sincronización)</text>
+<rect x="640" y="630" width="360" height="44" rx="12" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="820" y="657" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">5. Activar temporizador rotación 30 s</text>
+<rect x="70" y="630" width="360" height="44" rx="12" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="250" y="657" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">6. Proyectar código QR dinámico en aula</text>
+<circle cx="250" cy="735" r="16" fill="none" stroke="#0f172a" stroke-width="2.5"/>
+<circle cx="250" cy="735" r="10" fill="#0f172a"/>
+<text x="250" y="765" font-size="11" font-weight="bold" fill="#0f172a" text-anchor="middle">Fin Exitoso</text>
+<circle cx="1010" cy="420" r="16" fill="none" stroke="#0f172a" stroke-width="2.5"/>
+<circle cx="1010" cy="420" r="10" fill="#0f172a"/>
+<text x="1010" y="450" font-size="11" font-weight="bold" fill="#0f172a" text-anchor="middle">Fin Excepción</text>
+<line x1="250" y1="134" x2="250" y2="155" stroke="#334155" stroke-width="1.8"/>
+<line x1="250" y1="199" x2="250" y2="225" stroke="#334155" stroke-width="1.8"/>
+<line x1="430" y1="247" x2="665" y2="247" stroke="#334155" stroke-width="1.8"/>
+<line x1="740" y1="265" x2="430" y2="342" stroke="#334155" stroke-width="1.8"/>
+<text x="585" y="297" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[sesión activa hoy - Alterno 3a]</text>
+<line x1="900" y1="265" x2="1010" y2="320" stroke="#334155" stroke-width="1.8"/>
+<text x="955" y="286" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[sesión cerrada hoy - Excepción 3b]</text>
+<line x1="820" y1="283" x2="820" y2="386" stroke="#334155" stroke-width="1.8"/>
+<text x="820" y="328" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[no existe sesión hoy]</text>
+<line x1="670" y1="420" x2="430" y2="442" stroke="#334155" stroke-width="1.8"/>
+<text x="550" y="425" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[red inválida - Excepción 4b]</text>
+<line x1="820" y1="454" x2="820" y2="490" stroke="#334155" stroke-width="1.8"/>
+<text x="820" y="466" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[red institucional válida]</text>
+<line x1="720" y1="498" x2="655" y2="525" stroke="#334155" stroke-width="1.8"/>
+<line x1="920" y1="498" x2="990" y2="525" stroke="#334155" stroke-width="1.8"/>
+<line x1="655" y1="571" x2="720" y2="595" stroke="#334155" stroke-width="1.8"/>
+<line x1="990" y1="571" x2="920" y2="595" stroke="#334155" stroke-width="1.8"/>
+<line x1="820" y1="603" x2="820" y2="630" stroke="#334155" stroke-width="1.8"/>
+<line x1="640" y1="652" x2="430" y2="652" stroke="#334155" stroke-width="1.8"/>
+<line x1="250" y1="364" x2="250" y2="630" stroke="#334155" stroke-width="1.8"/>
+<line x1="250" y1="674" x2="250" y2="719" stroke="#334155" stroke-width="1.8"/>
+<line x1="1010" y1="364" x2="1010" y2="404" stroke="#334155" stroke-width="1.8"/>
+</svg>

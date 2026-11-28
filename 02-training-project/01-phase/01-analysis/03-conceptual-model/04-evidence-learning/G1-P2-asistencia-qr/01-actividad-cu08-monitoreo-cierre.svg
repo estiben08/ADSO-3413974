@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="1200" height="820" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1200" height="820" fill="#ffffff"/>
+<rect x="20" y="15" width="1160" height="40" rx="6" fill="#1e3a8a"/>
+<text x="600" y="41" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Diagrama de Actividades UML · CU-08 Monitorear asistencia y cerrar sesión (con CU-07 y CU-10)</text>
+<rect x="20" y="60" width="460" height="740" fill="#f8fafc" stroke="#1e3a8a" stroke-width="2"/>
+<rect x="20" y="60" width="460" height="32" fill="#dbeafe" stroke="#1e3a8a" stroke-width="2"/>
+<text x="250" y="81" fill="#1e3a8a" font-size="14" font-weight="bold" text-anchor="middle">Calle: Instructor</text>
+<rect x="480" y="60" width="700" height="740" fill="#ffffff" stroke="#1e3a8a" stroke-width="2"/>
+<rect x="480" y="60" width="700" height="32" fill="#e0f2fe" stroke="#1e3a8a" stroke-width="2"/>
+<text x="830" y="81" fill="#0c4a6e" font-size="14" font-weight="bold" text-anchor="middle">Calle: Sistema de Control de Asistencia QR</text>
+<circle cx="250" cy="115" r="14" fill="#0f172a"/>
+<rect x="70" y="145" width="360" height="42" rx="12" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="250" y="171" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">1. Consultar panel de monitoreo activo</text>
+<rect x="650" y="145" width="360" height="42" rx="12" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="830" y="171" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">2. Presentar listado en vivo de la ficha</text>
+<polygon points="250,221 405,255 250,289 95,255" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="250" y="259" font-size="11.5" font-weight="bold" fill="#78350f" text-anchor="middle">¿Aprendiz en aula sin celular?</text>
+<rect x="70" y="325" width="360" height="44" rx="12" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="250" y="352" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">3a. Registrar asistencia manual (CU-07)</text>
+<rect x="70" y="405" width="360" height="44" rx="12" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="250" y="432" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">4. Solicitar cierre formal de la sesión</text>
+<polygon points="820,393 975,427 820,461 665,427" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="820" y="431" font-size="11.5" font-weight="bold" fill="#78350f" text-anchor="middle">¿Estado de la sesión al cerrar?</text>
+<rect x="500" y="505" width="290" height="42" rx="12" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="645" y="531" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">5a. Consolidar por expiración horario</text>
+<rect x="840" y="505" width="310" height="42" rx="12" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="995" y="531" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">5. Invalidar QR y pasar sesión a Cerrada</text>
+<rect x="640" y="580" width="380" height="44" rx="12" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="830" y="607" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">6. Marcar como Inasistentes a no registrados</text>
+<polygon points="830,631 990,665 830,699 670,665" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="830" y="669" font-size="11.5" font-weight="bold" fill="#78350f" text-anchor="middle">¿Inasistente acumula >= 3 fallas?</text>
+<rect x="850" y="725" width="310" height="42" rx="12" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="1005" y="751" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">7a. Emitir alerta temprana deserción (CU-10)</text>
+<rect x="70" y="680" width="360" height="44" rx="12" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="250" y="707" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">8. Visualizar acta resumen y alertas</text>
+<circle cx="250" cy="765" r="16" fill="none" stroke="#0f172a" stroke-width="2.5"/>
+<circle cx="250" cy="765" r="10" fill="#0f172a"/>
+<text x="250" y="795" font-size="11" font-weight="bold" fill="#0f172a" text-anchor="middle">Fin Exitoso</text>
+<line x1="250" y1="129" x2="250" y2="145" stroke="#334155" stroke-width="1.8"/>
+<line x1="430" y1="166" x2="650" y2="166" stroke="#334155" stroke-width="1.8"/>
+<line x1="650" y1="180" x2="250" y2="221" stroke="#334155" stroke-width="1.8"/>
+<line x1="250" y1="289" x2="250" y2="325" stroke="#334155" stroke-width="1.8"/>
+<text x="250" y="301" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[sí: contingencia - Alterno 3a]</text>
+<line x1="100" y1="255" x2="100" y2="405" stroke="#334155" stroke-width="1.8"/>
+<text x="100" y="324" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[no: todos escanearon]</text>
+<line x1="250" y1="369" x2="250" y2="405" stroke="#334155" stroke-width="1.8"/>
+<line x1="430" y1="427" x2="665" y2="427" stroke="#334155" stroke-width="1.8"/>
+<line x1="740" y1="445" x2="645" y2="505" stroke="#334155" stroke-width="1.8"/>
+<text x="692" y="469" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[ya expiró ventana - Alterno 5a]</text>
+<line x1="900" y1="445" x2="995" y2="505" stroke="#334155" stroke-width="1.8"/>
+<text x="947" y="469" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[sesión abierta]</text>
+<line x1="645" y1="547" x2="780" y2="580" stroke="#334155" stroke-width="1.8"/>
+<line x1="995" y1="547" x2="880" y2="580" stroke="#334155" stroke-width="1.8"/>
+<line x1="830" y1="624" x2="830" y2="631" stroke="#334155" stroke-width="1.8"/>
+<line x1="910" y1="685" x2="1000" y2="725" stroke="#334155" stroke-width="1.8"/>
+<text x="955" y="699" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[>= 3 fallas]</text>
+<line x1="670" y1="665" x2="430" y2="702" stroke="#334155" stroke-width="1.8"/>
+<text x="550" y="677" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">[< 3 fallas]</text>
+<line x1="850" y1="746" x2="430" y2="712" stroke="#334155" stroke-width="1.8"/>
+<line x1="250" y1="724" x2="250" y2="749" stroke="#334155" stroke-width="1.8"/>
+</svg>
