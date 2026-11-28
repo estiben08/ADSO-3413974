@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 940" width="1440" height="940" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1440" height="940" fill="#ffffff"/>
+<rect x="20" y="15" width="1400" height="42" rx="6" fill="#1e3a8a"/>
+<text x="720" y="42" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Modelo Lógico Relacional en 3FN (B2) · 11 Tablas con Llaves Primarias (PK), Foráneas (FK) y Únicas (UK)</text>
+<line x1="330" y1="130" x2="390" y2="130" stroke="#334155" stroke-width="2"/>
+<rect x="285" y="112" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="360" y="125" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">id_centro FK</text>
+<text x="338" y="124" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="352" y="124" font-size="11" font-weight="bold" fill="#b45309">N</text>
+<line x1="710" y1="130" x2="760" y2="130" stroke="#334155" stroke-width="2"/>
+<rect x="660" y="112" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="735" y="125" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">id_usuario FK</text>
+<text x="718" y="124" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="722" y="124" font-size="11" font-weight="bold" fill="#b45309">N</text>
+<line x1="190" y1="205" x2="190" y2="320" stroke="#334155" stroke-width="2"/>
+<rect x="115" y="244" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="190" y="257" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">id_centro FK</text>
+<text x="198" y="199" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="152" y="314" font-size="11" font-weight="bold" fill="#b45309">N</text>
+<line x1="340" y1="395" x2="390" y2="395" stroke="#334155" stroke-width="2"/>
+<rect x="290" y="377" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="365" y="390" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">id_ficha FK</text>
+<text x="348" y="389" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="352" y="389" font-size="11" font-weight="bold" fill="#b45309">N</text>
+<line x1="550" y1="285" x2="550" y2="330" stroke="#334155" stroke-width="2"/>
+<rect x="475" y="289" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="550" y="302" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">id_aprendiz FK</text>
+<text x="558" y="279" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="512" y="324" font-size="11" font-weight="bold" fill="#b45309">N</text>
+<line x1="340" y1="440" x2="760" y2="410" stroke="#334155" stroke-width="2"/>
+<rect x="475" y="407" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="550" y="420" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">id_ficha FK</text>
+<text x="348" y="434" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="722" y="404" font-size="11" font-weight="bold" fill="#b45309">N</text>
+<line x1="1250" y1="225" x2="960" y2="300" stroke="#334155" stroke-width="2"/>
+<rect x="1030" y="244" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="1105" y="257" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">id_ambiente FK</text>
+<text x="1258" y="219" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="922" y="294" font-size="11" font-weight="bold" fill="#b45309">N</text>
+<line x1="1060" y1="390" x2="1100" y2="390" stroke="#334155" stroke-width="2"/>
+<rect x="1005" y="372" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="1080" y="385" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">id_sesion FK</text>
+<text x="1068" y="384" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="1062" y="384" font-size="11" font-weight="bold" fill="#b45309">N</text>
+<line x1="910" y1="485" x2="910" y2="560" stroke="#334155" stroke-width="2"/>
+<rect x="835" y="504" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="910" y="517" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">id_sesion FK</text>
+<text x="918" y="479" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="872" y="554" font-size="11" font-weight="bold" fill="#b45309">N</text>
+<line x1="600" y1="285" x2="760" y2="620" stroke="#334155" stroke-width="2"/>
+<rect x="605" y="434" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="680" y="447" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">id_aprendiz FK</text>
+<text x="608" y="279" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="722" y="614" font-size="11" font-weight="bold" fill="#b45309">N</text>
+<line x1="340" y1="480" x2="1100" y2="620" stroke="#334155" stroke-width="2"/>
+<rect x="645" y="532" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="720" y="545" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">id_ficha FK</text>
+<text x="348" y="474" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="1062" y="614" font-size="11" font-weight="bold" fill="#b45309">N</text>
+<line x1="200" y1="560" x2="440" y2="285" stroke="#334155" stroke-width="2"/>
+<rect x="245" y="404" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="320" y="417" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">id_usuario FK</text>
+<text x="208" y="554" font-size="11" font-weight="bold" fill="#b45309">N</text>
+<text x="402" y="279" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<rect x="40" y="75" width="290" height="130" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="40" y="75" width="290" height="28" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="185" y="94" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">centro_formacion</text>
+<text x="50" y="121" font-size="11" fill="#1e293b">PK id_centro: INTEGER</text>
+<text x="50" y="138" font-size="11" fill="#1e293b">UK codigo_centro: VARCHAR(15)</text>
+<text x="50" y="155" font-size="11" fill="#1e293b">   nombre_centro: VARCHAR(120)</text>
+<text x="50" y="172" font-size="11" fill="#1e293b">   regional: VARCHAR(60)</text>
+<text x="50" y="189" font-size="11" fill="#1e293b">   ciudad_sede: VARCHAR(60)</text>
+<text x="50" y="206" font-size="11" fill="#1e293b">   estado_centro: VARCHAR(15)</text>
+<rect x="390" y="75" width="320" height="210" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="390" y="75" width="320" height="28" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="550" y="94" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">usuario</text>
+<text x="400" y="121" font-size="11" fill="#1e293b">PK id_usuario: INTEGER</text>
+<text x="400" y="138" font-size="11" fill="#1e293b">FK id_centro: INTEGER</text>
+<text x="400" y="155" font-size="11" fill="#1e293b">   tipo_documento: VARCHAR(5)</text>
+<text x="400" y="172" font-size="11" fill="#1e293b">UK numero_documento: VARCHAR(20)</text>
+<text x="400" y="189" font-size="11" fill="#1e293b">   nombre_completo: VARCHAR(120)</text>
+<text x="400" y="206" font-size="11" fill="#1e293b">UK correo_institucional: VARCHAR(120)</text>
+<text x="400" y="223" font-size="11" fill="#1e293b">   password_hash: VARCHAR(255)</text>
+<text x="400" y="240" font-size="11" fill="#1e293b">   rol_sistema: VARCHAR(15)</text>
+<text x="400" y="257" font-size="11" fill="#1e293b">   especialidad_tecnica: VARCHAR(80)</text>
+<text x="400" y="274" font-size="11" fill="#1e293b">   es_vocero: INTEGER (0/1)</text>
+<text x="400" y="291" font-size="11" fill="#1e293b">FK id_vocero_orientador: INTEGER NULL</text>
+<text x="400" y="308" font-size="11" fill="#1e293b">   estado_usuario: VARCHAR(15)</text>
+<rect x="760" y="75" width="290" height="130" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<rect x="760" y="75" width="290" height="28" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="905" y="94" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">telefono_usuario (1FN Multival.)</text>
+<text x="770" y="121" font-size="11" fill="#1e293b">PK id_telefono: INTEGER</text>
+<text x="770" y="138" font-size="11" fill="#1e293b">FK id_usuario: INTEGER</text>
+<text x="770" y="155" font-size="11" fill="#1e293b">   numero_telefono: VARCHAR(20)</text>
+<text x="770" y="172" font-size="11" fill="#1e293b">   tipo_telefono: VARCHAR(15)</text>
+<text x="770" y="189" font-size="11" fill="#1e293b">   es_principal: INTEGER (0/1)</text>
+<text x="770" y="206" font-size="11" fill="#1e293b">UK (id_usuario, numero_telefono)</text>
+<rect x="1100" y="75" width="300" height="150" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="1100" y="75" width="300" height="28" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="1250" y="94" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">ambiente_formacion</text>
+<text x="1110" y="121" font-size="11" fill="#1e293b">PK id_ambiente: INTEGER</text>
+<text x="1110" y="138" font-size="11" fill="#1e293b">FK id_centro: INTEGER</text>
+<text x="1110" y="155" font-size="11" fill="#1e293b">UK codigo_ambiente: VARCHAR(20)</text>
+<text x="1110" y="172" font-size="11" fill="#1e293b">   nombre_ambiente: VARCHAR(100)</text>
+<text x="1110" y="189" font-size="11" fill="#1e293b">   capacidad_cupos: INTEGER</text>
+<text x="1110" y="206" font-size="11" fill="#1e293b">   subred_cidr_aula: VARCHAR(32)</text>
+<text x="1110" y="223" font-size="11" fill="#1e293b">   estado_ambiente: VARCHAR(15)</text>
+<rect x="40" y="320" width="300" height="180" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="40" y="320" width="300" height="28" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="190" y="339" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">ficha_formacion</text>
+<text x="50" y="366" font-size="11" fill="#1e293b">PK id_ficha: INTEGER</text>
+<text x="50" y="383" font-size="11" fill="#1e293b">FK id_centro: INTEGER</text>
+<text x="50" y="400" font-size="11" fill="#1e293b">FK id_instructor_lider: INTEGER</text>
+<text x="50" y="417" font-size="11" fill="#1e293b">UK numero_ficha: VARCHAR(15)</text>
+<text x="50" y="434" font-size="11" fill="#1e293b">   nombre_programa: VARCHAR(140)</text>
+<text x="50" y="451" font-size="11" fill="#1e293b">   nivel_formacion: VARCHAR(30)</text>
+<text x="50" y="468" font-size="11" fill="#1e293b">   jornada: VARCHAR(20)</text>
+<text x="50" y="485" font-size="11" fill="#1e293b">   fecha_inicio / fecha_fin: DATE</text>
+<text x="50" y="502" font-size="11" fill="#1e293b">   estado_ficha: VARCHAR(15)</text>
+<rect x="390" y="330" width="320" height="145" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<rect x="390" y="330" width="320" height="28" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="550" y="349" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">matricula_ficha (Tabla Intermedia N:M)</text>
+<text x="400" y="376" font-size="11" fill="#1e293b">PK,FK id_ficha: INTEGER</text>
+<text x="400" y="393" font-size="11" fill="#1e293b">PK,FK id_aprendiz: INTEGER</text>
+<text x="400" y="410" font-size="11" fill="#1e293b">      fecha_vinculacion: DATE</text>
+<text x="400" y="427" font-size="11" fill="#1e293b">      estado_matricula: VARCHAR(20)</text>
+<text x="400" y="444" font-size="11" fill="#1e293b">      observacion_academica: VARCHAR(200)</text>
+<rect x="760" y="300" width="300" height="185" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<rect x="760" y="300" width="300" height="28" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="910" y="319" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">sesion_asistencia</text>
+<text x="770" y="346" font-size="11" fill="#1e293b">PK id_sesion: INTEGER</text>
+<text x="770" y="363" font-size="11" fill="#1e293b">FK id_ficha: INTEGER</text>
+<text x="770" y="380" font-size="11" fill="#1e293b">FK id_instructor: INTEGER</text>
+<text x="770" y="397" font-size="11" fill="#1e293b">FK id_ambiente: INTEGER</text>
+<text x="770" y="414" font-size="11" fill="#1e293b">   fecha_sesion: DATE</text>
+<text x="770" y="431" font-size="11" fill="#1e293b">   hora_apertura / hora_cierre: TIME</text>
+<text x="770" y="448" font-size="11" fill="#1e293b">   ip_subred_aula: VARCHAR(32)</text>
+<text x="770" y="465" font-size="11" fill="#1e293b">   estado_sesion: VARCHAR(15)</text>
+<rect x="1100" y="300" width="300" height="185" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<rect x="1100" y="300" width="300" height="28" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="1250" y="319" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">token_qr_sesion</text>
+<text x="1110" y="346" font-size="11" fill="#1e293b">PK id_token_qr: INTEGER</text>
+<text x="1110" y="363" font-size="11" fill="#1e293b">FK id_sesion: INTEGER</text>
+<text x="1110" y="380" font-size="11" fill="#1e293b">   numero_secuencia: INTEGER</text>
+<text x="1110" y="397" font-size="11" fill="#1e293b">UK token_payload: VARCHAR(160)</text>
+<text x="1110" y="414" font-size="11" fill="#1e293b">   firma_hmac_sha256: VARCHAR(64)</text>
+<text x="1110" y="431" font-size="11" fill="#1e293b">   fecha_hora_emision: DATETIME</text>
+<text x="1110" y="448" font-size="11" fill="#1e293b">   fecha_hora_expiracion: DATETIME</text>
+<text x="1110" y="465" font-size="11" fill="#1e293b">   vigente: INTEGER (0/1)</text>
+<text x="1110" y="482" font-size="11" fill="#1e293b">UK (id_sesion, numero_secuencia)</text>
+<rect x="760" y="560" width="310" height="185" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<rect x="760" y="560" width="310" height="28" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="915" y="579" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">registro_asistencia</text>
+<text x="770" y="606" font-size="11" fill="#1e293b">PK id_registro: INTEGER</text>
+<text x="770" y="623" font-size="11" fill="#1e293b">FK id_sesion: INTEGER</text>
+<text x="770" y="640" font-size="11" fill="#1e293b">FK id_aprendiz: INTEGER</text>
+<text x="770" y="657" font-size="11" fill="#1e293b">   fecha_hora_marcacion: DATETIME</text>
+<text x="770" y="674" font-size="11" fill="#1e293b">   estado_asistencia: VARCHAR(20)</text>
+<text x="770" y="691" font-size="11" fill="#1e293b">   modalidad_registro: VARCHAR(20)</text>
+<text x="770" y="708" font-size="11" fill="#1e293b">   ip_origen_aprendiz: VARCHAR(45)</text>
+<text x="770" y="725" font-size="11" fill="#1e293b">   motivo_contingencia: VARCHAR(200)</text>
+<text x="770" y="742" font-size="11" fill="#1e293b">UK (id_sesion, id_aprendiz)</text>
+<rect x="1100" y="560" width="300" height="175" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+<rect x="1100" y="560" width="300" height="28" rx="6" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+<text x="1250" y="579" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">alerta_inasistencia</text>
+<text x="1110" y="606" font-size="11" fill="#1e293b">PK id_alerta: INTEGER</text>
+<text x="1110" y="623" font-size="11" fill="#1e293b">FK id_ficha: INTEGER</text>
+<text x="1110" y="640" font-size="11" fill="#1e293b">FK id_aprendiz: INTEGER</text>
+<text x="1110" y="657" font-size="11" fill="#1e293b">   fecha_generacion: DATE</text>
+<text x="1110" y="674" font-size="11" fill="#1e293b">   total_inasistencias: INTEGER</text>
+<text x="1110" y="691" font-size="11" fill="#1e293b">   nivel_riesgo: VARCHAR(20)</text>
+<text x="1110" y="708" font-size="11" fill="#1e293b">   observacion_seguimiento: VARCHAR(200)</text>
+<text x="1110" y="725" font-size="11" fill="#1e293b">   estado_alerta: VARCHAR(15)</text>
+<rect x="40" y="560" width="310" height="180" rx="6" fill="#f5f3ff" stroke="#6d28d9" stroke-width="2"/>
+<rect x="40" y="560" width="310" height="28" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+<text x="195" y="579" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">auditoria_seguridad</text>
+<text x="50" y="606" font-size="11" fill="#1e293b">PK id_auditoria: INTEGER</text>
+<text x="50" y="623" font-size="11" fill="#1e293b">FK id_usuario: INTEGER NULL</text>
+<text x="50" y="640" font-size="11" fill="#1e293b">FK id_sesion: INTEGER NULL</text>
+<text x="50" y="657" font-size="11" fill="#1e293b">   fecha_hora_evento: DATETIME</text>
+<text x="50" y="674" font-size="11" fill="#1e293b">   tipo_evento: VARCHAR(40)</text>
+<text x="50" y="691" font-size="11" fill="#1e293b">   ip_origen: VARCHAR(45)</text>
+<text x="50" y="708" font-size="11" fill="#1e293b">   detalle_evento: VARCHAR(250)</text>
+<text x="50" y="725" font-size="11" fill="#1e293b">   resultado_operacion: VARCHAR(15)</text>
+</svg>

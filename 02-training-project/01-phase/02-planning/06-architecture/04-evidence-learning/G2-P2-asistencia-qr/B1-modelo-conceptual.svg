@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 940" width="1440" height="940" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1440" height="940" fill="#ffffff"/>
+<rect x="20" y="15" width="1400" height="42" rx="6" fill="#1e3a8a"/>
+<text x="720" y="42" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Modelo Conceptual de Datos Ajustado (B1) · 9 Entidades, Cardinalidades (mín, máx), Verbos, N:M, Multivaluado y Recursiva</text>
+<line x1="360" y1="140" x2="510" y2="140" stroke="#334155" stroke-width="2"/>
+<rect x="360" y="122" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="435" y="135" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">agrupa (1:N)</text>
+<text x="368" y="134" font-size="11" font-weight="bold" fill="#b45309">(1,1)</text>
+<text x="472" y="134" font-size="11" font-weight="bold" fill="#b45309">(1,N)</text>
+<line x1="205" y1="220" x2="205" y2="340" stroke="#334155" stroke-width="2"/>
+<rect x="130" y="262" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="205" y="275" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">posee (1:N)</text>
+<text x="213" y="214" font-size="11" font-weight="bold" fill="#b45309">(1,1)</text>
+<text x="167" y="334" font-size="11" font-weight="bold" fill="#b45309">(1,N)</text>
+<line x1="870" y1="140" x2="1030" y2="140" stroke="#334155" stroke-width="2"/>
+<rect x="875" y="122" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="950" y="135" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">se_matricula (N:M)</text>
+<text x="878" y="134" font-size="11" font-weight="bold" fill="#b45309">(0,N)</text>
+<text x="992" y="134" font-size="11" font-weight="bold" fill="#b45309">(1,N)</text>
+<line x1="870" y1="200" x2="1030" y2="200" stroke="#334155" stroke-width="2"/>
+<rect x="875" y="182" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="950" y="195" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">lidera (1:N)</text>
+<text x="878" y="194" font-size="11" font-weight="bold" fill="#b45309">(1,1)</text>
+<text x="992" y="194" font-size="11" font-weight="bold" fill="#b45309">(0,N)</text>
+<line x1="360" y1="415" x2="510" y2="415" stroke="#334155" stroke-width="2"/>
+<rect x="360" y="397" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="435" y="410" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">aloja (1:N)</text>
+<text x="368" y="409" font-size="11" font-weight="bold" fill="#b45309">(1,1)</text>
+<text x="472" y="409" font-size="11" font-weight="bold" fill="#b45309">(0,N)</text>
+<line x1="1100" y1="245" x2="800" y2="340" stroke="#334155" stroke-width="2"/>
+<rect x="875" y="274" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="950" y="287" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">programa (1:N)</text>
+<text x="1108" y="239" font-size="11" font-weight="bold" fill="#b45309">(1,1)</text>
+<text x="762" y="334" font-size="11" font-weight="bold" fill="#b45309">(0,N)</text>
+<line x1="870" y1="430" x2="1030" y2="430" stroke="#334155" stroke-width="2"/>
+<rect x="875" y="412" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="950" y="425" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">genera (1:N Débil)</text>
+<text x="878" y="424" font-size="11" font-weight="bold" fill="#b45309">(1,1)</text>
+<text x="992" y="424" font-size="11" font-weight="bold" fill="#b45309">(1,N)</text>
+<line x1="690" y1="520" x2="690" y2="620" stroke="#334155" stroke-width="2"/>
+<rect x="615" y="552" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="690" y="565" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">consolida (1:N)</text>
+<text x="698" y="514" font-size="11" font-weight="bold" fill="#b45309">(1,1)</text>
+<text x="652" y="614" font-size="11" font-weight="bold" fill="#b45309">(0,N)</text>
+<line x1="560" y1="255" x2="560" y2="620" stroke="#334155" stroke-width="2"/>
+<rect x="485" y="419" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="560" y="432" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">marca (1:N)</text>
+<text x="568" y="249" font-size="11" font-weight="bold" fill="#b45309">(1,1)</text>
+<text x="522" y="614" font-size="11" font-weight="bold" fill="#b45309">(0,N)</text>
+<line x1="1200" y1="245" x2="1200" y2="620" stroke="#334155" stroke-width="2"/>
+<rect x="1125" y="414" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="1200" y="427" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">reporta (1:N)</text>
+<text x="1208" y="239" font-size="11" font-weight="bold" fill="#b45309">(1,1)</text>
+<text x="1162" y="614" font-size="11" font-weight="bold" fill="#b45309">(0,N)</text>
+<line x1="380" y1="700" x2="510" y2="480" stroke="#334155" stroke-width="2"/>
+<rect x="370" y="572" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="445" y="585" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">audita (1:N)</text>
+<text x="388" y="694" font-size="11" font-weight="bold" fill="#b45309">(0,1)</text>
+<text x="472" y="474" font-size="11" font-weight="bold" fill="#b45309">(0,N)</text>
+<rect x="50" y="80" width="310" height="140" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="50" y="80" width="310" height="28" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="205" y="99" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">CENTRO_FORMACION</text>
+<text x="60" y="126" font-size="11" fill="#1e293b">ID codigo_centro</text>
+<text x="60" y="143" font-size="11" fill="#1e293b">   nombre_centro</text>
+<text x="60" y="160" font-size="11" fill="#1e293b">   regional</text>
+<text x="60" y="177" font-size="11" fill="#1e293b">   ciudad_sede</text>
+<rect x="510" y="80" width="360" height="175" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="510" y="80" width="360" height="28" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="690" y="99" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">USUARIO (Con Multivaluado y Recursiva)</text>
+<text x="520" y="126" font-size="11" fill="#1e293b">ID numero_documento, tipo_documento</text>
+<text x="520" y="143" font-size="11" fill="#1e293b">   nombre_completo, correo_institucional</text>
+<text x="520" y="160" font-size="11" fill="#1e293b">   password_hash, rol_sistema</text>
+<text x="520" y="177" font-size="11" fill="#1e293b">   {telefonos_contacto} (Multivaluado)</text>
+<text x="520" y="194" font-size="11" fill="#1e293b">   orienta_a_vocero (Recursiva 0,1 a 0,N)</text>
+<text x="520" y="211" font-size="11" fill="#1e293b">   estado_usuario</text>
+<rect x="1030" y="80" width="350" height="165" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="1030" y="80" width="350" height="28" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="1205" y="99" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">FICHA_FORMACION</text>
+<text x="1040" y="126" font-size="11" fill="#1e293b">ID numero_ficha</text>
+<text x="1040" y="143" font-size="11" fill="#1e293b">   nombre_programa</text>
+<text x="1040" y="160" font-size="11" fill="#1e293b">   nivel_formacion, jornada</text>
+<text x="1040" y="177" font-size="11" fill="#1e293b">   fecha_inicio, fecha_fin</text>
+<text x="1040" y="194" font-size="11" fill="#1e293b">   estado_ficha</text>
+<rect x="50" y="340" width="310" height="155" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="50" y="340" width="310" height="28" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="205" y="359" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">AMBIENTE_FORMACION</text>
+<text x="60" y="386" font-size="11" fill="#1e293b">ID codigo_ambiente</text>
+<text x="60" y="403" font-size="11" fill="#1e293b">   nombre_ambiente</text>
+<text x="60" y="420" font-size="11" fill="#1e293b">   capacidad_cupos</text>
+<text x="60" y="437" font-size="11" fill="#1e293b">   subred_cidr_aula</text>
+<text x="60" y="454" font-size="11" fill="#1e293b">   estado_ambiente</text>
+<rect x="510" y="340" width="360" height="180" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<rect x="510" y="340" width="360" height="28" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="690" y="359" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">SESION_ASISTENCIA</text>
+<text x="520" y="386" font-size="11" fill="#1e293b">ID id_sesion</text>
+<text x="520" y="403" font-size="11" fill="#1e293b">   fecha_sesion</text>
+<text x="520" y="420" font-size="11" fill="#1e293b">   hora_apertura, hora_cierre</text>
+<text x="520" y="437" font-size="11" fill="#1e293b">   ip_subred_aula</text>
+<text x="520" y="454" font-size="11" fill="#1e293b">   estado_sesion</text>
+<rect x="1030" y="340" width="350" height="175" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<rect x="1030" y="340" width="350" height="28" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="1205" y="359" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">TOKEN_QR_SESION (Entidad Débil)</text>
+<text x="1040" y="386" font-size="11" fill="#1e293b">ID (id_sesion, numero_secuencia)</text>
+<text x="1040" y="403" font-size="11" fill="#1e293b">   token_payload</text>
+<text x="1040" y="420" font-size="11" fill="#1e293b">   firma_hmac_sha256</text>
+<text x="1040" y="437" font-size="11" fill="#1e293b">   fecha_hora_emision / expiracion</text>
+<text x="1040" y="454" font-size="11" fill="#1e293b">   vigente</text>
+<rect x="510" y="620" width="360" height="180" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<rect x="510" y="620" width="360" height="28" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="690" y="639" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">REGISTRO_ASISTENCIA</text>
+<text x="520" y="666" font-size="11" fill="#1e293b">ID id_registro</text>
+<text x="520" y="683" font-size="11" fill="#1e293b">   fecha_hora_marcacion</text>
+<text x="520" y="700" font-size="11" fill="#1e293b">   estado_asistencia</text>
+<text x="520" y="717" font-size="11" fill="#1e293b">   modalidad_registro</text>
+<text x="520" y="734" font-size="11" fill="#1e293b">   ip_origen_aprendiz</text>
+<text x="520" y="751" font-size="11" fill="#1e293b">   motivo_contingencia</text>
+<rect x="1030" y="620" width="350" height="175" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+<rect x="1030" y="620" width="350" height="28" rx="6" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+<text x="1205" y="639" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">ALERTA_INASISTENCIA</text>
+<text x="1040" y="666" font-size="11" fill="#1e293b">ID id_alerta</text>
+<text x="1040" y="683" font-size="11" fill="#1e293b">   fecha_generacion</text>
+<text x="1040" y="700" font-size="11" fill="#1e293b">   total_inasistencias</text>
+<text x="1040" y="717" font-size="11" fill="#1e293b">   nivel_riesgo</text>
+<text x="1040" y="734" font-size="11" fill="#1e293b">   observacion_seguimiento, estado_alerta</text>
+<rect x="50" y="620" width="330" height="175" rx="6" fill="#f5f3ff" stroke="#6d28d9" stroke-width="2"/>
+<rect x="50" y="620" width="330" height="28" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+<text x="215" y="639" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">AUDITORIA_SEGURIDAD</text>
+<text x="60" y="666" font-size="11" fill="#1e293b">ID id_auditoria</text>
+<text x="60" y="683" font-size="11" fill="#1e293b">   fecha_hora_evento</text>
+<text x="60" y="700" font-size="11" fill="#1e293b">   tipo_evento</text>
+<text x="60" y="717" font-size="11" fill="#1e293b">   ip_origen</text>
+<text x="60" y="734" font-size="11" fill="#1e293b">   detalle_evento</text>
+<text x="60" y="751" font-size="11" fill="#1e293b">   resultado_operacion</text>
+</svg>
