@@ -1,0 +1,191 @@
+classDiagram
+  class Usuario {
+    <<abstract>>
+    #idUsuario: int
+    #tipoDocumento: str
+    #numeroDocumento: str
+    #nombreCompleto: str
+    #correoInstitucional: str
+    -passwordHash: str
+    #estadoUsuario: str
+    +autenticar(passwordPlano: str) bool
+    +esActivo() bool
+    +obtenerRol()* str
+  }
+
+  class Administrador {
+    -cargoCoordinacion: str
+    -dependenciaCentro: str
+    +obtenerRol() str
+    +autorizarCreacionFicha(codigo: str) bool
+  }
+
+  class Instructor {
+    -especialidadTecnica: str
+    -tipoVinculacion: str
+    +obtenerRol() str
+    +puedeAperturarFicha(idFicha: int) bool
+  }
+
+  class Aprendiz {
+    -etapaFormacion: str
+    -esVocero: bool
+    -idVoceroOrientador: Optional~int~
+    +obtenerRol() str
+    +solicitarMarcacionQR(token: str, ipOrigen: str) SolicitudEscaneo
+  }
+
+  class FichaFormacion {
+    -idFicha: int
+    -numeroFicha: str
+    -nombrePrograma: str
+    -jornada: str
+    -fechaInicio: date
+    -fechaFin: date
+    -estadoFicha: str
+    +estaVigente(fechaActual: date) bool
+    +contarAprendicesActivos() int
+  }
+
+  class MatriculaFicha {
+    -idFicha: int
+    -idAprendiz: int
+    -fechaVinculacion: date
+    -estadoMatricula: str
+    +activarMatricula() void
+    +retirarAprendiz(motivo: str) void
+  }
+
+  class AmbienteFormacion {
+    -idAmbiente: int
+    -codigoAmbiente: str
+    -nombreAmbiente: str
+    -capacidadCupos: int
+    -subredCidrAula: str
+    +perteneceASubred(ipCliente: str) bool
+  }
+
+  class SesionAsistencia {
+    -idSesion: int
+    -idFicha: int
+    -idInstructor: int
+    -idAmbiente: int
+    -fechaSesion: date
+    -horaApertura: time
+    -horaCierre: Optional~time~
+    -ipSubredAula: str
+    -estadoSesion: str
+    +activarSesion() void
+    +rotarTokenQR(secretoHmac: str) TokenQRSesion
+    +cerrarSesion(horaFin: time) int
+  }
+
+  class TokenQRSesion {
+    -idTokenQr: int
+    -idSesion: int
+    -numeroSecuencia: int
+    -tokenPayload: str
+    -firmaHmacSha256: str
+    -fechaHoraEmision: datetime
+    -fechaHoraExpiracion: datetime
+    -vigente: bool
+    +estaVigente(ahora: datetime) bool
+    +verificarFirma(secretoHmac: str) bool
+  }
+
+  class RegistroAsistencia {
+    -idRegistro: int
+    -idSesion: int
+    -idAprendiz: int
+    -fechaHoraMarcacion: datetime
+    -estadoAsistencia: str
+    -modalidadRegistro: str
+    -ipOrigenAprendiz: str
+    -motivoContingencia: Optional~str~
+    +marcarContingencia(motivo: str, idInstructor: int) void
+    +esPresente() bool
+  }
+
+  class AlertaInasistencia {
+    -idAlerta: int
+    -idFicha: int
+    -idAprendiz: int
+    -fechaGeneracion: date
+    -totalInasistencias: int
+    -nivelRiesgo: str
+    -estadoAlerta: str
+    +superaUmbralCritico() bool
+    +registrarSeguimiento(nota: str) void
+  }
+
+  class IReglaValidacionAsistencia {
+    <<interface>>
+    +validar(solicitud: SolicitudEscaneo, sesion: SesionAsistencia) ResultadoValidacion
+  }
+
+  class ValidadorFirmaHMAC {
+    -secretoServidor: str
+    -toleranciaSegundos: int
+    +validar(solicitud: SolicitudEscaneo, sesion: SesionAsistencia) ResultadoValidacion
+  }
+
+  class ValidadorSubredIP {
+    -mascaraPrefijo: int
+    +validar(solicitud: SolicitudEscaneo, sesion: SesionAsistencia) ResultadoValidacion
+  }
+
+  class ValidadorUnicidadSesion {
+    +validar(solicitud: SolicitudEscaneo, sesion: SesionAsistencia) ResultadoValidacion
+  }
+
+  class ServicioControlAsistencia {
+    -reglasValidacion: List~IReglaValidacionAsistencia~
+    +aperturarSesion(idFicha: int, idInst: int, idAmb: int, ip: str) SesionAsistencia
+    +procesarEscaneoQR(solicitud: SolicitudEscaneo) RegistroAsistencia
+    +cerrarYConsolidarFallas(idSesion: int) List~AlertaInasistencia~
+  }
+
+  class IExportadorReporte {
+    <<interface>>
+    +exportar(registros: List~RegistroAsistencia~) bytes
+  }
+
+  class ExportadorCSV {
+    -delimitador: str
+    +exportar(registros: List~RegistroAsistencia~) bytes
+  }
+
+  class ExportadorExcel {
+    -incluirHojaAlertas: bool
+    +exportar(registros: List~RegistroAsistencia~) bytes
+  }
+
+  class FabricaExportadorReporte {
+    +crearExportador(formato: str) IExportadorReporte
+  }
+
+  Usuario <|-- Administrador
+  Usuario <|-- Instructor
+  Usuario <|-- Aprendiz
+
+  Instructor "1" --> "1..*" FichaFormacion : lidera
+  FichaFormacion "1" o-- "1..*" MatriculaFicha : agrupa
+  Aprendiz "1" --> "0..*" MatriculaFicha : posee
+  Instructor "1" --> "0..*" SesionAsistencia : dirige
+  FichaFormacion "1" --> "0..*" SesionAsistencia : desarrolla
+  AmbienteFormacion "1" --> "0..*" SesionAsistencia : aloja
+
+  SesionAsistencia "1" *-- "1..*" TokenQRSesion : compone
+  SesionAsistencia "1" *-- "0..*" RegistroAsistencia : compone
+  Aprendiz "1" --> "0..*" RegistroAsistencia : registra
+  Aprendiz "1" --> "0..*" AlertaInasistencia : acumula
+  FichaFormacion "1" --> "0..*" AlertaInasistencia : reporta
+
+  ServicioControlAsistencia "1" o-- "1..*" IReglaValidacionAsistencia : ejecuta estrategias
+  IReglaValidacionAsistencia <|.. ValidadorFirmaHMAC
+  IReglaValidacionAsistencia <|.. ValidadorSubredIP
+  IReglaValidacionAsistencia <|.. ValidadorUnicidadSesion
+
+  FabricaExportadorReporte ..> IExportadorReporte : instancia
+  IExportadorReporte <|.. ExportadorCSV
+  IExportadorReporte <|.. ExportadorExcel

@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 920" width="1440" height="920" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1440" height="920" fill="#ffffff"/>
+<rect x="20" y="15" width="1400" height="42" rx="6" fill="#1e3a8a"/>
+<text x="720" y="42" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Diagrama de Clases de Diseño UML (A2) · Herencia, Composición, Agregación, Polimorfismo y Patrones GoF</text>
+<line x1="155" y1="260" x2="155" y2="220" stroke="#334155" stroke-width="2"/>
+<rect x="80" y="222" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="155" y="235" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle"><|-- Herencia</text>
+<line x1="350" y1="260" x2="250" y2="220" stroke="#334155" stroke-width="2"/>
+<rect x="225" y="222" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="300" y="235" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle"><|-- Herencia</text>
+<line x1="90" y1="385" x2="90" y2="220" stroke="#334155" stroke-width="2"/>
+<rect x="15" y="284" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="90" y="297" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle"><|-- Herencia</text>
+<line x1="450" y1="260" x2="450" y2="205" stroke="#334155" stroke-width="2"/>
+<rect x="375" y="214" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="450" y="227" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">lidera</text>
+<text x="458" y="254" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="412" y="199" font-size="11" font-weight="bold" fill="#b45309">1..*</text>
+<line x1="480" y1="205" x2="450" y2="385" stroke="#334155" stroke-width="2"/>
+<rect x="390" y="277" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="465" y="290" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">o-- Agrega</text>
+<text x="488" y="199" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="412" y="379" font-size="11" font-weight="bold" fill="#b45309">1..*</text>
+<line x1="290" y1="435" x2="330" y2="435" stroke="#334155" stroke-width="2"/>
+<rect x="235" y="417" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="310" y="430" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">cursa</text>
+<text x="298" y="429" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="292" y="429" font-size="11" font-weight="bold" fill="#b45309">0..*</text>
+<line x1="770" y1="205" x2="770" y2="260" stroke="#334155" stroke-width="2"/>
+<rect x="695" y="214" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="770" y="227" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">aloja</text>
+<text x="778" y="199" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="732" y="254" font-size="11" font-weight="bold" fill="#b45309">0..*</text>
+<line x1="640" y1="140" x2="680" y2="260" stroke="#334155" stroke-width="2"/>
+<rect x="585" y="182" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="660" y="195" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">desarrolla</text>
+<text x="648" y="134" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="642" y="254" font-size="11" font-weight="bold" fill="#b45309">0..*</text>
+<line x1="765" y1="405" x2="765" y2="445" stroke="#334155" stroke-width="2"/>
+<rect x="690" y="407" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="765" y="420" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">*-- Compone</text>
+<text x="773" y="399" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="727" y="439" font-size="11" font-weight="bold" fill="#b45309">1..*</text>
+<line x1="765" y1="575" x2="765" y2="610" stroke="#334155" stroke-width="2"/>
+<rect x="690" y="574" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="765" y="587" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">*-- Compone</text>
+<text x="773" y="569" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="727" y="604" font-size="11" font-weight="bold" fill="#b45309">0..*</text>
+<line x1="175" y1="490" x2="175" y2="530" stroke="#334155" stroke-width="2"/>
+<rect x="100" y="492" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="175" y="505" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">acumula</text>
+<text x="183" y="484" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="137" y="524" font-size="11" font-weight="bold" fill="#b45309">0..*</text>
+<line x1="930" y1="310" x2="980" y2="140" stroke="#334155" stroke-width="2"/>
+<rect x="880" y="207" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="955" y="220" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">gestiona</text>
+<text x="938" y="304" font-size="11" font-weight="bold" fill="#b45309">0..*</text>
+<text x="942" y="134" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<line x1="1170" y1="200" x2="1170" y2="240" stroke="#334155" stroke-width="2"/>
+<rect x="1095" y="202" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="1170" y="215" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">o-- Estrategias</text>
+<text x="1178" y="194" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="1132" y="234" font-size="11" font-weight="bold" fill="#b45309">1..*</text>
+<line x1="1070" y1="370" x2="1100" y2="335" stroke="#334155" stroke-width="2"/>
+<rect x="1010" y="334" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="1085" y="347" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle"><|.. Implementa</text>
+<line x1="1270" y1="370" x2="1240" y2="335" stroke="#334155" stroke-width="2"/>
+<rect x="1180" y="334" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="1255" y="347" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle"><|.. Implementa</text>
+<line x1="1170" y1="485" x2="1170" y2="335" stroke="#334155" stroke-width="2"/>
+<rect x="1095" y="392" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="1170" y="405" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle"><|.. Implementa</text>
+<line x1="580" y1="660" x2="980" y2="645" stroke="#334155" stroke-width="2"/>
+<rect x="705" y="634" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="780" y="647" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">..> Instancia</text>
+<line x1="1070" y1="725" x2="1100" y2="695" stroke="#334155" stroke-width="2"/>
+<rect x="1010" y="692" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="1085" y="705" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle"><|.. Implementa</text>
+<line x1="1270" y1="725" x2="1240" y2="695" stroke="#334155" stroke-width="2"/>
+<rect x="1180" y="692" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="1255" y="705" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle"><|.. Implementa</text>
+<rect x="40" y="75" width="290" height="145" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="40" y="75" width="290" height="28" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="185" y="94" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle"><<abstract>> Usuario</text>
+<text x="50" y="121" font-size="11" fill="#1e293b">#idUsuario: int</text>
+<text x="50" y="138" font-size="11" fill="#1e293b">#numeroDocumento: str</text>
+<text x="50" y="155" font-size="11" fill="#1e293b">#nombreCompleto: str</text>
+<text x="50" y="172" font-size="11" fill="#1e293b">-passwordHash: str</text>
+<text x="50" y="189" font-size="11" fill="#1e293b">+autenticar(pass: str): bool</text>
+<text x="50" y="206" font-size="11" fill="#1e293b">+obtenerRol(): str*</text>
+<rect x="40" y="260" width="230" height="95" rx="6" fill="#ffffff" stroke="#0369a1" stroke-width="2"/>
+<rect x="40" y="260" width="230" height="28" rx="6" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="155" y="279" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Administrador</text>
+<text x="50" y="306" font-size="11" fill="#1e293b">-cargoCoordinacion: str</text>
+<text x="50" y="323" font-size="11" fill="#1e293b">+obtenerRol(): str</text>
+<text x="50" y="340" font-size="11" fill="#1e293b">+autorizarFicha(): bool</text>
+<rect x="290" y="260" width="230" height="95" rx="6" fill="#ffffff" stroke="#0369a1" stroke-width="2"/>
+<rect x="290" y="260" width="230" height="28" rx="6" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="405" y="279" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Instructor</text>
+<text x="300" y="306" font-size="11" fill="#1e293b">-especialidadTecnica: str</text>
+<text x="300" y="323" font-size="11" fill="#1e293b">+obtenerRol(): str</text>
+<text x="300" y="340" font-size="11" fill="#1e293b">+puedeAperturar(): bool</text>
+<rect x="40" y="385" width="250" height="105" rx="6" fill="#ffffff" stroke="#0369a1" stroke-width="2"/>
+<rect x="40" y="385" width="250" height="28" rx="6" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="165" y="404" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Aprendiz</text>
+<text x="50" y="431" font-size="11" fill="#1e293b">-etapaFormacion: str</text>
+<text x="50" y="448" font-size="11" fill="#1e293b">-esVocero: bool</text>
+<text x="50" y="465" font-size="11" fill="#1e293b">+obtenerRol(): str</text>
+<text x="50" y="482" font-size="11" fill="#1e293b">+solicitarMarcacionQR()</text>
+<rect x="370" y="75" width="270" height="130" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="370" y="75" width="270" height="28" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="505" y="94" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">FichaFormacion</text>
+<text x="380" y="121" font-size="11" fill="#1e293b">-idFicha: int</text>
+<text x="380" y="138" font-size="11" fill="#1e293b">-numeroFicha: str</text>
+<text x="380" y="155" font-size="11" fill="#1e293b">-nombrePrograma: str</text>
+<text x="380" y="172" font-size="11" fill="#1e293b">+estaVigente(): bool</text>
+<text x="380" y="189" font-size="11" fill="#1e293b">+contarAprendices(): int</text>
+<rect x="330" y="385" width="250" height="105" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<rect x="330" y="385" width="250" height="28" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="455" y="404" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">MatriculaFicha</text>
+<text x="340" y="431" font-size="11" fill="#1e293b">-idFicha: int</text>
+<text x="340" y="448" font-size="11" fill="#1e293b">-idAprendiz: int</text>
+<text x="340" y="465" font-size="11" fill="#1e293b">-estadoMatricula: str</text>
+<text x="340" y="482" font-size="11" fill="#1e293b">+activarMatricula(): void</text>
+<rect x="680" y="75" width="270" height="130" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="680" y="75" width="270" height="28" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="815" y="94" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">AmbienteFormacion</text>
+<text x="690" y="121" font-size="11" fill="#1e293b">-idAmbiente: int</text>
+<text x="690" y="138" font-size="11" fill="#1e293b">-codigoAmbiente: str</text>
+<text x="690" y="155" font-size="11" fill="#1e293b">-subredCidrAula: str</text>
+<text x="690" y="172" font-size="11" fill="#1e293b">+perteneceASubred(ip): bool</text>
+<rect x="610" y="260" width="320" height="145" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<rect x="610" y="260" width="320" height="28" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="770" y="279" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">SesionAsistencia</text>
+<text x="620" y="306" font-size="11" fill="#1e293b">-idSesion: int</text>
+<text x="620" y="323" font-size="11" fill="#1e293b">-fechaSesion: date</text>
+<text x="620" y="340" font-size="11" fill="#1e293b">-ipSubredAula: str</text>
+<text x="620" y="357" font-size="11" fill="#1e293b">-estadoSesion: str</text>
+<text x="620" y="374" font-size="11" fill="#1e293b">+activarSesion(): void</text>
+<text x="620" y="391" font-size="11" fill="#1e293b">+rotarTokenQR(): TokenQRSesion</text>
+<text x="620" y="408" font-size="11" fill="#1e293b">+cerrarSesion(): int</text>
+<rect x="610" y="445" width="310" height="130" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<rect x="610" y="445" width="310" height="28" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="765" y="464" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">TokenQRSesion (Composición *--)</text>
+<text x="620" y="491" font-size="11" fill="#1e293b">-idTokenQr: int</text>
+<text x="620" y="508" font-size="11" fill="#1e293b">-numeroSecuencia: int</text>
+<text x="620" y="525" font-size="11" fill="#1e293b">-firmaHmacSha256: str</text>
+<text x="620" y="542" font-size="11" fill="#1e293b">+estaVigente(): bool</text>
+<text x="620" y="559" font-size="11" fill="#1e293b">+verificarFirma(): bool</text>
+<rect x="610" y="610" width="310" height="135" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<rect x="610" y="610" width="310" height="28" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="765" y="629" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">RegistroAsistencia (Composición *--)</text>
+<text x="620" y="656" font-size="11" fill="#1e293b">-idRegistro: int</text>
+<text x="620" y="673" font-size="11" fill="#1e293b">-fechaHoraMarcacion: datetime</text>
+<text x="620" y="690" font-size="11" fill="#1e293b">-estadoAsistencia: str</text>
+<text x="620" y="707" font-size="11" fill="#1e293b">-ipOrigenAprendiz: str</text>
+<text x="620" y="724" font-size="11" fill="#1e293b">+marcarContingencia(): void</text>
+<rect x="40" y="530" width="270" height="120" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+<rect x="40" y="530" width="270" height="28" rx="6" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+<text x="175" y="549" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">AlertaInasistencia</text>
+<text x="50" y="576" font-size="11" fill="#1e293b">-idAlerta: int</text>
+<text x="50" y="593" font-size="11" fill="#1e293b">-totalInasistencias: int</text>
+<text x="50" y="610" font-size="11" fill="#1e293b">-nivelRiesgo: str</text>
+<text x="50" y="627" font-size="11" fill="#1e293b">+superaUmbralCritico(): bool</text>
+<rect x="980" y="75" width="380" height="125" rx="6" fill="#f5f3ff" stroke="#6d28d9" stroke-width="2"/>
+<rect x="980" y="75" width="380" height="28" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+<text x="1170" y="94" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">ServicioControlAsistencia (Contexto Strategy)</text>
+<text x="990" y="121" font-size="11" fill="#1e293b">-reglas: List<IReglaValidacionAsistencia></text>
+<text x="990" y="138" font-size="11" fill="#1e293b">+aperturarSesion(): SesionAsistencia</text>
+<text x="990" y="155" font-size="11" fill="#1e293b">+procesarEscaneoQR(): RegistroAsistencia</text>
+<text x="990" y="172" font-size="11" fill="#1e293b">+cerrarYConsolidarFallas(): List<Alerta></text>
+<rect x="980" y="240" width="380" height="95" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<rect x="980" y="240" width="380" height="28" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="1170" y="259" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle"><<interface>> IReglaValidacionAsistencia</text>
+<text x="990" y="286" font-size="11" fill="#1e293b">+validar(sol: SolicitudEscaneo,</text>
+<text x="990" y="303" font-size="11" fill="#1e293b">         ses: SesionAsistencia): Resultado</text>
+<rect x="980" y="370" width="180" height="95" rx="6" fill="#f8fafc" stroke="#0369a1" stroke-width="2"/>
+<rect x="980" y="370" width="180" height="28" rx="6" fill="#ffffff" stroke="#0369a1" stroke-width="2"/>
+<text x="1070" y="389" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">ValidadorFirmaHMAC</text>
+<text x="990" y="416" font-size="11" fill="#1e293b">-secretoServidor: str</text>
+<text x="990" y="433" font-size="11" fill="#1e293b">+validar(): Resultado</text>
+<rect x="1180" y="370" width="180" height="95" rx="6" fill="#f8fafc" stroke="#0369a1" stroke-width="2"/>
+<rect x="1180" y="370" width="180" height="28" rx="6" fill="#ffffff" stroke="#0369a1" stroke-width="2"/>
+<text x="1270" y="389" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">ValidadorSubredIP</text>
+<text x="1190" y="416" font-size="11" fill="#1e293b">-mascaraPrefijo: int</text>
+<text x="1190" y="433" font-size="11" fill="#1e293b">+validar(): Resultado</text>
+<rect x="980" y="485" width="380" height="80" rx="6" fill="#f8fafc" stroke="#0369a1" stroke-width="2"/>
+<rect x="980" y="485" width="380" height="28" rx="6" fill="#ffffff" stroke="#0369a1" stroke-width="2"/>
+<text x="1170" y="504" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">ValidadorUnicidadSesion</text>
+<text x="990" y="531" font-size="11" fill="#1e293b">+validar(sol, ses): Resultado</text>
+<rect x="980" y="600" width="380" height="95" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<rect x="980" y="600" width="380" height="28" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="1170" y="619" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle"><<interface>> IExportadorReporte (Factory)</text>
+<text x="990" y="646" font-size="11" fill="#1e293b">+exportar(reg: List<Registro>): bytes</text>
+<rect x="980" y="725" width="180" height="90" rx="6" fill="#f8fafc" stroke="#15803d" stroke-width="2"/>
+<rect x="980" y="725" width="180" height="28" rx="6" fill="#ffffff" stroke="#15803d" stroke-width="2"/>
+<text x="1070" y="744" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">ExportadorCSV</text>
+<text x="990" y="771" font-size="11" fill="#1e293b">-delimitador: str</text>
+<text x="990" y="788" font-size="11" fill="#1e293b">+exportar(): bytes</text>
+<rect x="1180" y="725" width="180" height="90" rx="6" fill="#f8fafc" stroke="#15803d" stroke-width="2"/>
+<rect x="1180" y="725" width="180" height="28" rx="6" fill="#ffffff" stroke="#15803d" stroke-width="2"/>
+<text x="1270" y="744" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">ExportadorExcel</text>
+<text x="1190" y="771" font-size="11" fill="#1e293b">-hojaAlertas: bool</text>
+<text x="1190" y="788" font-size="11" fill="#1e293b">+exportar(): bytes</text>
+<rect x="330" y="610" width="250" height="110" rx="6" fill="#f5f3ff" stroke="#6d28d9" stroke-width="2"/>
+<rect x="330" y="610" width="250" height="28" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+<text x="455" y="629" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">FabricaExportadorReporte</text>
+<text x="340" y="656" font-size="11" fill="#1e293b">+crearExportador(fmt: str):</text>
+<text x="340" y="673" font-size="11" fill="#1e293b">   IExportadorReporte</text>
+</svg>
