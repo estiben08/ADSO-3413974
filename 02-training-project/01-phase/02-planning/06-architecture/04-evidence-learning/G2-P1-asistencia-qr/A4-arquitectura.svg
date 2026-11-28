@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 920" width="1440" height="920" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1440" height="920" fill="#ffffff"/>
+<rect x="20" y="15" width="1400" height="42" rx="6" fill="#1e3a8a"/>
+<text x="720" y="42" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Arquitectura del Software en 3 Capas (A4) · Separación Estricta sin Capas Saltadas</text>
+<line x1="700" y1="270" x2="700" y2="325" stroke="#334155" stroke-width="2"/>
+<rect x="625" y="279" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="700" y="292" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">Llamadas por Interfaces de Servicio</text>
+<line x1="440" y1="540" x2="440" y2="595" stroke="#334155" stroke-width="2"/>
+<rect x="365" y="549" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="440" y="562" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">Invocación a Repositorios (IRepositorioDatos)</text>
+<line x1="820" y1="685" x2="900" y2="685" stroke="#334155" stroke-width="2"/>
+<rect x="785" y="667" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="860" y="680" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">TCP 3306 Pool</text>
+<text x="828" y="679" font-size="11" font-weight="bold" fill="#b45309">1</text>
+<text x="862" y="679" font-size="11" font-weight="bold" fill="#b45309">20</text>
+<rect x="60" y="80" width="1280" height="190" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="60" y="80" width="1280" height="28" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="700" y="99" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">CAPA 1: PRESENTACIÓN (Vistas Web Responsivas Mobile-First + Controladores HTTP/REST)</text>
+<text x="70" y="126" font-size="11" fill="#1e293b">• Vista Aula Instructor (Proyección QR rotativo 30 s + Tablero en vivo AJAX 10 s)   |   • Vista Móvil Aprendiz (Escaneo QR en navegador + Comprobante)</text>
+<text x="70" y="143" font-size="11" fill="#1e293b">• Vista Administración y Reportes (Gestión de Fichas/Usuarios + Descarga CSV/Excel)</text>
+<text x="70" y="160" font-size="11" fill="#1e293b">• Controladores HTTP (Flask Blueprints): AuthController, CatalogoController, SesionQRController, AsistenciaController, ReporteController</text>
+<text x="70" y="177" font-size="11" fill="#1e293b">  [ Regla: Reciben peticiones HTTPS/JSON, validan formato sintáctico y delegan 100 % a la Capa 2. Cero acceso a BD ]</text>
+<rect x="60" y="325" width="1280" height="215" rx="6" fill="#f5f3ff" stroke="#6d28d9" stroke-width="2"/>
+<rect x="60" y="325" width="1280" height="28" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+<text x="700" y="344" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">CAPA 2: LÓGICA DE NEGOCIO Y SERVICIOS DE DOMINIO (Fachada, Patrones GoF y Entidades)</text>
+<text x="70" y="371" font-size="11" fill="#1e293b">• Fachada de Negocio: ServicioControlAsistencia (coordina apertura de sesión, rotación QR, validación de escaneo y cierre con alertas)</text>
+<text x="70" y="388" font-size="11" fill="#1e293b">• Patrón Estrategia: IReglaValidacionAsistencia -> [ ValidadorFirmaHMAC | ValidadorSubredIP | ValidadorUnicidadSesion ]</text>
+<text x="70" y="405" font-size="11" fill="#1e293b">• Patrón Método Fábrica: FabricaExportadorReporte -> IExportadorReporte -> [ ExportadorCSV (Streaming) | ExportadorExcel ]</text>
+<text x="70" y="422" font-size="11" fill="#1e293b">• Entidades de Dominio: Usuario (Administrador, Instructor, Aprendiz), FichaFormacion, AmbienteFormacion, SesionAsistencia, TokenQRSesion, RegistroAsistencia, AlertaInasistencia</text>
+<rect x="60" y="595" width="760" height="185" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<rect x="60" y="595" width="760" height="28" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="440" y="614" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">CAPA 3: ACCESO A DATOS Y PERSISTENCIA (Repositorios + Connection Pool)</text>
+<text x="70" y="641" font-size="11" fill="#1e293b">• Interfaz IRepositorioDatos y Repositorios SQL Parametrizados:</text>
+<text x="70" y="658" font-size="11" fill="#1e293b">  RepositorioUsuario, RepositorioFicha, RepositorioSesion, RepositorioAsistencia, RepositorioAuditoria</text>
+<text x="70" y="675" font-size="11" fill="#1e293b">• Piscina de Conexiones: MySQLConnectionPool (20 conexiones activas reutilizables - RNF-01)</text>
+<text x="70" y="692" font-size="11" fill="#1e293b">  [ Sentencias SQL 100 % parametrizadas contra Inyección SQL - RNF-02 ]</text>
+<rect x="900" y="595" width="440" height="185" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<rect x="900" y="595" width="440" height="28" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="1120" y="614" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">MOTOR DE BASE DE DATOS RELACIONAL (Red Privada)</text>
+<text x="910" y="641" font-size="11" fill="#1e293b">• Motor: MySQL 8.0 (TCP/3306 red interna)</text>
+<text x="910" y="658" font-size="11" fill="#1e293b">• 11 Tablas Normalizadas en 3FN</text>
+<text x="910" y="675" font-size="11" fill="#1e293b">• Restricciones ACID, PK, FK (ON DELETE RESTRICT)</text>
+<text x="910" y="692" font-size="11" fill="#1e293b">• Índice único uk_sesion_aprendiz y CHECKs</text>
+</svg>
