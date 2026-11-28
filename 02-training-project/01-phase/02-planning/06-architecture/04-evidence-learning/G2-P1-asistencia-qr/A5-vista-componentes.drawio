@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" modified="2026-11-24T15:30:00.000Z" agent="Draw.io" version="24.0.0" type="device">
+  <diagram id="cu-asistencia-qr" name="Vista de Componentes UML (A5) · 7 Componentes con Interfaces Provistas (○) y Requeridas (-( )">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- Frontera del sistema -->
+        <mxCell id="sys" value="Sistema de Control de Asistencia QR SENA (asistencia-qr)" style="swimlane;whiteSpace=wrap;html=1;startSize=35;fillColor=#f8fafc;strokeColor=#1e3a8a;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="260" y="40" width="880" height="860" as="geometry" />
+        </mxCell>
+        <!-- Casos de uso dentro de la frontera -->
+        <mxCell id="cu01" value="CU-01 Autenticar usuario" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#1d4ed8;fontStyle=1;" vertex="1" parent="sys">
+          <mxGeometry x="80" y="60" width="230" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="cu02" value="CU-02 Gestionar catálogo académico y usuarios" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#1d4ed8;fontStyle=1;" vertex="1" parent="sys">
+          <mxGeometry x="80" y="160" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cu03" value="CU-03 Aperturar sesión de asistencia" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#1d4ed8;fontStyle=1;" vertex="1" parent="sys">
+          <mxGeometry x="80" y="280" width="250" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cu04" value="CU-04 Generar token QR dinámico firmado" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0369a1;fontStyle=1;" vertex="1" parent="sys">
+          <mxGeometry x="520" y="280" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cu05" value="CU-05 Registrar asistencia por escaneo QR" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#1d4ed8;fontStyle=1;" vertex="1" parent="sys">
+          <mxGeometry x="80" y="410" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cu06" value="CU-06 Validar subred IP y firma del código QR" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0369a1;fontStyle=1;" vertex="1" parent="sys">
+          <mxGeometry x="520" y="410" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cu08" value="CU-08 Monitorear asistencia y cerrar sesión&#xa;---&#xa;Puntos de extensión:&#xa;• Excepción dispositivo en aula&#xa;• Consolidación inasistencias al cierre" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#1d4ed8;fontStyle=1;fontSize=11;" vertex="1" parent="sys">
+          <mxGeometry x="70" y="540" width="290" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="cu07" value="CU-07 Registrar asistencia manual por contingencia" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#b45309;fontStyle=1;" vertex="1" parent="sys">
+          <mxGeometry x="520" y="520" width="290" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cu10" value="CU-10 Generar alerta temprana de inasistencia" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#b45309;fontStyle=1;" vertex="1" parent="sys">
+          <mxGeometry x="520" y="635" width="290" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cu09" value="CU-09 Exportar reporte histórico de asistencia" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#1d4ed8;fontStyle=1;" vertex="1" parent="sys">
+          <mxGeometry x="80" y="730" width="270" height="70" as="geometry" />
+        </mxCell>
+        <!-- Relaciones include y extend -->
+        <mxCell id="inc1" value="&amp;laquo;include&amp;raquo;" style="endArrow=open;endSize=12;dashed=1;html=1;strokeColor=#0369a1;fontStyle=1;" edge="1" parent="sys" source="cu03" target="cu04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc2" value="&amp;laquo;include&amp;raquo;" style="endArrow=open;endSize=12;dashed=1;html=1;strokeColor=#0369a1;fontStyle=1;" edge="1" parent="sys" source="cu05" target="cu06">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext1" value="&amp;laquo;extend&amp;raquo;&#xa;[aprendiz sin celular / falla cámara]" style="endArrow=open;endSize=12;dashed=1;html=1;strokeColor=#b45309;fontStyle=1;" edge="1" parent="sys" source="cu07" target="cu08">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext2" value="&amp;laquo;extend&amp;raquo;&#xa;[inasistencias &gt;= 3]" style="endArrow=open;endSize=12;dashed=1;html=1;strokeColor=#b45309;fontStyle=1;" edge="1" parent="sys" source="cu10" target="cu08">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Actores fuera de la frontera -->
+        <mxCell id="act_adm" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeColor=#1e293b;fillColor=#e2e8f0;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="130" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="act_ins" value="Instructor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeColor=#1e293b;fillColor=#e2e8f0;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="380" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="act_apr" value="Aprendiz" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeColor=#1e293b;fillColor=#e2e8f0;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="600" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="act_tmp" value="Temporizador&#xa;del Sistema" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeColor=#0369a1;fillColor=#e0f2fe;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="310" width="40" height="80" as="geometry" />
+        </mxCell>
+        <!-- Asociaciones Actor - Caso de Uso -->
+        <mxCell id="e1" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="act_adm" target="cu01"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="act_adm" target="cu02"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="act_adm" target="cu09"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="act_ins" target="cu01"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="act_ins" target="cu03"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="act_ins" target="cu08"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="act_ins" target="cu09"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="act_apr" target="cu01"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" style="endArrow=none;html=1;strokeColor=#334155;" edge="1" parent="1" source="act_apr" target="cu05"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" style="endArrow=none;html=1;strokeColor=#0369a1;" edge="1" parent="1" source="act_tmp" target="cu04"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

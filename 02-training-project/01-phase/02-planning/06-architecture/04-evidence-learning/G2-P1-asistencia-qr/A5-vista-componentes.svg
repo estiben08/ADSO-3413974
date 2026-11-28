@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 920" width="1440" height="920" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1440" height="920" fill="#ffffff"/>
+<rect x="20" y="15" width="1400" height="42" rx="6" fill="#1e3a8a"/>
+<text x="720" y="42" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Vista de Componentes UML (A5) · 7 Componentes con Interfaces Provistas (○) y Requeridas (-( )</text>
+<line x1="340" y1="300" x2="460" y2="140" stroke="#334155" stroke-width="2"/>
+<rect x="325" y="202" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="400" y="215" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">-( IAutenticacion ○</text>
+<line x1="340" y1="340" x2="460" y2="295" stroke="#334155" stroke-width="2"/>
+<rect x="325" y="299" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="400" y="312" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">-( IGestionAcademica ○</text>
+<line x1="340" y1="380" x2="460" y2="455" stroke="#334155" stroke-width="2"/>
+<rect x="325" y="399" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="400" y="412" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">-( ISesionQR ○</text>
+<line x1="340" y1="420" x2="460" y2="620" stroke="#334155" stroke-width="2"/>
+<rect x="325" y="502" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="400" y="515" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">-( IRegistroAsistencia ○</text>
+<line x1="340" y1="460" x2="460" y2="790" stroke="#334155" stroke-width="2"/>
+<rect x="325" y="607" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="400" y="620" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">-( IReportesAlertas ○</text>
+<line x1="640" y1="550" x2="640" y2="520" stroke="#334155" stroke-width="2"/>
+<rect x="565" y="517" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="640" y="530" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">-( ISesionQR</text>
+<line x1="820" y1="140" x2="980" y2="320" stroke="#334155" stroke-width="2"/>
+<rect x="825" y="212" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="900" y="225" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">-( IRepositorioDatos ○</text>
+<line x1="820" y1="295" x2="980" y2="360" stroke="#334155" stroke-width="2"/>
+<rect x="825" y="309" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="900" y="322" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">-( IRepositorioDatos ○</text>
+<line x1="820" y1="455" x2="980" y2="400" stroke="#334155" stroke-width="2"/>
+<rect x="825" y="409" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="900" y="422" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">-( IRepositorioDatos ○</text>
+<line x1="820" y1="620" x2="980" y2="440" stroke="#334155" stroke-width="2"/>
+<rect x="825" y="512" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="900" y="525" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">-( IRepositorioDatos ○</text>
+<line x1="820" y1="790" x2="980" y2="480" stroke="#334155" stroke-width="2"/>
+<rect x="825" y="617" width="150" height="18" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="900" y="630" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">-( IRepositorioDatos ○</text>
+<rect x="50" y="260" width="290" height="240" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="50" y="260" width="290" height="28" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="195" y="279" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle"><<component>> InterfazWebMVC</text>
+<text x="60" y="306" font-size="11" fill="#1e293b">Provee: ○ IControladorHTTP</text>
+<text x="60" y="323" font-size="11" fill="#1e293b">Requiere:</text>
+<text x="60" y="340" font-size="11" fill="#1e293b">  -( IAutenticacion</text>
+<text x="60" y="357" font-size="11" fill="#1e293b">  -( IGestionAcademica</text>
+<text x="60" y="374" font-size="11" fill="#1e293b">  -( ISesionQR</text>
+<text x="60" y="391" font-size="11" fill="#1e293b">  -( IRegistroAsistencia</text>
+<text x="60" y="408" font-size="11" fill="#1e293b">  -( IReportesAlertas</text>
+<text x="60" y="425" font-size="11" fill="#1e293b">Clases: Controladores + Vistas Web</text>
+<rect x="460" y="80" width="360" height="125" rx="6" fill="#f5f3ff" stroke="#6d28d9" stroke-width="2"/>
+<rect x="460" y="80" width="360" height="28" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+<text x="640" y="99" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle"><<component>> ComponenteAutenticacionSeguridad</text>
+<text x="470" y="126" font-size="11" fill="#1e293b">Provee: ○ IAutenticacion</text>
+<text x="470" y="143" font-size="11" fill="#1e293b">Requiere: -( IRepositorioDatos</text>
+<text x="470" y="160" font-size="11" fill="#1e293b">Clases: Usuario, Admin, Instructor, Aprendiz</text>
+<rect x="460" y="235" width="360" height="125" rx="6" fill="#f5f3ff" stroke="#6d28d9" stroke-width="2"/>
+<rect x="460" y="235" width="360" height="28" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+<text x="640" y="254" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle"><<component>> ComponenteGestionAcademica</text>
+<text x="470" y="281" font-size="11" fill="#1e293b">Provee: ○ IGestionAcademica</text>
+<text x="470" y="298" font-size="11" fill="#1e293b">Requiere: -( IAutenticacion, -( IRepositorioDatos</text>
+<text x="470" y="315" font-size="11" fill="#1e293b">Clases: FichaFormacion, MatriculaFicha, Ambiente</text>
+<rect x="460" y="390" width="360" height="130" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<rect x="460" y="390" width="360" height="28" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="640" y="409" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle"><<component>> ComponenteSesionQR</text>
+<text x="470" y="436" font-size="11" fill="#1e293b">Provee: ○ ISesionQR</text>
+<text x="470" y="453" font-size="11" fill="#1e293b">Requiere: -( IGestionAcademica, -( IReportesAlertas,</text>
+<text x="470" y="470" font-size="11" fill="#1e293b">          -( IRepositorioDatos</text>
+<text x="470" y="487" font-size="11" fill="#1e293b">Clases: SesionAsistencia, TokenQRSesion</text>
+<rect x="460" y="550" width="360" height="145" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<rect x="460" y="550" width="360" height="28" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="640" y="569" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle"><<component>> ComponenteValidacionAsistencia</text>
+<text x="470" y="596" font-size="11" fill="#1e293b">Provee: ○ IRegistroAsistencia</text>
+<text x="470" y="613" font-size="11" fill="#1e293b">Requiere: -( ISesionQR, -( IAutenticacion,</text>
+<text x="470" y="630" font-size="11" fill="#1e293b">          -( IRepositorioDatos</text>
+<text x="470" y="647" font-size="11" fill="#1e293b">Clases: ServicioControlAsistencia, RegistroAsistencia,</text>
+<text x="470" y="664" font-size="11" fill="#1e293b">        IReglaValidacionAsistencia (3 Validadores)</text>
+<rect x="460" y="725" width="360" height="135" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<rect x="460" y="725" width="360" height="28" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="640" y="744" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle"><<component>> ComponenteReportesAlertas</text>
+<text x="470" y="771" font-size="11" fill="#1e293b">Provee: ○ IReportesAlertas</text>
+<text x="470" y="788" font-size="11" fill="#1e293b">Requiere: -( IRepositorioDatos</text>
+<text x="470" y="805" font-size="11" fill="#1e293b">Clases: AlertaInasistencia, FabricaExportadorReporte,</text>
+<text x="470" y="822" font-size="11" fill="#1e293b">        IExportadorReporte, ExportadorCSV/Excel</text>
+<rect x="980" y="260" width="360" height="260" rx="6" fill="#f0f9ff" stroke="#0369a1" stroke-width="2"/>
+<rect x="980" y="260" width="360" height="28" rx="6" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="1160" y="279" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle"><<component>> ComponentePersistenciaSQL</text>
+<text x="990" y="306" font-size="11" fill="#1e293b">Provee: ○ IRepositorioDatos</text>
+<text x="990" y="323" font-size="11" fill="#1e293b">Requiere: -( Protocolo MySQL TCP/3306</text>
+<text x="990" y="340" font-size="11" fill="#1e293b">Clases:</text>
+<text x="990" y="357" font-size="11" fill="#1e293b">  • MySQLConnectionPool (20 conexiones)</text>
+<text x="990" y="374" font-size="11" fill="#1e293b">  • RepositorioUsuario</text>
+<text x="990" y="391" font-size="11" fill="#1e293b">  • RepositorioFicha</text>
+<text x="990" y="408" font-size="11" fill="#1e293b">  • RepositorioSesion</text>
+<text x="990" y="425" font-size="11" fill="#1e293b">  • RepositorioAsistencia</text>
+</svg>
