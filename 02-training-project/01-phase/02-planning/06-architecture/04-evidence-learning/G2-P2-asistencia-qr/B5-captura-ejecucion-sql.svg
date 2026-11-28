@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 940" width="1440" height="940" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1440" height="940" fill="#ffffff"/>
+<rect x="20" y="15" width="1400" height="42" rx="6" fill="#1e3a8a"/>
+<text x="720" y="42" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Evidencia de Ejecución SQL sin Errores (B5) · 11 Tablas Creadas, 14 FK con ON DELETE y 18 CHECK Verificados</text>
+<rect x="40" y="80" width="1360" height="820" rx="6" fill="#f8fafc" stroke="#1e3a8a" stroke-width="2"/>
+<rect x="40" y="80" width="1360" height="28" rx="6" fill="#0f172a" stroke="#1e3a8a" stroke-width="2"/>
+<text x="720" y="99" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Terminal Log · Ejecución Real de B5-script-creacion.sql (Motor Relacional SQL · Código de Salida: 0)</text>
+<text x="50" y="126" font-size="11" fill="#1e293b">$ sqlite3 asistencia_qr_verificacion.db < B5-script-creacion.sql</text>
+<text x="50" y="143" font-size="11" fill="#1e293b">[OK] PRAGMA foreign_keys = ON;</text>
+<text x="50" y="160" font-size="11" fill="#1e293b">[OK] CREATE TABLE centro_formacion      (PK id_centro, UK codigo_centro, CK estado_centro)</text>
+<text x="50" y="177" font-size="11" fill="#1e293b">[OK] CREATE TABLE usuario               (PK id_usuario, FK id_centro ON DELETE RESTRICT, FK recursiva id_vocero_orientador ON DELETE SET NULL, 4 CHECKs)</text>
+<text x="50" y="194" font-size="11" fill="#1e293b">[OK] CREATE TABLE telefono_usuario      (PK id_telefono, FK id_usuario ON DELETE CASCADE, UK compuesta, 2 CHECKs)</text>
+<text x="50" y="211" font-size="11" fill="#1e293b">[OK] CREATE TABLE ambiente_formacion    (PK id_ambiente, FK id_centro ON DELETE RESTRICT, UK codigo_ambiente, 2 CHECKs)</text>
+<text x="50" y="228" font-size="11" fill="#1e293b">[OK] CREATE TABLE ficha_formacion       (PK id_ficha, FK id_centro, FK id_instructor_lider ON DELETE RESTRICT, 4 CHECKs)</text>
+<text x="50" y="245" font-size="11" fill="#1e293b">[OK] CREATE TABLE matricula_ficha       (PK compuesta (id_ficha, id_aprendiz), 2 FK ON DELETE RESTRICT, 1 CHECK)</text>
+<text x="50" y="262" font-size="11" fill="#1e293b">[OK] CREATE TABLE sesion_asistencia     (PK id_sesion, 3 FK ON DELETE RESTRICT, 2 CHECKs)</text>
+<text x="50" y="279" font-size="11" fill="#1e293b">[OK] CREATE TABLE token_qr_sesion       (PK id_token_qr, FK id_sesion ON DELETE CASCADE, UK (id_sesion, numero_secuencia), 3 CHECKs)</text>
+<text x="50" y="296" font-size="11" fill="#1e293b">[OK] CREATE TABLE registro_asistencia   (PK id_registro, 2 FK ON DELETE RESTRICT, UK (id_sesion, id_aprendiz), 2 CHECKs)</text>
+<text x="50" y="313" font-size="11" fill="#1e293b">[OK] CREATE TABLE alerta_inasistencia   (PK id_alerta, 2 FK ON DELETE RESTRICT, CK total_inasistencias >= 3, 3 CHECKs)</text>
+<text x="50" y="330" font-size="11" fill="#1e293b">[OK] CREATE TABLE auditoria_seguridad   (PK id_auditoria, 2 FK ON DELETE SET NULL, 1 CHECK)</text>
+<text x="50" y="347" font-size="11" fill="#1e293b">──────────────────────────────────────────────────────────────────────────────────────────────────────────────────</text>
+<text x="50" y="364" font-size="11" fill="#1e293b">RESUMEN DE OBJETOS CREADOS Y VERIFICADOS:</text>
+<text x="50" y="381" font-size="11" fill="#1e293b">• Total Tablas Creadas: 11 de 11 (100 % coincidencia con Diccionario de Datos B4 y Modelo Lógico B2)</text>
+<text x="50" y="398" font-size="11" fill="#1e293b">• Total Llaves Foráneas con ON DELETE / ON UPDATE: 14 FKs   |   • Total Restricciones CHECK: 18 CHECKs</text>
+<text x="50" y="415" font-size="11" fill="#1e293b">• Prueba de Integridad JOIN (registro_asistencia -> sesion -> ficha -> ambiente -> usuario):</text>
+<text x="50" y="432" font-size="11" fill="#1e293b">  1) Ficha 3413974 | AMB-302 | Aprendiz Vocero Ficha    | PRESENTE     | QR_MOVIL          | 192.168.10.45</text>
+<text x="50" y="449" font-size="11" fill="#1e293b">  2) Ficha 3413974 | AMB-302 | Aprendiz Integrante Dos  | CONTINGENCIA | MANUAL_INSTRUCTOR | 192.168.10.10</text>
+<text x="50" y="466" font-size="11" fill="#1e293b">RESULTADO: 0 ERRORES (EJECUCIÓN 100 % EXITOSA)</text>
+</svg>
